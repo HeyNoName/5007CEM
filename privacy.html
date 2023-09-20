@@ -9,136 +9,186 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/5007CEM/public_html/css/privacy.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+
+            window.onscroll = function () {
+                myFunction()
+            };
+
+            var header = document.getElementById("myHeader");
+            var sticky = header.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset > sticky) {
+                    header.classList.add("sticky");
+                } else {
+                    header.classList.remove("sticky");
+                }
+            }
+
+        </script>
     </head>
     <body>
-        <!-- header -->
-        <div>
-            <a href="index.html">
-                <img src="/5007CEM/public_html/image/logo-1.png" height="150" width="150"/>
-            </a>
-            <div>
-                <input type="text" id="search" name="search"> 
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </div>
-            <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
-            <a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-            <a href="cart.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
-            <a href="index.html">Home</a>
-            <a href="product.html">All Product</a>
-            <!-- Drop down Menu -->
-            <div>
-                <a href="product.html#cakes">Cakes</a>
-                <a href="product.html#cookies">Cookies & Macaroons</a>
-                <a href="product.html#tarts">Tarts</a>
-                <a href="product.html#pastry">Pastry</a>
-                <a href="product.html#savouries">Savouries</a>
-                <a href="product.html#gift">GiftBox</a>
-            </div>
-            <a href="seasonal.html">Seasonal Product</a>
-            <!-- Drop down Menu -->
-            <div>
-                <a href="seasonal.html#mooncake">Mooncake Set</a>
-                <a href="seasonal.html#father">Father's Day Special</a>
-                <a href="seasonal.html#mother">Mother's Day Special</a>
-                <a href="seasonal.html#christmas">Christmas</a>
-                <a href="seasonal.html#chinese">Chinese New Year</a>
-                <a href="seasonal.html#raya">Hari Raya</a>
-            </div>
-            <a href="customize.html">Customize</a>
-            <a href="contact.html">Contact Us</a>
-            <div>
-                <a href="faq.html">FAQs</a>
-                <a href="allergen.html">Allergen and Diet Information</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="delivery.html">Delivery Policy</a>
-                <a href="pick.html">Pickup Information</a>
-            </div>
-        </div>
+        <div class="overflow-hidden">
+            <!-- header -->
 
-        <div>
-            <h1>Privacy Policy</h1>
-            <p>This Privacy Policy describes how your personal information is collected, used, and shared when you 
-                visit or make a purchase from Bliss Pâtisserie (the “Site”).</p>
-            <ol type="1">
-                <li>
-                    <b>Information We Collect</b><br>
-                    We collect information you voluntarily provide when you interact with our website, place an order, 
-                    or contact us. This may include your name, email address, phone number, billing and 
-                    shipping address, payment information, and other relevant details.
-                </li>
-                <li>
-                    <b>Use of Information</b><br>
-                    We use the information we collect for the following purposes:<br>
-                    <b>2.1 Order Processing:</b> To process and fulfill your orders, including order confirmation, 
-                    delivery, and customer support.<br><br>
-                    <b>2.2 Communications:</b> To communicate with you about your orders, updates, promotions, and news
-                    related to our bakery.<br><br>
-                    <b>2.3 Improvement of Services:</b> To improve our website and services, analyze user trends, and 
-                    enhance your experience.<br><br>
-                    <b>2.4 Legal Obligations:</b> To comply with legal obligations and regulations.                    
-                </li>
-                <li>
-                    <b>Do not track</b><br>
-                    Please note that we do not alter our Site’s data collection and use practices when we see a 
-                    Do Not Track signal from your browser.
-                </li>
-                <li>
-                    <b>Data retention</b><br>
-                    When you place an order through the Site, we will maintain your Order Information for our records 
-                    unless and until you ask us to delete this information.
-                </li>
-                <li>
-                    <b>Changes</b><br>
-                    We may update this privacy policy from time to time in order to reflect, for example, changes to 
-                    our practices or for other operational, legal or regulatory reasons.
-                </li>
-                <li>
-                    <b>Contact us</b><br>
-                    For more information about our privacy practices, if you have questions, or if you would like to 
-                    make a complaint, please contact us by e‑mail at <a href="mailto:lavienpatisserie@gmail.com">lavienpatisserie@gmail.com</a>.
-                </li>
-            </ol>
-        </div>
+            <div class="header" >
+                <div class="wrapper" id="myHeader">
+                    <div class="search" >
+                        <span id="mobile-menu-button" class="open-button" onclick="openNav()">
+                            <i class="fa fa-bars"></i>
+                        </span>
+                        <input type="text" id="search" name="search">
+                        <i class="fa fa-search"></i>
+                        <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+                        <a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                        <a href="cart.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+                    </div>
 
-        <!-- Footer -->
-        <div>
-            <h2>La Vie en Rose Pâtisserie</h2>
-            <p>
-                Indulge in premium French desserts, including our exquisite birthday cakes, that are perfect for 
-                gifting and accessible to everyone. Our cakes are crafted from scratch using only the finest halal 
-                ingredients, ensuring quality and inclusivity for all. 
-            </p>
-            <h3>Certification</h3>
-            <img src="/5007CEM/public_html/image/halal.png" width="100" height="100">
-            <img src="/5007CEM/public_html/image/gluten.png" width="150" height="100">
-            <img src="/5007CEM/public_html/image/vegan.png" width="100" height="100">
-            <div>
-                <h3>Quick Links</h3>
-                <p><a href="index.html">Home</a></p>
-                <p><a href="about.html">About Us</a></p>
-                <p><a href="product.html">All Products</a></p>
-                <p><a href="seasonal.html">Seasonal Products</a></p>
-                <p><a href="customize.html">Customize</a></p>
-                <p><a href="contact.html">Contact Us</a></p>
-                <p><a href="allergen.html">Allergen and Diet Information</a></p>
-                <p><a href="faq.html">FAQs</a></p>                
-                <p><a href="terms.html">Terms of Service</a></p>
-                <p><a href="privacy.html">Privacy Policy</a></p>
-                <p><a href="delivery.html">Delivery Policy</a></p>
-                <p><a href="pick.html">Pickup Information</a></p>
-            </div>
-            <div>
-                <h3>Follow Us</h3>
-                <a href="https://www.facebook.com/lavieenrose.pastisserie/" target="blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="https://www.instagram.com/lavieenrose.patisserie/" target="blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            </div>
-            <div>
-                <h2>Our Store</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.0247000251957!2d100.33273147478046!3d5.413208635069488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac35e17db31bb%3A0x1236041f2d3ec9e0!2sLa%20Vie%20en%20Rose%20P%C3%A2tisserie!5e0!3m2!1sen!2smy!4v1693982880895!5m2!1sen!2smy" width="500" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <h4>19, Lebuh Melayu, George Town, 10100 George Town, Pulau Pinang</h4>
-                <h4>Operating Hours: Wednesday - Sunday : 10AM - 6PM</h4>
-                <h4>Contact No: 0143336480</h4>
+                    <a href="index.html">
+                        <img src="/5007CEM/public_html/image/logo-1.png" height="150" width="150"/>
+                    </a>
+                </div>
+
+                <div class="menu" id="mySidenav">
+                    <a href="javascript:void(0)" id="mobile-menu-button" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="index.html">Home</a>
+                    <div class="dropdown">
+                        <a href="product.html">All Product</a>
+                        <!-- Drop down Menu -->
+                        <div class="dropdown-content">
+                            <a href="product.html#cakes">Cakes</a>
+                            <a href="product.html#cookies">Cookies & Macaroons</a>
+                            <a href="product.html#tarts">Tarts</a>
+                            <a href="product.html#pastry">Pastry</a>
+                            <a href="product.html#savouries">Savouries</a>
+                            <a href="product.html#gift">GiftBox</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="seasonal.html">Seasonal Product</a>
+                        <!-- Drop down Menu -->
+                        <div class="dropdown-content">
+                            <a href="seasonal.html#mooncake">Mooncake Set</a>
+                            <a href="seasonal.html#father">Father's Day Special</a>
+                            <a href="seasonal.html#mother">Mother's Day Special</a>
+                            <a href="seasonal.html#christmas">Christmas</a>
+                            <a href="seasonal.html#chinese">Chinese New Year</a>
+                            <a href="seasonal.html#raya">Hari Raya</a>
+                        </div>
+                    </div>
+                    <a href="customize.html">Customize</a>
+                    <div class="dropdown">
+                        <a href="faq.html">FAQs</a>
+                        <div class="dropdown-content">
+                            <a href="allergen.html">Allergen and Diet Information</a>
+                            <a href="terms.html">Terms of Service</a>
+                            <a href="privacy.html">Privacy Policy</a>
+                            <a href="delivery.html">Delivery Policy</a>
+                            <a href="pick.html">Pickup Information</a>
+                        </div>
+                    </div>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+
+                <div class="container text-justify py-5 px-5">
+                    <h1 class="text-center pb-3 title">Privacy Policy</h1>
+                    <p>This Privacy Policy describes how your personal information is collected, used, and shared when you 
+                        visit or make a purchase from Bliss Pâtisserie (the “Site”).</p>
+                    <ol type="1">
+                        <li>
+                            <b>Information We Collect</b><br>
+                            We collect information you voluntarily provide when you interact with our website, place an order, 
+                            or contact us. This may include your name, email address, phone number, billing and 
+                            shipping address, payment information, and other relevant details.
+                        </li>
+                        <li>
+                            <b>Use of Information</b><br>
+                            We use the information we collect for the following purposes:<br>
+                            <b>2.1 Order Processing:</b> To process and fulfill your orders, including order confirmation, 
+                            delivery, and customer support.<br><br>
+                            <b>2.2 Communications:</b> To communicate with you about your orders, updates, promotions, and news
+                            related to our bakery.<br><br>
+                            <b>2.3 Improvement of Services:</b> To improve our website and services, analyze user trends, and 
+                            enhance your experience.<br><br>
+                            <b>2.4 Legal Obligations:</b> To comply with legal obligations and regulations.                    
+                        </li>
+                        <li>
+                            <b>Do not track</b><br>
+                            Please note that we do not alter our Site’s data collection and use practices when we see a 
+                            Do Not Track signal from your browser.
+                        </li>
+                        <li>
+                            <b>Data retention</b><br>
+                            When you place an order through the Site, we will maintain your Order Information for our records 
+                            unless and until you ask us to delete this information.
+                        </li>
+                        <li>
+                            <b>Changes</b><br>
+                            We may update this privacy policy from time to time in order to reflect, for example, changes to 
+                            our practices or for other operational, legal or regulatory reasons.
+                        </li>
+                        <li>
+                            <b>Contact us</b><br>
+                            For more information about our privacy practices, if you have questions, or if you would like to 
+                            make a complaint, please contact us by e‑mail at <a href="mailto:lavienpatisserie@gmail.com">lavienpatisserie@gmail.com</a>.
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- Footer -->
+                <div>
+                    <h2>La Vie en Rose Pâtisserie</h2>
+                    <p>
+                        Indulge in premium French desserts, including our exquisite birthday cakes, that are perfect for 
+                        gifting and accessible to everyone. Our cakes are crafted from scratch using only the finest halal 
+                        ingredients, ensuring quality and inclusivity for all. 
+                    </p>
+                    <h3>Certification</h3>
+                    <img src="/5007CEM/public_html/image/halal.png" width="100" height="100">
+                    <img src="/5007CEM/public_html/image/gluten.png" width="150" height="100">
+                    <img src="/5007CEM/public_html/image/vegan.png" width="100" height="100">
+                    <div>
+                        <h3>Quick Links</h3>
+                        <p><a href="index.html">Home</a></p>
+                        <p><a href="about.html">About Us</a></p>
+                        <p><a href="product.html">All Products</a></p>
+                        <p><a href="seasonal.html">Seasonal Products</a></p>
+                        <p><a href="customize.html">Customize</a></p>
+                        <p><a href="contact.html">Contact Us</a></p>
+                        <p><a href="allergen.html">Allergen and Diet Information</a></p>
+                        <p><a href="faq.html">FAQs</a></p>                
+                        <p><a href="terms.html">Terms of Service</a></p>
+                        <p><a href="privacy.html">Privacy Policy</a></p>
+                        <p><a href="delivery.html">Delivery Policy</a></p>
+                        <p><a href="pick.html">Pickup Information</a></p>
+                    </div>
+                    <div>
+                        <h3>Follow Us</h3>
+                        <a href="https://www.facebook.com/lavieenrose.pastisserie/" target="blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/lavieenrose.patisserie/" target="blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </div>
+                    <div>
+                        <h2>Our Store</h2>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.0247000251957!2d100.33273147478046!3d5.413208635069488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac35e17db31bb%3A0x1236041f2d3ec9e0!2sLa%20Vie%20en%20Rose%20P%C3%A2tisserie!5e0!3m2!1sen!2smy!4v1693982880895!5m2!1sen!2smy" width="500" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <h4>19, Lebuh Melayu, George Town, 10100 George Town, Pulau Pinang</h4>
+                        <h4>Operating Hours: Wednesday - Sunday : 10AM - 6PM</h4>
+                        <h4>Contact No: 0143336480</h4>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

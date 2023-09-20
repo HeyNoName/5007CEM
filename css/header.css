@@ -1,0 +1,227 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Sep 19, 2023, 5:27:05 PM
+    Author     : user
+*/
+/*header*/
+.header{
+    margin: auto;
+    text-align: center;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row-reverse;
+    padding:20px;
+    justify-content: center;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    padding-left: 370px;
+
+}
+
+.head{
+    background-color: white !important; 
+    justify-content: center;
+}
+
+.spacing{
+    margin-left: 30px;
+    padding-top:65px;
+}
+
+.fa{
+    padding-left: 20px;
+    color: #88694e !important;
+}
+
+.menu{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #88694e;
+    height: 40px;
+}
+
+.menu a{
+    color: #ffff;
+    text-decoration: none;
+}
+
+.menu a:hover{
+    color: #e6d6c8;
+    text-decoration: none;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content a:hover {
+    background-color: #88694e;
+    color: #ffff;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .carousel-item {
+    margin-right: 0;
+    flex: 0 0 33.333333%;
+    display: block;
+  }
+  .carousel-inner {
+    display: flex;
+  }
+}
+.card .img-wrapper {
+    max-width: 100%;
+    height: 13em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card img {
+    max-height: 100%;
+}
+@media (max-width: 767px) {
+  .card .img-wrapper {
+    height: 17em;
+  }
+}
+
+
+/*mobile*/
+@media screen and (max-width: 767px){
+    /*navBar*/
+
+    .menu {
+        height: 100%;
+        width: 0;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #88694e;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .menu a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    .open-button {
+        color: #88694e;
+        border: none;
+        cursor: pointer;
+        font-size: 40px;
+    }
+
+    .open-button:hover {
+        background-color: #333;
+    }
+
+    .fa{
+        padding: 5px;
+    }
+
+    .wrapper{
+        display: block;
+        padding:0px;
+    }
+
+    .search{
+        display: block;
+        padding-bottom: 20px;
+        padding-left: 0px;
+    }
+
+    .wrapper img{
+        width:100px;
+        height: 100px;
+    }
+
+    /*banner*/
+    .banner img{
+        height: 370px;
+        padding-top: 20px;
+    }
+
+    .banner h1{
+        font-size: 40px;
+    }
+
+    .text-block{
+        top: 26%;
+        left: 3%;
+    }
+
+    .container{
+        display: inline-block;
+        max-width: 100%;
+    }
+
+
+    .container img{
+        width: 250px;
+        height: 250px;
+    }
+
+
+}
+
+@media screen and (min-width: 768px) {
+    #mobile-menu-button {
+        display: none;
+    }
+}
