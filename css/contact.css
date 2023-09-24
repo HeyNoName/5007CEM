@@ -1,0 +1,36 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Sep 24, 2023, 12:11:43 AM
+    Author     : user
+*/
+
+.btn:hover{
+    background-color:#88694e;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.btn-primary{
+    border-radius: 1.3rem !important;
+    background-color: #88694e !important;
+    border-color: transparent !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.title{
+    font-family: Garamond,Baskerville,Caslon,serif;
+}
+
+
+
+/*mobile*/
+@media screen and (max-width: 767px){
+    
+}
+
+@media screen and (min-width: 768px) {
+
+}

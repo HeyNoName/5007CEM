@@ -62,8 +62,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     font-size: 1em;
     color: white;
     font-weight: 600;
-    padding: 5px;
     border-bottom: 2px solid white;
+}
+
+.label{
+    margin-bottom: 0px;
 }
 
 .btn-1 {

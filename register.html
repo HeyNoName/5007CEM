@@ -46,11 +46,32 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         </div>
                         <button type="button" class="btn-1">Register</button><br><br>
                         <div class="login-register">
-                            <p>Have An Account?<a href="login.html"> Login</a></p>
+                            <p>Have An Account?<a href="login.html" class="login-link"> Login</a></p>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
+
+        <script>
+            const wrapper = document.querySelector('.wrapper');
+            const loginLink = document.querySelector('.login-link');
+            const registerLink = document.querySelector('.register-link');
+            const loginButton = document.querySelector('.form-box.login .btn-1'); // Updated selector
+
+            registerLink.addEventListener('click', () => {
+                wrapper.classList.add('active');
+            });
+
+            loginLink.addEventListener('click', () => {
+                wrapper.classList.remove('active');
+            });
+
+            loginButton.addEventListener('click', (event) => { // Added 'event' parameter
+                event.preventDefault();
+                window.location.href = 'index.html';
+            });
+
+        </script>
     </body>
 </html>
