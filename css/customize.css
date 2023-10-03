@@ -1,0 +1,143 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Sep 18, 2023, 9:58:36 AM
+    Author     : user
+*/
+.title{
+    font-family: Garamond,Baskerville,Caslon,serif;
+}
+
+.container{
+    max-width: 900px;
+}
+
+/*footer*/
+.foot{
+    background-color: #88694e;
+    color:#fff !important;
+}
+
+.col-6 {
+    color:#fff !important;
+}
+
+.col-6 a{
+    color:#fff;
+}
+
+.col-6 fa{
+    font-size:20px;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #88694e;
+    overflow-x: hidden;
+    transition: 0.5s;
+    color: #ffff;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.input{
+    border-radius: 10px;
+}
+
+/*.btn-lg{
+    width: 250px;
+    height: 50px;
+    border-radius: 1.3rem !important;
+    background-color: white;
+}*/
+
+.btn:hover{
+    background-color:#88694e;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn-primary{
+    border-radius: 1.3rem !important;
+    background-color: #88694e !important;
+    border-color: transparent !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.btn-primary a{
+    color:white;
+}
+
+.btn-primary a:hover{
+    color:white;
+    text-decoration: none;
+}
+.accordion {
+    background-color: #88694e;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #f2f2f2;
+    color:#88694e;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+.size img{
+    width: 500px;
+}
+
+.pick-section,
+.delivery-section {
+    display: none; 
+}
+
+@media screen and (max-width: 767px){
+ 
+}
+
+@media screen and (min-width: 768px) {
+
+}

@@ -1,0 +1,54 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Sep 24, 2023, 3:27:02 PM
+    Author     : user
+*/
+
+.title{
+    font-family: Garamond,Baskerville,Caslon,serif;
+}
+
+.col-md-8, .col-md-4{
+    display: flex;
+    align-items: center;
+}
+
+.col-md-4{
+    justify-content: flex-end;
+}
+
+.btn-primary {
+    color: white !important;
+    background-color: #88694e !important;
+    border-color: transparent !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.btn-primary:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn-primary a{
+    color: white;
+}
+
+.btn-primary a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.select{
+    padding: 30px;
+    display: none;
+    margin-top: 30px;
+    width: 60%;
+}
+
+.select img{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}

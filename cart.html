@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>La Vie en Rose Pâtisserie</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/5007CEM/public_html/css/cart.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        
+    </head>
+    <body>
+        <div >
+            <div id="sideNav" class="sidenav"">
+                <h2>My Cart</h2>
+                <hr>
+                <div>
+                    <div>
+                        <div>
+                            <span><i class="fa fa-close"></i></span>
+                        </div>
+
+                        <div>
+                            <img src="" alt="" />
+                        </div>
+
+                        <div>
+                            <span>Product</span>
+                        </div>
+
+                        <div>
+                            <button type="button" name="button">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                            <input type="text" name="name" value="1">
+                            <button type="button" name="button">
+                                <i class="fa fa-minus" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                        <div>RM</div>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                        <div>
+                            <a href="payment.html">
+                                <button>
+                                    Go To Checkout
+                                </button>
+                            </a>
+                        </div>
+
+                        <div>
+                            <button><a href="login.html"> Please log in to proceed</a></button>
+                        </div>        
+                    </div>
+
+
+                </div>              
+            </div> 
+            <div>
+                <h2>Choose An Option</h2>
+                <form>
+                    <input type="checkbox" id="pick" name="pick" value="pick">
+                    <label for="pick">Pick Up</label><br>
+                    <div>
+                        <div>
+                            <div>
+                                <label for="name2">Name</label><br>
+                                <input type="text" id="name2" name="name">
+                            </div>
+
+                            <div>
+                                <label for="contact1">Contact No</label><br>
+                                <input type="text" id="contact1" name="contact">
+                            </div>
+                            <br>
+                            <div>
+                                <label for="pick">Pick Up Time</label>
+                                <select>
+                                    <option value="0">2 PM</option>
+                                    <option value="1">3 PM</option>
+                                    <option value="2">6 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <input type="checkbox" id="deli" name="deli" value="delivery">
+                    <label for="deli">Delivery</label>
+                    <div>
+                        <div>
+                            <label for="name1">Name</label><br>
+                            <input type="text" id="name1" name="name">
+                        </div>
+
+                        <div>
+                            <label for="contact2">Contact No</label><br>
+                            <input type="text" id="contact2" name="contact">
+                        </div>
+
+                        <div>
+                            <label for="add">Address</label><br>
+                            <textarea id="add" name="address" placeholder="Address" style="height:100px"></textarea>
+                        </div>
+
+                        <label for="deli">Delivery Time</label>
+                        <select>
+                            <option value="0">2 PM</option>
+                            <option value="1">3 PM</option>
+                            <option value="2">6 PM</option>
+                        </select>   
+                    </div>
+                </form>
+            </div>
+            <br>
+            <div class="container">
+                <div class="center">
+                    <h4>Your Cart Is Empty </h4>
+                    <br>
+                    <button class="btn btn-primary">Shop Now</button>
+                </div>
+            </div>
+
+
+            <div>
+                <p><strong>We accept</strong></p>
+                <img src="/5007CEM/public_html/image/visa.jpg" width="45" alt="Visa"/>
+                <img src="/5007CEM/public_html/image/master.png" width="45" alt="Mastercard"/>
+                <img src="/5007CEM/public_html/image/tng.png" width="45" alt="Tng"/> &nbsp;
+            </div>
+            <div>
+                <p><strong>Estimated Process Period</strong></p>
+                <p><strong>3 - 5 Days &nbsp; (Start from order day)</strong></p>
+            </div>
+
+
+        </div>
+        <script>
+        
+
+            function openNav() {
+                document.getElementById("sideNav").style.width = "300px";
+            }
+
+            function closeNav() {
+                document.getElementById("sideNav").style.width = "0";
+            }
+
+        </script>
+    </body>
+</html>
