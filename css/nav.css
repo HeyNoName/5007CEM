@@ -46,13 +46,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     justify-content: center;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #88694e;
-    height: 40px;
+
 }
 
 .menu a{
-    color: #ffff;
+    color: #88694e;
     text-decoration: none;
+    font-family: 'Paint Brush Script';
+    font-size: 30px;
+}
+
+@font-face {
+ font-family: 'Paint Brush Script';
+  src: url(http://site/fonts/PaintBrushScript-Regular.woff);
 }
 
 .menu a:hover{
@@ -101,6 +107,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     display: flex;
 }
 
+.title{
+    font-family: Garamond,Baskerville,Caslon,serif;
+}
+
+.col-lg-8, .col-lg-4{
+    display: flex;
+    align-items: center;
+}
+
+.col-lg-4{
+    justify-content: flex-end;
+}
+
+.container{
+    max-width: 1400px !important;
+}
 
 /*footer*/
 .foot{
@@ -108,15 +130,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     color:#fff !important;
 }
 
-.col-6 {
-    color:#fff !important;
-}
-
-.col-6 a{
+.foot a{
     color:#fff;
 }
 
-.col-6 fa{
+.col-sm-12 fa{
     font-size:20px;
 }
 
@@ -144,7 +162,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     }
 
     .menu a {
-        padding: 8px 8px 8px 32px;
+        padding: 23px 19px 8px 27px;
         text-decoration: none;
         font-size: 25px;
         color: white;
@@ -167,10 +185,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
         font-size: 40px;
     }
 
-    .open-button:hover {
-        background-color: #333;
-    }
-
     .fa{
         padding: 5px;
     }
@@ -189,6 +203,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     .menu-btn{
         display: flex;
     }
+
+    .foot a{
+        color:#fff !important;
+    }
+    
+    #map{
+        width: 300px;
+        height: 300px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -196,3 +219,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
         display: none;
     }
 }
+
+@media screen and (max-width: 768px) {
+    #menu {
+        display: none;
+    }
+}
+
+/* Display the menu on screens larger than 768px 
+@media screen and (min-width: 769px) {
+    .none{
+        display: flex;  or any other appropriate display value 
+    }
+}*/

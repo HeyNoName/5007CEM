@@ -11,11 +11,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/5007CEM/public_html/css/home.css">
         <link rel="stylesheet" href="/5007CEM/public_html/css/nav.css">
+        <link rel="stylesheet" href="/5007CEM/public_html/css/product.css">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
     </head>
     <body>
         <div class="overflow-hidden">
@@ -23,30 +23,52 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
             <div class="header">
                 <div class="container" id="myHeader">
-                    <div class="row head py-4">
-                        <div class="col-md-4 menu-btn">
-                            <span id="mobile-menu-button" class="open-button" onclick="openNav()">
-                                <i class="fa fa-bars"></i>
-                            </span>
-                        </div>
-                        <div class="col-md-4">
+                    <!--                    mobile-menu-->
+                    <div class="d-flex d-lg-none justify-content-between menu-btn">
+                        <span id="mobile-menu-button" class="open-button" onclick="openNav()">
+                            <i class="fa fa-bars"></i>
+                        </span>
+
+                        <div class="pl-5">
                             <a href="index.html">
                                 <img src="/5007CEM/public_html/image/logo-1.png" height="70" width="70"/>
                             </a>
                         </div>
-                        <div class="col-md-4">
+
+                        <div class="menu-icon">
+                            <div class="search">
+                                <input type="text" id="search" name="search">
+
+                                <i class="fa fa-search" Onclick="myFunction()"></i>
+                                <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+                                <span style="cursor:pointer" onclick="openNav2()"><i class="fa fa-shopping-bag"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row head pt-4" id="menu">
+
+                        <div class="col-lg-8">
+                            <a href="index.html">
+                                <img src="/5007CEM/public_html/image/logo-1.png" height="100" width="100"/>
+                            </a>
+                            <h3 class="title px-2 pt-2">La Vie en Rose Pâtisserie</h3>
+                        </div>
+
+                        <div class="col-lg-4 pl-5">
                             <div class="search">
                                 <input type="text" id="search" name="search">
 
                                 <i class="fa fa-search" Onclick="myFunction()"></i>
                                 <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
                                 <a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                                <span style="cursor:pointer" onclick="openNav()"><i class="fa fa-shopping-bag"></i></span>
+                                <span style="cursor:pointer" onclick="openNav2()"><i class="fa fa-shopping-bag"></i></span>
                             </div>
                         </div>
                     </div>
+                    <hr/>
                 </div>
-
+                
                 <div class="menu" id="mySidenav">
                     <a href="javascript:void(0)" id="mobile-menu-button" class="closebtn" onclick="closeNav()">&times;</a>
                     <a href="index.html">Home</a>
@@ -86,200 +108,188 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <a href="contact.html">Contact Us</a>
                 </div>
             </div>
+            
+            <div class="container">
+                <hr/>
+            </div>
+            
 
             <!--slider-->
-            <div class="slideshow-container">
-
+            <div class="slideshow-container" id="demo" >
+                
                 <div class="mySlides fade">
                     <div class="numbertext">1 / 3</div>
                     <div class="banner">
-                        <img src="/5007CEM/public_html/image/hbanner.jpg" style="width: 100%"/>
-                        <div class="text-block">
-                            <h4>Limited Time Only</h4>
-                            <h1>Lunar Delights Collection</h1>
-                            <a href="#" class="btn btn-lg">Buy Now</a>
+                        <img src="/5007CEM/public_html/image/banner.jpg"/>
+                        <div class="banner-content px-5">
+                            <h4 class="banner-head">Limited Time Only</h4>
+                            <h1 class="pb-3 text-capitalize text-center">
+                                This autumn's gourmet treat!
+                            </h1>
+                            <a href="seasonal.html" class="btn btn-lg">Shop Now</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="mySlides fade">
                     <div class="numbertext">2 / 3</div>
-                    <div class="video-container">
-                        <video autoplay="autoplay" muted="muted" loop="loop" id="bg-video">
-                            <source src="/5007CEM/public_html/image/about.mp4" type="video/mp4" />
-                        </video>
-                        <div class="about text-justify px-5">
-                            <h2 class="pb-4">About Us</h2>
-                            <p>
-                                Welcome to La Vie en Rose Pâtisserie, where we bake one happiness at a time. Our journey begins with a 
-                                passion for making delicious baked goods that bring people together with smiles on their faces.
-                            </p>
-                            <p class="pb-4">
-                                At La Vie en Rose Pâtisserie, we believe in the magic of baking. It's not just about mixing ingredients 
-                                and following recipes, it's about crafting moments of joy that come back to haunt you with every bite. 
-                                Our story is one of dedication, innovation and an unwavering commitment to quality.
-                            </p>
-                            <button class="btn btn-secondary-1"><a href="about.html">Read More</a></button>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="mySlides fade">
-                    <div class="numbertext">3 / 3</div>
                     <div class="banner">
-                        <img src="/5007CEM/public_html/image/custom.jpg" style="width: 100%"/>
-                        <div class="text-block">
-                            <h1>Customize Your Own Pastry</h1>
-                            <a href="#" class="btn btn-lg">Buy Now</a>
+                        <img src="/5007CEM/public_html/image/custom.png"/>
+                        <div class="banner-content px-5">
+                            <h4 class="banner-head">Customize</h4>
+                            <h1 class="pb-3 text-capitalize text-center">
+                                Customize Your Own Pastry
+                            </h1>
+                            <a href="customize.html" class="btn btn-lg">Customize</a>
                         </div>
                     </div>
                 </div>
 
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <a class="next" onclick="plusSlides(1)">❯</a>
+                <!--                <div class="mySlides fade">
+                                    <div class="numbertext">3 / 3</div>
+                           
+                                </div>-->
+
+                <a class="prev" href="#demo" onclick="plusSlides(-1)">❮</a>
+                <a class="next" href="#demo" onclick="plusSlides(1)">❯</a>
 
                 <br>
 
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span> 
-                    <span class="dot" onclick="currentSlide(2)"></span> 
-                    <span class="dot" onclick="currentSlide(3)"></span> 
-                </div>
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <!--                    <li data-target="#demo" data-slide-to="2"></li>-->
+                </ul>
             </div>
 
+            <!--About us-->
+            <div class="container py-5">
+                <hr/>
+                <div class="about-us pt-5">
+                    <img src="/5007CEM/public_html/image/about.jpg" style="width: 50%; border-radius: 20px;">
+                    <div class="about-content text-justify px-5">
+                        <h1 class="about-title pb-4">About Us</h1>
+                        <p>
+                            Welcome to La Vie en Rose Pâtisserie, where we bake one happiness at a time. Our journey begins with a 
+                            passion for making delicious baked goods that bring people together with smiles on their faces.
+                        </p>
 
-
-            <div class="container px-3 py-5">
-                <button type="button" class="btn btn-primary product" data-toggle="button" aria-pressed="false" >
-                    <a href="product.html">All Product</a>
-                </button>
-
-                <button type="button" class="btn btn-primary mx-5 product" data-toggle="button" aria-pressed="false" style=" background-image: url('/5007CEM/public_html/image/custom.jpg')">
-                    <a href="customize.html">Customize</a>
-                </button>
-
-                <button type="button" class="btn btn-primary product" data-toggle="button" aria-pressed="false" style="background-image: url('/5007CEM/public_html/image/hbanner.jpg')" >
-                    <a href="seasonal.html">Seasonal Product</a>
-                </button>
-            </div>
-
-            <div class="container px-3 py-5">
-                <h1>Best Sellers</h1>
-                <div class="row" style="background-color: white !important; flex-wrap: nowrap;">
-                    <div class="col-md-12">
-                        <div id="carouselExampleControls" class="carousel-slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="col-xs-4">
-                                        <div class="card" style="width: 18rem;">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-body">
-                                                <h3 class="card-title">Best Seller</h3>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                <span class="btn-primary" style="cursor:pointer" onclick="openNav()">Go somewhere</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <div class="col-xs-4">
-                                        <div class="card" style="width: 18rem;">
-                                            <img class="card-img-top" src="..." alt="Card image cap">
-                                            <div class="card-body">
-                                                <h3 class="card-title">Best Seller</h3>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                <span class="btn-primary" style="cursor:pointer" onclick="openNav()">Go somewhere</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="..." alt="Card image cap">
-                                        <div class="card-body">
-                                            <h3 class="card-title">Best Seller</h3>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <span class="btn-primary" style="cursor:pointer" onclick="openNav()">Go somewhere</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="..." alt="Card image cap">
-                                        <div class="card-body">
-                                            <h3 class="card-title">Best Seller</h3>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <span class="btn-primary" style="cursor:pointer" onclick="openNav()">Go somewhere</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add more carousel items with similar structure for additional slides -->
-
-                        <!-- Carousel navigation controls -->
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                        <a href="about.html" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
             </div>
-
-
+            
+            <!--Best Seller-->
             <div class="container py-5"> 
-                <h1 class="title pt-5">Seasonal Product</h1>
+                <hr/>
+                <h1 class="title pt-5">Best Seller Product</h1>
                 <div class="row justify-content-center">
                     <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">
                                 <h3 class="card-title">Product Name</h3>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <span class="btn btn-primary " style="cursor:pointer" onclick="openNav()">Go somewhere</span>
+                                <span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Go somewhere</span>
                             </div>
                         </div>
                     </div>
 
                     <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">
                                 <h3 class="card-title">Best Seller</h3>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <span class="btn btn-primary " style="cursor:pointer" onclick="openNav()">Go somewhere</span>
+                                <span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Go somewhere</span>
                             </div>
                         </div>
                     </div>
 
                     <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">
                                 <h3 class="card-title">Best Seller</h3>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <span class="btn btn-primary " style="cursor:pointer" onclick="openNav()">Go somewhere</span>
+                                <span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Go somewhere</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+            </div>
+            
+            <!--Contact Us-->
+            <div class="contact py-5">
+                <div class="container text-center">
+                    <div class="contact-content pb-2">
+                        <h1 class="contact-title pr-3">Contact Us</h1>
+                        <img src="/5007CEM/public_html/image/newsletter.png" style="width: 50px; height: 50px;"/>
+                    </div>
+                    <p>For more information or if you have questions please feel free to contact us.</p>
+                    <button class="btn btn-secondary-1"><a href="contact.html">Contact Us</a></button>
+                </div>
+            </div>
+            
+<!--            Seasonal Product-->
+
+            <div class="container py-5"> 
+                <hr/>
+                <h1 class="title pt-5">Seasonal Product</h1>
+                <div class="row justify-content-center">
+                    <div class=".col-6 .col-md-4 px-4 py-4">
+                        <div class="card">
+                            <img class="card-img-top" src="..." alt="Card image cap">
+                            <div class="card-body">
+                                <h3 class="card-title">Product Name</h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Go somewhere</span>
                             </div>
                         </div>
                     </div>
 
                     <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">
                                 <h3 class="card-title">Best Seller</h3>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary ">Go somewhere</a>
+                                <span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Go somewhere</span>
                             </div>
                         </div>
                     </div>
+
+                    <div class=".col-6 .col-md-4 px-4 py-4">
+                        <div class="card">
+                            <img class="card-img-top" src="..." alt="Card image cap">
+                            <div class="card-body">
+                                <h3 class="card-title">Best Seller</h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Go somewhere</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sideNav" class="sidenav">
+                <div class="content">
+                    <img src="..."/>
+                    <h1>Product Name</h1>
+                    <p>Description</p>
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+                    <button type="button" name="button" class="input text-center">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                    <input type="text" name="name" value="1" size="10" class="input text-center">
+                    <button type="button" name="button" class="input">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                    </button>
+
+                    <h3>RM</h3>
+
+                    <button class="btn-lg">Add To Cart</button>
                 </div>
             </div>
 
@@ -291,7 +301,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <div>
                         <div>
                             <div>
-                                <a href="javascript:void(0)" class="closebtn" onclick="closNav()">&times;</a>
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
                             </div>
 
                             <div>
@@ -431,21 +441,28 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <img src="/5007CEM/public_html/image/vegan.png" width="100" height="100">
                     </div>
                 </div>
-                
+
                 <div class="col-md-4 col-sm-12">
                     <h3 class="pb-3">Quick Links</h3>
+                    <div class="row">
+                    <div class="col-md-4">
                     <p><a href="index.html">Home</a></p>
                     <p><a href="about.html">About Us</a></p>
                     <p><a href="product.html">All Products</a></p>
                     <p><a href="seasonal.html">Seasonal Products</a></p>
                     <p><a href="customize.html">Customize</a></p>
                     <p><a href="contact.html">Contact Us</a></p>
+                    </div>
+                    <div class="col-md-8">
                     <p><a href="allergen.html">Allergen and Diet Information</a></p>
                     <p><a href="faq.html">FAQs</a></p>
                     <p><a href="terms.html">Terms of Service</a></p>
                     <p><a href="privacy.html">Privacy Policy</a></p>
                     <p><a href="delivery.html">Delivery Policy</a></p>
                     <p><a href="pick.html">Pickup Information</a></p>
+                    </div>
+                        
+                    </div>
 
                     <h3 class="py-3">Follow Us</h3>
                     <a href="https://www.facebook.com/lavieenrose.pastisserie/" target="blank"><i class="fa fa-facebook" aria-hidden="true" style="color:white !important"></i></a>
@@ -453,14 +470,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <h3 class="pb-3">Our Store</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7944.049474086806!2d100.335306!3d5.413203!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac35e17db31bb%3A0x1236041f2d3ec9e0!2sLa%20Vie%20en%20Rose%20P%C3%A2tisserie!5e0!3m2!1sen!2smy!4v1695548904517!5m2!1sen!2smy" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7944.049474086806!2d100.335306!3d5.413203!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac35e17db31bb%3A0x1236041f2d3ec9e0!2sLa%20Vie%20en%20Rose%20P%C3%A2tisserie!5e0!3m2!1sen!2smy!4v1695548904517!5m2!1sen!2smy" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="map"></iframe>
                     <p>19, Lebuh Melayu, George Town, 10100 George Town, Pulau Pinang</p>
                     <p>Operating Hours: Wednesday - Sunday : 10AM - 6PM</p>
                     <p>Contact No: 0143336480</p>
                 </div>
             </div>
         </div>
-        <script src="/5007CEM/public_html/js/home.js" type="text/javascript"></script>
-        <script src="/5007CEM/public_html/js/mobile-menu.js" type="text/javascript"></script>
-    </body>
+        
+    <script src="/5007CEM/public_html/js/home.js" type="text/javascript"></script>
+    <script src="/5007CEM/public_html/js/mobile-menu.js" type="text/javascript"></script>
+    <script src="/5007CEM/public_html/js/cart.js" type="text/javascript"></script>
+    <script src="/5007CEM/public_html/js/product.js" type="text/javascript"></script>
+</body>
 </html>

@@ -7,45 +7,54 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Author     : user
 */
 
-
 /*Banner*/
 .banner{
-    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .banner h1{
-    font-size:60px;
+    font-size: 70px;
+    font-family: 'Paint Brush Script';
 }
 
-.text-block {
-    position: absolute;
-    top: 35%;
-    left: 10%;
-    color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: left;
-    line-height: 70px;
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #dbe4d5;
+    width: 100%;
 }
 
-.video-container {
-    position: relative;
+.banner-head{
+    display: inline-block;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    margin: 0 auto 30px;
+    text-transform: uppercase;
+    line-height: 38px;
+    font-size: 1.395rem;
+    font-weight: 600;
 }
 
 .banner img {
-    filter: brightness(70%);
+    width: 50%;
 }
 
 .btn-lg{
     width: 300px;
     height: 50px;
     border-radius: 1.3rem !important;
-    background-color: white;
+    background-color: white !important;
+    color:#88694e !important;
+    left: 27%;
+    position: relative;
 }
 
-.btn:hover{
-    background-color:#88694e;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.btn-lg:hover{
+    background-color:#88694e !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+    color: white !important;
 }
 
 /*slider*/
@@ -113,18 +122,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     top: 0;
 }
 
-/* The dots/bullets/indicators */
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
 .active, .dot:hover {
     background-color: #717171;
 }
@@ -132,8 +129,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 /* Fading animation */
 .fade {
     animation-name: fade;
-    animation-duration: 2s;
+    
 }
+
+.fade:not(.show) {
+    opacity: 1 !important;
+  }
+
+
 
 @keyframes fade {
     from {
@@ -195,9 +198,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 }
 
 /*about*/
-#bg-video {
-    width: 100%;
+.about-title{
+    font-family: 'Paint Brush Script';
+    font-size: 70px;
+}
+
+.about-us {
     filter: brightness(70%);
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .about {
@@ -216,6 +225,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     border-radius: 20px;
 }
 
+.about-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about btn{
+    width: 30%;
+}
+
+
+
 .btn-secondary-1{
     background-color: white !important;
     color: #88694e !important;
@@ -230,67 +251,23 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     color: #88694e;
 }
 
-.card-body {
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    min-height: 1px;
-    padding: 1.25rem;
-    color: black !important;
-}
-
-.carousel-item {
-    > .carousel-item {
-        transition: 500ms ease-in-out left;
-    }
-    .active {
-        &.left {
-            left: -33%;
-        }
-        &.right {
-            left: 33%;
-        }
-    }
-}
-
-.carousel-control-next {
-    left: 33%;
-}
-.carousel-control-prev {
-    left: -33%;
-}
-
-.carousel-control {
-    &.next, &.prev {
-        background-image: none;
-    }
-}
-
-@media all and (transform-3d), (-webkit-transform-3d) {
-    > .carousel-item {
-        transition: 500ms ease-in-out left;
-        transition: 500ms ease-in-out all;
-        backface-visibility: visible;
-        transform: none!important;
-    }
-}
-
-
 /*cart*/
-.sidenav {
-    height: 100%;
+.cart {
     width: 0;
+    height: 100%;
     position: fixed;
-    z-index: 1;
     top: 0;
-    left: 0;
-    background-color: #88694e;
+    right: -400px; /* Start it off the screen to the right */
+    background-color: #111;
     overflow-x: hidden;
-    transition: 0.5s;
-    color: #ffff;
-    padding-top: 60px;
+    transition: right 0.3s ease-in-out;
 }
 
-.sidenav a {
+.cart.active {
+    right: 0; /* Slide it in from the right */
+}
+
+.cart a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -299,11 +276,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     transition: 0.3s;
 }
 
-.sidenav a:hover {
+.cart a:hover {
     color: #f1f1f1;
 }
 
-.sidenav .closebtn {
+.cart .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
@@ -316,34 +293,108 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     color: #88694e !important;
 }
 
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #88694e;
+  overflow-x: hidden;
+  transition: 0.5s;
+  color: #ffff;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+
+/*Contact*/
+.content{
+    padding: 60px 20px 0px 20px;
+}
+
+.contact{
+    background-color: #dea5a4;
+    color:#2e2206;
+}
+
+.contact-content{
+    display:flex;
+    justify-content: center;
+}
+
+.contact-title{
+    font-family: 'Paint Brush Script';
+    font-size: 60px;
+    font-weight: 500;
+}
 
 /*mobile*/
 @media screen and (max-width: 767px){
     /*banner*/
     .banner img{
-        height: 370px;
+        width: 100%;
         padding-top: 20px;
+        height: 400px;
     }
+
+    .banner{
+        display:block;
+    }
+
+    .banner-content{
+        padding: 40px 0 40px 0;
+    }
+
 
     .banner h1{
-        font-size: 40px;
+        font-size: 50px;
     }
-
-    .text-block{
-        top: 26%;
-        left: 3%;
+    
+    .btn-lg{
+        position: relative;
+        left: 10%;
     }
 
     .container{
         display: inline-block;
         max-width: 100%;
     }
-
-
     
     .card .img-wrapper {
         height: 17em;
     }
+    
+    .about-us{
+        display:block;
+    }
+    
+    .about-us img{
+        display: none;
+    }
+
+
 
 
 }
@@ -353,14 +404,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
         display: none;
     }
     
-    .carousel-item {
-        margin-right: 0;
-        flex: 0 0 33.333333%;
-        display: block;
-    }
-    .carousel-inner {
-        display: flex;
-    }
+
 }
 .card .img-wrapper {
     max-width: 100%;

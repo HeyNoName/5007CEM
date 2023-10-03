@@ -20,30 +20,53 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
     <body>
         <div class="overflow-hidden">
             <!-- header -->
+
             <div class="header">
                 <div class="container" id="myHeader">
-                    <div class="row head py-4">
-                        <div class="col-md-4 menu-btn">
-                            <span id="mobile-menu-button" class="open-button" onclick="openNav()">
-                                <i class="fa fa-bars"></i>
-                            </span>
-                        </div>
-                        <div class="col-md-4">
+                    <!--                    mobile-menu-->
+                    <div class="d-flex d-lg-none justify-content-between menu-btn">
+                        <span id="mobile-menu-button" class="open-button" onclick="openNav()">
+                            <i class="fa fa-bars"></i>
+                        </span>
+
+                        <div class="pl-5">
                             <a href="index.html">
                                 <img src="/5007CEM/public_html/image/logo-1.png" height="70" width="70"/>
                             </a>
                         </div>
-                        <div class="col-md-4">
+
+                        <div class="menu-icon">
                             <div class="search">
                                 <input type="text" id="search" name="search">
 
                                 <i class="fa fa-search" Onclick="myFunction()"></i>
                                 <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
-                                <a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                                <span style="cursor:pointer" onclick="openNav()"><i class="fa fa-shopping-bag"></i></span>
+                                <span style="cursor:pointer" onclick="openNav2()"><i class="fa fa-shopping-bag"></i></span>
                             </div>
                         </div>
                     </div>
+
+                    <div class="row head pt-4" id="menu">
+
+                        <div class="col-lg-8">
+                            <a href="index.html">
+                                <img src="/5007CEM/public_html/image/logo-1.png" height="100" width="100"/>
+                            </a>
+                            <h3 class="title px-2 pt-2">La Vie en Rose Pâtisserie</h3>
+                        </div>
+
+                        <div class="col-lg-4 pl-5">
+                            <div class="search">
+                                <input type="text" id="search" name="search">
+
+                                <i class="fa fa-search" Onclick="myFunction2()"></i>
+                                <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+                                <a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                                <span style="cursor:pointer" onclick="openNav2()"><i class="fa fa-shopping-bag"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
                 </div>
 
                 <div class="menu" id="mySidenav">
@@ -86,240 +109,437 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 </div>
             </div>
 
+            <div class="container">
+                <hr/>
+            </div>
+
             <h1 class="title pt-5 text-center">Seasonal Product</h1>
+
+            <!--            MoonCake-->
             <div class="container py-5"> 
                 <h1 id="mooncake" class="title">Mooncake Set</h1>
                 <div class="row justify-content-center">
-                    <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
+                    <div id="mooncake" class=".col-6 .col-md-4 px-4 py-4">
+                        <div class="card">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">
-                                <h3 class="card-title">Product Name</h3>
+                                <h3 class="card-title">Mooncake Set</h3>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <span class="btn btn-primary" style="cursor:pointer" onclick="openNav()">Go somewhere</span>
+                                <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
+                    <div id="mooncake" class=".col-6 .col-md-4 px-4 py-4">
+                        <div class="card">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">
-                                <h3 class="card-title">Best Seller</h3>
+                                <h3 class="card-title">Mooncake Set</h3>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <span class="btn btn-primary" style="cursor:pointer" onclick="openNav()">Go somewhere</span>
+                                <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
+                    <div id="mooncake" class=".col-6 .col-md-4 px-4 py-4">
+                        <div class="card">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">
-                                <h3 class="card-title">Best Seller</h3>
+                                <h3 class="card-title">Mooncake Set</h3>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <span class="btn btn-primary" style="cursor:pointer" onclick="openNav()">Go somewhere</span>
+                                <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
+                    <div id="mooncake" class=".col-6 .col-md-4 px-4 py-4">
+                        <div class="card">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">
-                                <h3 class="card-title">Best Seller</h3>
+                                <h3 class="card-title">Mooncake Set</h3>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
+                    <div id="mooncake" class=".col-6 .col-md-4 px-4 py-4">
+                        <div class="card">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">
-                                <h3 class="card-title">Best Seller</h3>
+                                <h3 class="card-title">Mooncake Set</h3>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <span class="btn btn-primary" style="cursor:pointer" onclick="openNav()">Go somewhere</span>
+                                <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
+                    <div id="mooncake" class=".col-6 .col-md-4 px-4 py-4">
+                        <div class="card">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">
-                                <h3 class="card-title">Best Seller</h3>
+                                <h3 class="card-title">Mooncake Set</h3>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <span class="btn btn-primary" style="cursor:pointer" onclick="openNav()">Go somewhere</span>
+                                <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--                Father's Day-->
+
+                    <h1 id="father" class="title pt-5">Father's Day Special</h1>
+                    <div class="row justify-content-center">
+                        <div class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Father's Day Special</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="father" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Father's Day Special</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="father" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Father's Day Special</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="father" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Father's Day Special</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="father" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Father's Day Special</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="father" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Father's Day Special</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <!--                Mother's Day-->
+                    <h1 id="mother" class="title pt-5">Mother's Day Special</h1>
+                    <div class="row justify-content-center">
+                        <div class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Mother's Day Special</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Mother's Day Special</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Mother's Day Special</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Mother's Day Special</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Mother's Day Special</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Mother's Day Special</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+<!--                    christmas-->
+
+                    <h1 id="christmas" class="title">Christmas</h1>
+                    <div class="row justify-content-center">
+                        <div id="christmas" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Christmas</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="christmas" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Christmas</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="christmas" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Christmas</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="christmas" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Christmas</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="christmas" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Christmas</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="christmas" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Christmas</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+<!--                    chinese new year-->
+                    
+                    <h1 id="chinese" class="title">Chinese New Year</h1>
+                    <div class="row justify-content-center">
+                        <div id="christmas" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Chinese New Year</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="chinese" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Chinese New Year</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="chinese" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Chinese New Year</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="chinese" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Chinese New Year</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="chinese" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Chinese New Year</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="chinese" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Chinese New Year</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+<!--                     Hari Raya-->
+                    <h1 id="raya" class="title">Hari Raya</h1>
+                    <div class="row justify-content-center">
+                        <div id="christmas" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Hari Raya</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="raya" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Hari Raya</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="raya" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Hari Raya</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="raya" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Hari Raya</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="raya" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Hari Raya</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="raya" class=".col-6 .col-md-4 px-4 py-4">
+                            <div class="card">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">Hari Raya</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <span class="btn btn-primary" style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!--                Father's Day-->
-
-                <h1 id="father" class="title pt-5">Father's Day Special</h1>
-                <div class="row justify-content-center">
-                    <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="..." alt="Card image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Cakes</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="father" class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="..." alt="Card image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Cakes</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="father" class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="..." alt="Card image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Cakes</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="father" class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="..." alt="Card image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Cakes</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="father" class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="..." alt="Card image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Cakes</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="father" class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="..." alt="Card image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Cakes</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-
-                <!--                Mother's Day-->
-                <h1 id="mother" class="title pt-5">Mother's Day Special</h1>
-                <div class="row justify-content-center">
-                    <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="..." alt="Card image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Cookies and Macaroons</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="..." alt="Card image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Cookies and Macaroons</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="..." alt="Card image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Cookies and Macaroons</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="..." alt="Card image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Cookies and Macaroons</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="..." alt="Card image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Cookies and Macaroons</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class=".col-6 .col-md-4 px-4 py-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="..." alt="Card image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Cookies and Macaroons</h3>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
             </div>
-
-
-            <div id="christmas">
-                <h1>Christmas</h1>
-                <img src="...">
-                <div>
-                    <h5>Card title</h5>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#">Add To Cart</a>
-                </div>
-            </div>
-            <div id="raya">
-                <h1>Hari Raya</h1>
-                <img src="...">
-                <div>
-                    <h5>Card title</h5>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#">Add To Cart</a>
-                </div>
-            </div>
+            
+<!--            Product Description-->
 
             <div id="sideNav" class="sidenav">
                 <div class="content">
@@ -343,7 +563,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 
             <!-- Footer -->
             <div class="row text-left px-5 pt-5 foot">
-                <div class="col-6 col-md-4">
+                <div class="col-md-4 col-sm-12">
                     <h3 class="pb-3">La Vie en Rose Pâtisserie</h3>
                     <p>
                         Indulge in premium French desserts, including our exquisite birthday cakes, that are perfect for
@@ -351,35 +571,45 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         ingredients, ensuring quality and inclusivity for all.
                     </p>
                     <br>
-                    <div class="absolute">
+                    <div>
                         <h3 class="pb-3">Certification</h3>
                         <img src="/5007CEM/public_html/image/halal.png" width="100" height="100">
                         <img src="/5007CEM/public_html/image/gluten.png" width="150" height="100">
                         <img src="/5007CEM/public_html/image/vegan.png" width="100" height="100">
                     </div>
                 </div>
-                <div class="col-6 col-md-4">
-                    <h3 class="pb-3">Quick Links</h3>
-                    <p><a href="index.html">Home</a></p>
-                    <p><a href="about.html">About Us</a></p>
-                    <p><a href="product.html">All Products</a></p>
-                    <p><a href="seasonal.html">Seasonal Products</a></p>
-                    <p><a href="customize.html">Customize</a></p>
-                    <p><a href="contact.html">Contact Us</a></p>
-                    <p><a href="allergen.html">Allergen and Diet Information</a></p>
-                    <p><a href="faq.html">FAQs</a></p>
-                    <p><a href="terms.html">Terms of Service</a></p>
-                    <p><a href="privacy.html">Privacy Policy</a></p>
-                    <p><a href="delivery.html">Delivery Policy</a></p>
-                    <p><a href="pick.html">Pickup Information</a></p>
 
-                    <h3 class="py-3">Follow Us</h3>
-                    <a href="https://www.facebook.com/lavieenrose.pastisserie/" target="blank"><i class="fa fa-facebook" aria-hidden="true" style="color:white !important"></i></a>
-                    <a href="https://www.instagram.com/lavieenrose.patisserie/" target="blank"><i class="fa fa-instagram" aria-hidden="true" style="color:white !important"></i></a>
+                <div class="col-md-4 col-sm-12">
+                    <h3 class="pb-3">Quick Links</h3>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p><a href="index.html">Home</a></p>
+                            <p><a href="about.html">About Us</a></p>
+                            <p><a href="product.html">All Products</a></p>
+                            <p><a href="seasonal.html">Seasonal Products</a></p>
+                            <p><a href="customize.html">Customize</a></p>
+                            <p><a href="contact.html">Contact Us</a></p>
+                        </div>
+                        <div class="col-md-8">
+                            <p><a href="allergen.html">Allergen and Diet Information</a></p>
+                            <p><a href="faq.html">FAQs</a></p>
+                            <p><a href="terms.html">Terms of Service</a></p>
+                            <p><a href="privacy.html">Privacy Policy</a></p>
+                            <p><a href="delivery.html">Delivery Policy</a></p>
+                            <p><a href="pick.html">Pickup Information</a></p>
+                        </div>
+
+                    </div>
+
+                    <div class="py-3">
+                        <h3 class="pt-3 pb-1">Follow Us</h3>
+                        <a href="https://www.facebook.com/lavieenrose.pastisserie/" target="blank"><i class="fa fa-facebook" aria-hidden="true" style="color:white !important; font-size: 25px;"></i></a>
+                        <a href="https://www.instagram.com/lavieenrose.patisserie/" target="blank"><i class="fa fa-instagram" aria-hidden="true" style="color:white !important; font-size: 25px;"></i></a>
+                    </div>
                 </div>
-                <div class="col-6 col-md-4">
+                <div class="col-md-4 col-sm-12">
                     <h3 class="pb-3">Our Store</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.0247000251957!2d100.33273147478046!3d5.413208635069488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac35e17db31bb%3A0x1236041f2d3ec9e0!2sLa%20Vie%20en%20Rose%20P%C3%A2tisserie!5e0!3m2!1sen!2smy!4v1693982880895!5m2!1sen!2smy" width="500" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="pr-3"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7944.049474086806!2d100.335306!3d5.413203!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac35e17db31bb%3A0x1236041f2d3ec9e0!2sLa%20Vie%20en%20Rose%20P%C3%A2tisserie!5e0!3m2!1sen!2smy!4v1695548904517!5m2!1sen!2smy" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="map"></iframe>
                     <p>19, Lebuh Melayu, George Town, 10100 George Town, Pulau Pinang</p>
                     <p>Operating Hours: Wednesday - Sunday : 10AM - 6PM</p>
                     <p>Contact No: 0143336480</p>

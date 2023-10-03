@@ -17,10 +17,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 
 .title{
     font-family: Garamond,Baskerville,Caslon,serif;
+    padding-left: 33px;
 }
 
 .container{
     max-width: 900px;
+}
+
+.card{
+    width: 25rem;
 }
 
 .content{
@@ -78,11 +83,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 }
 
 .btn-primary{
-    border-radius: 1.3rem !important;
+    border-radius: 0.7rem !important;
     background-color: #88694e !important;
     border-color: transparent !important;
 }
 
 @media screen and (max-width: 767px){
+    
+    .card{
+        width: 20rem;
+    }
    
 }

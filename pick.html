@@ -18,33 +18,56 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
     </head>
     <body>
         <div class="overflow-hidden">
-            <!-- header -->
+                       <!-- header -->
+
             <div class="header">
                 <div class="container" id="myHeader">
-                    <div class="row head py-4">
-                        <div class="col-md-4 menu-btn">
-                            <span id="mobile-menu-button" class="open-button" onclick="openNav()">
-                                <i class="fa fa-bars"></i>
-                            </span>
-                        </div>
-                        <div class="col-md-4">
+                    <!--                    mobile-menu-->
+                    <div class="d-flex d-lg-none justify-content-between menu-btn">
+                        <span id="mobile-menu-button" class="open-button" onclick="openNav()">
+                            <i class="fa fa-bars"></i>
+                        </span>
+
+                        <div class="pl-5">
                             <a href="index.html">
                                 <img src="/5007CEM/public_html/image/logo-1.png" height="70" width="70"/>
                             </a>
                         </div>
-                        <div class="col-md-4">
+
+                        <div class="menu-icon">
                             <div class="search">
                                 <input type="text" id="search" name="search">
 
                                 <i class="fa fa-search" Onclick="myFunction()"></i>
                                 <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
-                                <a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                                <span style="cursor:pointer" onclick="openNav()"><i class="fa fa-shopping-bag"></i></span>
+                                <span style="cursor:pointer" onclick="openNav2()"><i class="fa fa-shopping-bag"></i></span>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                    <div class="row head pt-4" id="menu">
+
+                        <div class="col-lg-8">
+                            <a href="index.html">
+                                <img src="/5007CEM/public_html/image/logo-1.png" height="100" width="100"/>
+                            </a>
+                            <h3 class="title px-2 pt-2">La Vie en Rose Pâtisserie</h3>
+                        </div>
+
+                        <div class="col-lg-4 pl-5">
+                            <div class="search">
+                                <input type="text" id="search" name="search">
+
+                                <i class="fa fa-search" Onclick="myFunction2()"></i>
+                                <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+                                <a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                                <span style="cursor:pointer" onclick="openNav2()"><i class="fa fa-shopping-bag"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                </div>
+                
                 <div class="menu" id="mySidenav">
                     <a href="javascript:void(0)" id="mobile-menu-button" class="closebtn" onclick="closeNav()">&times;</a>
                     <a href="index.html">Home</a>
@@ -83,6 +106,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     </div>
                     <a href="contact.html">Contact Us</a>
                 </div>
+            </div>
+            
+            <div class="container">
+                <hr/>
             </div>
 
             <div class="container text-justify py-5 px-5">

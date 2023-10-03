@@ -19,27 +19,31 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
     <body>
         <div class="overflow-hidden">
             <!-- header -->
+
             <div class="header">
                 <div class="container" id="myHeader">
+                    <div class=" menu-btn">
+                        <span id="mobile-menu-button" class="open-button" onclick="openNav()">
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </div>
                     <div class="row head py-4">
-                        <div class="col-md-4 menu-btn">
-                            <span id="mobile-menu-button" class="open-button" onclick="openNav()">
-                                <i class="fa fa-bars"></i>
-                            </span>
-                        </div>
-                        <div class="col-md-4">
+                        
+                        <div class="col-lg-8">
                             <a href="index.html">
-                                <img src="/5007CEM/public_html/image/logo-1.png" height="70" width="70"/>
+                                <img src="/5007CEM/public_html/image/logo-1.png" height="100" width="100"/>
                             </a>
+                            <h3 class="title px-2 pt-2">La Vie en Rose Pâtisserie</h3>
                         </div>
-                        <div class="col-md-4">
+
+                        <div class="col-lg-4 pl-5">
                             <div class="search">
                                 <input type="text" id="search" name="search">
 
                                 <i class="fa fa-search" Onclick="myFunction()"></i>
                                 <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
                                 <a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                                <span style="cursor:pointer" onclick="openNav()"><i class="fa fa-shopping-bag"></i></span>
+                                <span style="cursor:pointer" onclick="openNav2()"><i class="fa fa-shopping-bag"></i></span>
                             </div>
                         </div>
                     </div>
