@@ -59,12 +59,25 @@ styleSelect.addEventListener("change", function () {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-$(document).ready(function () {
-    $('input[type="checkbox"]').click(function () {
-        var inputValue = $(this).attr("value");
-        $("." + inputValue + "-section").toggle();
+    checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener("click", function () {
+            var inputValue = this.value;
+            var elementsToToggle = document.querySelectorAll("." + inputValue + "-section");
+
+            elementsToToggle.forEach(function (element) {
+                if (element.style.display === "none" || element.style.display === "") {
+                    element.style.display = "block";
+                } else {
+                    element.style.display = "none";
+                }
+            });
+        });
     });
 });
+
+
 
 

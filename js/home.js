@@ -20,13 +20,13 @@ function currentSlide(n) {
 function showSlides() {
     let i;
     let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("carousel-indicators");
+    let dots = document.getElementsByClassName("carousel-indicators")[0].getElementsByTagName("li"); // Access the individual <li> elements
 
     if (slideIndex >= slides.length) {
-        slideIndex = 0
+        slideIndex = 0;
     }
     if (slideIndex < 0) {
-        slideIndex = slides.length - 1
+        slideIndex = slides.length - 1;
     }
 
     for (i = 0; i < slides.length; i++) {
@@ -43,9 +43,40 @@ function showSlides() {
     slideIndex++;
 
     // Set a timeout for the next automatic slide (adjust the time as needed)
-    setTimeout(showSlides, 5000); // Change slide every 3 seconds
+    setTimeout(showSlides, 8000); // Change slide every 5 seconds
 }
 
+
+// showSlides(slideIndex += n);
+//}
+//
+//function currentSlide(n) {
+//  showSlides(slideIndex = n - 1);
+//}
+//
+//function showSlides() {
+//  let i;
+//  let slides = document.getElementsByClassName("mySlides");
+//  let dots = document.getElementsByClassName("dot");
+//
+//  if (slideIndex >= slides.length) { slideIndex = 0 }
+//  if (slideIndex < 0) { slideIndex = slides.length - 1 }
+//
+//  for (i = 0; i < slides.length; i++) {
+//    slides[i].style.display = "none";
+//  }
+//  for (i = 0; i < dots.length; i++) {
+//    dots[i].className = dots[i].className.replace(" active", "");
+//  }
+//
+//  slides[slideIndex].style.display = "block";
+//  dots[slideIndex].className += " active";
+//
+//  // Increment the slide index for the next automatic slide
+//  slideIndex++;
+//  
+//  // Set a timeout for the next automatic slide (adjust the time as needed)
+//  setTimeout(showSlides, 5000); // Change slide every 3 seconds
 
 
 
@@ -152,6 +183,8 @@ function myFunction() {
 //}
 //
 //// You can add additional logic for handling search functionality here
+
+
 
 
 
