@@ -151,7 +151,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
         font-size: 11px
     }
 }
-
+/*
 .product{
     background-image: url("/5007CEM/public_html/image/allpro.jpg");
     background-repeat: no-repeat;
@@ -179,7 +179,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 .product:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     filter: brightness(95%);
-}
+}*/
 
 /*about*/
 .about-title{
