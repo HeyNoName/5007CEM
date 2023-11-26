@@ -28,26 +28,33 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         </span>
 
                         <div class="pl-5">
-                            <a href="index.html">
+                            <a href="index.php">
                                 <img src="/5007CEM/public_html/image/logo-1.png" height="70" width="70"/>
                             </a>
                         </div>
 
+
                         <div class="menu-icon">
                             <div class="search">
-                                <input type="text" id="search" name="search">
-
-                                <i class="fa fa-search" Onclick="myFunction()"></i>
-                                <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
-                                <span style="cursor:pointer" onclick="openNav2()"><i class="fa fa-shopping-bag"></i></span>
+                                <a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>
+                                <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
                             </div>
                         </div>
                     </div>
 
+                    <form action="searchResult.php" method="GET" id="mobile-menu-button">
+                        <div class="searchBox">
+                            <input type="text" id="search" name="search" class="size">
+                            <button type="submit" style="border: none; background: transparent;">
+                                <i class="fa fa-search" Onclick="myFunction()"></i>
+                            </button>
+                        </div>
+                    </form>
+
                     <div class="row head pt-4" id="menu">
 
                         <div class="col-lg-8">
-                            <a href="index.html">
+                            <a href="index.php">
                                 <img src="/5007CEM/public_html/image/logo-1.png" height="100" width="100"/>
                             </a>
                             <h3 class="title px-2 pt-2">La Vie en Rose Pâtisserie</h3>
@@ -55,41 +62,54 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 
                         <div class="col-lg-4 pl-5">
                             <div class="search">
-                                <input type="text" id="search" name="search">
-
-                                <i class="fa fa-search" Onclick="myFunction()"></i>
-                                <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+                                <form action="searchResult.php" method="GET">
+                                    <div class="search">
+                                        <input type="text" id="search" name="search">
+                                        <button type="submit" style="border: none; background: transparent;">
+                                            <i class="fa fa-search" onclick="myFunction()"></i>
+                                        </button>
+                                    </div>
+                                </form>
                                 <a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                                <span style="cursor:pointer" onclick="openNav2()"><i class="fa fa-shopping-bag"></i></span>
+                                <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
+                                <?php
+                                // Check if the user is logged in
+                                if (isset($_SESSION['user'])) {
+                                    echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                    echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
+                                } else {
+                                    echo '<a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
                     <hr/>
                 </div>
-                
+
                 <div class="menu" id="mySidenav">
                     <a href="javascript:void(0)" id="mobile-menu-button" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                     <div class="dropdown">
-                        <a href="product.html">All Product</a>
+                        <a href="product.php">All Product</a>
                         <div class="dropdown-content">
-                            <a href="product.html#cakes">Cakes</a>
-                            <a href="product.html#cookies">Cookies & Macaroons</a>
-                            <a href="product.html#tarts">Tarts</a>
-                            <a href="product.html#pastry">Pastry</a>
-                            <a href="product.html#savouries">Savouries</a>
-                            <a href="product.html#gift">GiftBox</a>
+                            <a href="product.php#cakes">Cakes</a>
+                            <a href="product.php#cookies">Cookies & Macaroons</a>
+                            <a href="product.php#tarts">Tarts</a>
+                            <a href="product.php#pastry">Pastry</a>
+                            <a href="product.php#savouries">Savouries</a>
+                            <a href="product.php#gift">GiftBox</a>
                         </div>
                     </div>
                     <div class="dropdown">
-                        <a href="seasonal.html">Seasonal Product</a>
+                        <a href="seasonal.php">Seasonal Product</a>
                         <div class="dropdown-content">
-                            <a href="seasonal.html#mooncake">Mooncake Set</a>
-                            <a href="seasonal.html#father">Father's Day Special</a>
-                            <a href="seasonal.html#mother">Mother's Day Special</a>
-                            <a href="seasonal.html#christmas">Christmas</a>
-                            <a href="seasonal.html#chinese">Chinese New Year</a>
-                            <a href="seasonal.html#raya">Hari Raya</a>
+                            <a href="seasonal.php#mooncake">Mooncake Set</a>
+                            <a href="seasonal.php#father">Father's Day Special</a>
+                            <a href="seasonal.php#mother">Mother's Day Special</a>
+                            <a href="seasonal.php#christmas">Christmas</a>
+                            <a href="seasonal.php#chinese">Chinese New Year</a>
+                            <a href="seasonal.php#raya">Hari Raya</a>
                         </div>
                     </div>
                     <a href="customize.html">Customize</a>
@@ -103,10 +123,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <a href="pick.html">Pickup Information</a>
                         </div>
                     </div>
-                    <a href="contact.html">Contact Us</a>
+                    <a href="contact.php">Contact Us</a>
                 </div>
             </div>
-            
+
             <div class="container hr-line">
                 <hr/>
             </div>
