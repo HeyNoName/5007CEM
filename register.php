@@ -24,6 +24,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
               integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
               crossorigin="anonymous">
+        <style>
+            @media screen and (max-width: 768px) {
+                .wrapper {
+                    position: relative;
+                    width: 390px;
+                    background: transparent;
+                    border: 2px solid rgba(255, 255, 255, .5);
+                    border-radius: 20px;
+                    backdrop-filter: blur(20px);
+                    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    transition: height .2s ease;
+                    color: white;
+                    left: 0%;
+                }
+            }
+        </style>
     </head>
 
     <body>
@@ -58,14 +78,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 
                             $problem = FALSE;
 
-                            if ( !empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password'])) {
+                            if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password'])) {
 
                                 $username = $_POST['username'];
                                 $email = $_POST['email'];
                                 $password = $_POST['password'];
 
                                 $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-                                
+
                                 if (!is_numeric($_POST['username'])) {
 
                                     if (isset($_POST['password'])) {
@@ -106,7 +126,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                 );
 
                                 // Debugging statement
-                                echo "User Created! " ;
+                                echo "User Created! ";
 
                                 $curl = curl_init();
 
@@ -131,7 +151,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 //                                echo "API Response: " . $response;
 
                                 curl_close($curl);
-
                             }
                         }
                         ?>

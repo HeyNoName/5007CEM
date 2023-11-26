@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-// Assuming you have a database connection
-// Replace the placeholders with your actual database credentials
+// database connection
 $dsn = 'mysql:host=localhost;dbname=PastryDB;';
 $username = 'root';
 $password = '';
@@ -13,13 +12,13 @@ try {
     die('Database connection failed: ' . $e->getMessage());
 }
 
-// Check if form is submitted
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get user input
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    // Your authentication logic using a database query
+    //authentication logic using a database query
     $stmt = $pdo->prepare("SELECT * FROM user WHERE email = :email");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
@@ -28,14 +27,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($user && password_verify($password, $user['password'])) {
         // Successful login
-        // Set user details in the session
         $_SESSION['user'] = $user;
 
         // Redirect to index.php
         header("Location: index.php");
-        exit(); // Make sure to exit after the redirect to prevent further script execution
+        exit();
     } else {
-        // Invalid credentials
         echo "Invalid email or password. Please try again.";
     }
 }
@@ -57,6 +54,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+            @media screen and (max-width: 768px) {
+                .wrapper {
+                    position: relative;
+                    width: 390px;
+                    background: transparent;
+                    border: 2px solid rgba(255, 255, 255, .5);
+                    border-radius: 20px;
+                    backdrop-filter: blur(20px);
+                    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    transition: height .2s ease;
+                    color: white;
+                    left: 0%;
+                }
+            }
+        </style>
     </head>
 
     <body>

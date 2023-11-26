@@ -28,6 +28,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             .size{
                 width: 305px;
             }
+            @media screen and (max-width: 767px){
+
+
+
+                .row{
+                    display:block;
+                }
+
+            }
         </style>
     </head>
     <body>
@@ -50,8 +59,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                         <div class="menu-icon">
                             <div class="search">
-                                <a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>
                                 <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
+                                <?php
+                                // Check if the user is logged in
+                                if (isset($_SESSION['user'])) {
+                                    echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                    echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
+                                } else {
+                                    echo '<a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -106,7 +123,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <a href="index.php">Home</a>
                     <div class="dropdown">
                         <a href="product.php">All Product</a>
-                        <div class="dropdown-content">
+                        <div class="dropdown-content" id="menu">
                             <a href="product.php#cakes">Cakes</a>
                             <a href="product.php#cookies">Cookies & Macaroons</a>
                             <a href="product.php#tarts">Tarts</a>
@@ -117,7 +134,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </div>
                     <div class="dropdown">
                         <a href="seasonal.php">Seasonal Product</a>
-                        <div class="dropdown-content">
+                        <div class="dropdown-content" id="menu">
                             <a href="seasonal.php#mooncake">Mooncake Set</a>
                             <a href="seasonal.php#father">Father's Day Special</a>
                             <a href="seasonal.php#mother">Mother's Day Special</a>
@@ -129,7 +146,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <a href="customize.php">Customize</a>
                     <div class="dropdown">
                         <a href="faq.php">FAQs</a>
-                        <div class="dropdown-content">
+                        <a href="allergen.php" id="mobile-menu-button">Allergen and Diet Information</a>
+                        <a href="terms.php" id="mobile-menu-button">Terms of Service</a>
+                        <a href="privacy.php" id="mobile-menu-button">Privacy Policy</a>
+                        <a href="pick.php" id="mobile-menu-button">Pickup Information</a>
+                        <div class="dropdown-content" id="menu">
                             <a href="allergen.html">Allergen and Diet Information</a>
                             <a href="terms.php">Terms of Service</a>
                             <a href="privacy.php">Privacy Policy</a>
@@ -461,7 +482,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </div>
             </div>
 
-            
+
             <!-- Footer -->
             <div class="row text-left px-5 pt-5 foot">
                 <div class="col-md-4 col-sm-12 pb-3">
@@ -508,16 +529,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <p>Contact No: 0143336480</p>
                 </div>
             </div>
-        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="/5007CEM/public_html/js/aos.js" type="text/javascript" defer></script>
-        <script src="/5007CEM/public_html/js/home.js" type="text/javascript"></script>
-        <script src="/5007CEM/public_html/js/mobile-menu.js" type="text/javascript"></script>
-        <script src="/5007CEM/public_html/js/cart.js" type="text/javascript"></script>
-        <script src="/5007CEM/public_html/js/product.js" type="text/javascript"></script>
-        <script>
+            <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+            <script src="/5007CEM/public_html/js/aos.js" type="text/javascript" defer></script>
+            <script src="/5007CEM/public_html/js/home.js" type="text/javascript"></script>
+            <script src="/5007CEM/public_html/js/mobile-menu.js" type="text/javascript"></script>
+            <script src="/5007CEM/public_html/js/cart.js" type="text/javascript"></script>
+            <script src="/5007CEM/public_html/js/product.js" type="text/javascript"></script>
+            <script>
                                     function openNav() {
                                         document.getElementById("mySidenav").style.width = "300px";
                                     }
@@ -550,7 +571,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     }
 
 
-        </script>
+            </script>
 
     </body>
 </html>

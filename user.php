@@ -15,6 +15,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
+    <style>
+        .searchBox{
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+
+        }
+        .size{
+            width: 305px;
+        }
+    </style>
     <body>
 
         <div class="overflow-hidden">
@@ -34,7 +45,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         // Check if the user is logged in
                         if (isset($_SESSION['user'])) {
                             $user = $_SESSION['user'];
-                           echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px;"></i></a>';
+                            echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px;"></i></a>';
                         } else {
                             echo '<a href="login.php"><i class="fa fa-user px-5" aria-hidden="true" style="font-size: 25px;"></i></a>';
                         }
@@ -65,16 +76,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         if (isset($_SESSION['user'])) {
                             echo '<p>Name: ' . $user['username'] . '</p>';
                             echo '<p>Email: ' . $user['email'] . '</p>';
-                            // Add other user details as needed
-//                            echo '<hr/>';
                         }
                         ?>
-<!--                        <div class="add">
-                            <p>Address</p><span id="myButton"><i class="fa fa-plus px-3"> Add</i></span>
-                        </div>
-                        <div class="box">
-                            <p><i class="fa fa-info-circle px-3 pt-3"> No Address Added</i></p>
-                        </div>-->
+                        <!--                        <div class="add">
+                                                    <p>Address</p><span id="myButton"><i class="fa fa-plus px-3"> Add</i></span>
+                                                </div>
+                                                <div class="box">
+                                                    <p><i class="fa fa-info-circle px-3 pt-3"> No Address Added</i></p>
+                                                </div>-->
                     </div>
 
                     <div id="myPopup" class="popup">

@@ -60,7 +60,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     </head>
     <body>
         <div class="overflow-hidden">
-           <!-- header -->
+             <!-- header -->
             <div class="header">
                 <div class="container" id="myHeader">
                     <!--mobile-menu-->
@@ -78,8 +78,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                         <div class="menu-icon">
                             <div class="search">
-                                <a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>
                                 <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
+                                <?php
+                                // Check if the user is logged in
+                                if (isset($_SESSION['user'])) {
+                                    echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                    echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
+                                } else {
+                                    echo '<a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -96,7 +104,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <div class="row head pt-4" id="menu">
 
                         <div class="col-lg-8">
-                            <a href="index.php">
+                            <a href="index.html">
                                 <img src="/5007CEM/public_html/image/logo-1.png" height="100" width="100"/>
                             </a>
                             <h3 class="title px-2 pt-2">La Vie en Rose Pâtisserie</h3>
@@ -112,7 +120,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                         </button>
                                     </div>
                                 </form>
-                                <a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                                <a href="about.php"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                                 <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
                                 <?php
                                 // Check if the user is logged in
@@ -134,7 +142,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <a href="index.php">Home</a>
                     <div class="dropdown">
                         <a href="product.php">All Product</a>
-                        <div class="dropdown-content">
+                        <div class="dropdown-content" id="menu">
                             <a href="product.php#cakes">Cakes</a>
                             <a href="product.php#cookies">Cookies & Macaroons</a>
                             <a href="product.php#tarts">Tarts</a>
@@ -145,7 +153,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </div>
                     <div class="dropdown">
                         <a href="seasonal.php">Seasonal Product</a>
-                        <div class="dropdown-content">
+                        <div class="dropdown-content" id="menu">
                             <a href="seasonal.php#mooncake">Mooncake Set</a>
                             <a href="seasonal.php#father">Father's Day Special</a>
                             <a href="seasonal.php#mother">Mother's Day Special</a>
@@ -154,14 +162,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             <a href="seasonal.php#raya">Hari Raya</a>
                         </div>
                     </div>
-                    <a href="customize.html">Customize</a>
+                    <a href="customize.php">Customize</a>
                     <div class="dropdown">
-                        <a href="faq.html">FAQs</a>
-                        <div class="dropdown-content">
+                        <a href="faq.php">FAQs</a>
+                        <a href="allergen.php" id="mobile-menu-button">Allergen and Diet Information</a>
+                        <a href="terms.php" id="mobile-menu-button">Terms of Service</a>
+                        <a href="privacy.php" id="mobile-menu-button">Privacy Policy</a>
+                        <a href="pick.php" id="mobile-menu-button">Pickup Information</a>
+                        <div class="dropdown-content" id="menu">
                             <a href="allergen.html">Allergen and Diet Information</a>
-                            <a href="terms.html">Terms of Service</a>
-                            <a href="privacy.html">Privacy Policy</a>
-                            <a href="delivery.html">Delivery Policy</a>
+                            <a href="terms.php">Terms of Service</a>
+                            <a href="privacy.php">Privacy Policy</a>
                             <a href="pick.html">Pickup Information</a>
                         </div>
                     </div>
@@ -173,12 +184,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <hr/>
             </div>
 
-
             <div class="container pt-3 pb-5"> 
                 <h1 class="title">Search Results</h1>
 
                 <?php
-// Check if the search parameter is provided
                 if (isset($_GET['search']) && !empty($_GET['search'])) {
                     $searchTerm = $_GET['search'];
 

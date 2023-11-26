@@ -15,21 +15,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    </head>
-     <style>
-        .searchBox{
-            display: flex;
-            justify-content: center;
-            padding-top: 20px;
+        <style>
+            .searchBox{
+                display: flex;
+                justify-content: center;
+                padding-top: 20px;
 
-        }
-        .size{
-            width: 305px;
-        }
-    </style>
+            }
+            .size{
+                width: 305px;
+            }
+        </style>
+    </head>
+
     <body>
         <div class="overflow-hidden">
- <!-- header -->
+            <!-- header -->
             <div class="header">
                 <div class="container" id="myHeader">
                     <!--mobile-menu-->
@@ -152,112 +153,74 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             <div class="container hr-line">
                 <hr/>
             </div>
-                      
+
             <div class="container text-justify py-5 px-5">
-                <h1 class="text-center pb-3 title">Terms of service</h1>
+                <h1 class="text-center pb-3 title">Privacy Policy</h1>
+                <p>This Privacy Policy describes how your personal information is collected, used, and shared when you 
+                    visit or make a purchase from Bliss Pâtisserie (the “Site”).</p>
                 <ol type="1">
                     <li>
+                        <b>Information We Collect</b><br>
                         <p>
-                            <b>Acceptance of Terms</b><br>
-                            By accessing and using the services provided by Bliss Pâtisserie , you agree to comply with and 
-                            be bound by these Terms of Service. If you do not agree with these terms, please refrain from 
-                            using our services.
-                        <p>
+                            We collect information you voluntarily provide when you interact with our website, place an order, 
+                            or contact us. This may include your name, email address, phone number, billing and 
+                            shipping address, payment information, and other relevant details.
+                        </p>
                     </li>
                     <li>
+                        <b>Use of Information</b><br>
                         <p>
-                            <b>Use of Services</b><br>
-                            You must be at least 18 years old to use our services or place orders. 
-                            If you are under 18, you may only use our services with the consent and involvement 
-                            of a parent or guardian.
+                            We use the information we collect for the following purposes:
+                        </p>
                         <p>
+                            <b>2.1 Order Processing:</b> To process and fulfill your orders, including order confirmation, 
+                            delivery, and customer support.
+                        </p>
+                        <p>
+                            <b>2.2 Communications:</b> To communicate with you about your orders, updates, promotions, and news
+                            related to our bakery.<br>
+                        </p>
+                        <p>
+                            <b>2.3 Improvement of Services:</b> To improve our website and services, analyze user trends, and 
+                            enhance your experience.<br>
+                        </p>
+                        <p>
+                            <b>2.4 Legal Obligations:</b> To comply with legal obligations and regulations.  
+                        </p>
                     </li>
                     <li>
+                        <b>Do not track</b><br>
                         <p>
-                            <b>Orders and Payment</b><br>
-                            <b>3.1 Order Placement:</b> When placing an order, you agree to provide accurate and complete 
-                            information, including contact and payment details. We reserve the right to refuse or cancel 
-                            orders at our discretion.<br><br>
-
-                            <b>3.2 Payment:</b> Payment for orders can be made using accepted methods as specified on our 
-                            website. Orders are subject to applicable taxes.
-                        <p>
+                            Please note that we do not alter our Site’s data collection and use practices when we see a 
+                            Do Not Track signal from your browser.
+                        </p>
                     </li>
                     <li>
+                        <b>Data retention</b><br>
                         <p>
-                            <b>Cancellations and Refunds</b><br>
-                            <b>4.1 Cancellations:</b> You may cancel an order within a specified timeframe, as indicated on our 
-                            website or communicated to you during the ordering process. After this timeframe, 
-                            cancellations may not be possible.<br><br>
-
-                            <b>4.2 Refunds:</b> Refunds, if applicable, will be issued in accordance with our Refund Policy,
-                            which can be found on our website.
-                        <p>
+                            When you place an order through the Site, we will maintain your Order Information for our records 
+                            unless and until you ask us to delete this information.
+                        </p>
                     </li>
                     <li>
+                        <b>Changes</b><br>
                         <p>
-                            <b>Privacy Policy</b><br>
-                            Your use of our services is also governed by our Privacy Policy, which outlines how we collect, 
-                            use, and protect your personal information. Please review our Privacy Policy separately.
-                        <p>
+                            We may update this privacy policy from time to time in order to reflect, for example, changes to 
+                            our practices or for other operational, legal or regulatory reasons.
+                        </p>
                     </li>
                     <li>
+                        <b>Contact us</b><br>
                         <p>
-                            <b>Allergen and Dietary Information</b><br>
-                            Please refer to our Allergen and Diet Information section, available on our website, 
-                            to understand the presence of common allergens and dietary options in our products.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b> Limitation of Liability</b><br>
-                            Please refer to our Allergen and Diet Information section, available on our website, 
-                            to understand the presence of common allergens and dietary options in our products.<br>
-                            <b>7.1 Disclaimer:</b> Our bakery products are provided "as is," and we make no warranties, 
-                            express or implied, regarding the quality, fitness for a particular purpose, or safety of our 
-                            products.<br><br>
-
-                            <b>7.2 Liability:</b> In no event shall [Your Bakery Name] be liable for any direct, indirect, 
-                            incidental, special, or consequential damages resulting from the use or inability to use our 
-                            services or products.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Indemnification</b><br>
-                            You agree to indemnify and hold Bliss Pâtisserie, its affiliates, employees, and partners 
-                            harmless from any claims, losses, or damages arising from your use of our services or products, 
-                            violation of these terms, or infringement of any rights.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Termination</b><br>
-                            We reserve the right to terminate or suspend your access to our services at any time, 
-                            without notice, for any reason.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Changes to Terms</b><br>
-                            You can review the most current version of the Terms of Service at any time at this page.
-                            We reserve the right, at our sole discretion, to update, change or replace any part of these 
-                            Terms of Service by posting updates and changes to our website. It is your responsibility to 
-                            check our website periodically for changes. Your continued use of or access to our website or 
-                            the Service following the posting of any changes to these Terms of Service constitutes 
-                            acceptance of those changes.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Contact Information</b><br>
-                            Questions about the Terms of Service should be sent to us at <a href="mailto:lavienpatisserie@gmail.com">lavienpatisserie@gmail.com</a>.
-                        <p>
+                            For more information about our privacy practices, if you have questions, or if you would like to 
+                            make a complaint, please contact us by e‑mail at <a href="mailto:lavienpatisserie@gmail.com">lavienpatisserie@gmail.com</a>.
+                        </p>
                     </li>
                 </ol>
             </div>
 
-              <!-- Footer -->
+
+            <!-- Footer -->
             <div class="row text-left px-5 pt-5 foot">
                 <div class="col-md-4 col-sm-12 pb-3">
                     <h3 class="pb-3">La Vie en Rose Pâtisserie</h3>
@@ -274,7 +237,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <div class="row">
                         <div class="col-md-4">
                             <p><a href="index.php">Home</a></p>
-                            <p><a href="about.php">About Us</a></p>
+                            <p><a href="about.html">About Us</a></p>
                             <p><a href="product.php">All Products</a></p>
                             <p><a href="seasonal.php">Seasonal Products</a></p>
                             <p><a href="customize.php">Customize</a></p>
@@ -304,6 +267,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 </div>
             </div>
         </div>
-        <script src="/5007CEM/public_html/js/mobile-menu.js" type="text/javascript"></script>
-</body>
+        <script src="js/mobile-menu.js" type="text/javascript"></script>
+    </body>
 </html>

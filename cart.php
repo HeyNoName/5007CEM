@@ -111,39 +111,47 @@ if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <style>
+            .searchBox{
+                display: flex;
+                justify-content: center;
+                padding-top: 20px;
 
+            }
+            .size{
+                width: 305px;
+            }
             .button input[type = "button"]{
-            background-color: #88694e ;
-            border: none;
-            color: white;
-            padding: 5px 15px;
-            text - decoration: none;
-            display: inline-block;
-            font - size: 16px;
-            margin: auto;
-            cursor: pointer;
+                background-color: #88694e ;
+                border: none;
+                color: white;
+                padding: 5px 15px;
+                text - decoration: none;
+                display: inline-block;
+                font - size: 16px;
+                margin: auto;
+                cursor: pointer;
             }
 
             .button input[type = "button"]:hover{
-            background-color: white;
-            color: #88694e ;
+                background-color: white;
+                color: #88694e ;
             }
 
             input[type = "submit"]#remove{
-            background-color: #88694e ;
-            border: none;
-            color: white;
-            padding: 5px 15px;
-            text-decoration: none;
-            display: inline-block;
-            font - size: 16px;
-            margin: auto;
-            cursor: pointer;
+                background-color: #88694e ;
+                border: none;
+                color: white;
+                padding: 5px 15px;
+                text-decoration: none;
+                display: inline-block;
+                font - size: 16px;
+                margin: auto;
+                cursor: pointer;
             }
 
             input[type = "submit"]#remove:hover{
-            background-color: #88694e ;
-            color: #C70039;
+                background-color: #88694e ;
+                color: #C70039;
             }
 
         </style>
@@ -152,7 +160,7 @@ if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
     <body>
 
         <div class="overflow-hidden">
-            <!-- header -->
+           <!-- header -->
             <div class="header">
                 <div class="container" id="myHeader">
                     <!--mobile-menu-->
@@ -170,8 +178,16 @@ if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
 
                         <div class="menu-icon">
                             <div class="search">
-                                <a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>
                                 <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
+                                <?php
+                                // Check if the user is logged in
+                                if (isset($_SESSION['user'])) {
+                                    echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                    echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
+                                } else {
+                                    echo '<a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -204,7 +220,7 @@ if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
                                         </button>
                                     </div>
                                 </form>
-                                <a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                                <a href="about.php"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                                 <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
                                 <?php
                                 // Check if the user is logged in
@@ -226,7 +242,7 @@ if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
                     <a href="index.php">Home</a>
                     <div class="dropdown">
                         <a href="product.php">All Product</a>
-                        <div class="dropdown-content">
+                        <div class="dropdown-content" id="menu">
                             <a href="product.php#cakes">Cakes</a>
                             <a href="product.php#cookies">Cookies & Macaroons</a>
                             <a href="product.php#tarts">Tarts</a>
@@ -237,7 +253,7 @@ if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
                     </div>
                     <div class="dropdown">
                         <a href="seasonal.php">Seasonal Product</a>
-                        <div class="dropdown-content">
+                        <div class="dropdown-content" id="menu">
                             <a href="seasonal.php#mooncake">Mooncake Set</a>
                             <a href="seasonal.php#father">Father's Day Special</a>
                             <a href="seasonal.php#mother">Mother's Day Special</a>
@@ -246,18 +262,21 @@ if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
                             <a href="seasonal.php#raya">Hari Raya</a>
                         </div>
                     </div>
-                    <a href="customize.html">Customize</a>
+                    <a href="customize.php">Customize</a>
                     <div class="dropdown">
-                        <a href="faq.html">FAQs</a>
-                        <div class="dropdown-content">
+                        <a href="faq.php">FAQs</a>
+                        <a href="allergen.php" id="mobile-menu-button">Allergen and Diet Information</a>
+                        <a href="terms.php" id="mobile-menu-button">Terms of Service</a>
+                        <a href="privacy.php" id="mobile-menu-button">Privacy Policy</a>
+                        <a href="pick.php" id="mobile-menu-button">Pickup Information</a>
+                        <div class="dropdown-content" id="menu">
                             <a href="allergen.html">Allergen and Diet Information</a>
-                            <a href="terms.html">Terms of Service</a>
-                            <a href="privacy.html">Privacy Policy</a>
-                            <a href="delivery.html">Delivery Policy</a>
+                            <a href="terms.php">Terms of Service</a>
+                            <a href="privacy.php">Privacy Policy</a>
                             <a href="pick.html">Pickup Information</a>
                         </div>
                     </div>
-                    <a href="contact.html">Contact Us</a>
+                    <a href="contact.php">Contact Us</a>
                 </div>
             </div>
 
@@ -279,7 +298,7 @@ if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
                     <?php
                     // Display the combined cart contents
                     if (!empty($allProducts)) {
-                        $totalPrice = 0; 
+                        $totalPrice = 0;
 
                         foreach ($allProducts as $itemId => $item) {
                             echo '<div class="card mb-3">';
@@ -315,6 +334,7 @@ if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
                         echo '<p>Your combined cart is empty.</p>';
                     }
                     ?>
+                    <div style="padding-left:3.9em;" class="button pt-3"><input type="button" value="Continuous Shopping"onclick="location.href = 'product.php'" >&nbsp;&nbsp;&nbsp;<input type="button" value="CheckOut" onclick="location.href = 'payment.html'"> </div>
                 </div>
 
                 <div class="content" id="menu">
@@ -327,7 +347,6 @@ if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
                         foreach ($allProducts as $itemId => $item) {
                             echo '<tr>';
 
- 
                             $itemName = isset($item['name']) ? $item['name'] : (isset($item['seasonal_name']) ? $item['seasonal_name'] : 'N/A');
                             $itemPrice = isset($item['price']) ? $item['price'] : (isset($item['seasonal_price']) ? $item['seasonal_price'] : 'N/A');
 
@@ -358,6 +377,14 @@ if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
             </div>
         </div>
     </body>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "300px";
+        }
 
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 </html>
 

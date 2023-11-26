@@ -15,10 +15,32 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <style>
+            .searchBox{
+                display: flex;
+                justify-content: center;
+                padding-top: 20px;
+
+            }
+            .size{
+                width: 305px;
+            }
+            @media screen and (max-width: 767px){
+
+                .card{
+                    width: 20rem;
+                }
+
+                .row{
+                    display:block;
+                }
+
+            }
+        </style>
     </head>
     <body>
         <div class="overflow-hidden">
-            <!-- header -->
+             <!-- header -->
             <div class="header">
                 <div class="container" id="myHeader">
                     <!--mobile-menu-->
@@ -36,8 +58,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 
                         <div class="menu-icon">
                             <div class="search">
-                                <a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>
                                 <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
+                                <?php
+                                // Check if the user is logged in
+                                if (isset($_SESSION['user'])) {
+                                    echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                    echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
+                                } else {
+                                    echo '<a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -54,7 +84,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <div class="row head pt-4" id="menu">
 
                         <div class="col-lg-8">
-                            <a href="index.php">
+                            <a href="index.html">
                                 <img src="/5007CEM/public_html/image/logo-1.png" height="100" width="100"/>
                             </a>
                             <h3 class="title px-2 pt-2">La Vie en Rose Pâtisserie</h3>
@@ -70,7 +100,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                         </button>
                                     </div>
                                 </form>
-                                <a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                                <a href="about.php"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                                 <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
                                 <?php
                                 // Check if the user is logged in
@@ -92,17 +122,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <a href="index.php">Home</a>
                     <div class="dropdown">
                         <a href="product.php">All Product</a>
-                        <div class="dropdown-content">
+                        <div class="dropdown-content" id="menu">
                             <a href="product.php#cakes">Cakes</a>
                             <a href="product.php#cookies">Cookies & Macaroons</a>
                             <a href="product.php#tarts">Tarts</a>
+                            <a href="product.php#pastry">Pastry</a>
                             <a href="product.php#savouries">Savouries</a>
                             <a href="product.php#gift">GiftBox</a>
                         </div>
                     </div>
                     <div class="dropdown">
                         <a href="seasonal.php">Seasonal Product</a>
-                        <div class="dropdown-content">
+                        <div class="dropdown-content" id="menu">
                             <a href="seasonal.php#mooncake">Mooncake Set</a>
                             <a href="seasonal.php#father">Father's Day Special</a>
                             <a href="seasonal.php#mother">Mother's Day Special</a>
@@ -113,12 +144,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     </div>
                     <a href="customize.php">Customize</a>
                     <div class="dropdown">
-                        <a href="faq.html">FAQs</a>
-                        <div class="dropdown-content">
+                        <a href="faq.php">FAQs</a>
+                        <a href="allergen.php" id="mobile-menu-button">Allergen and Diet Information</a>
+                        <a href="terms.php" id="mobile-menu-button">Terms of Service</a>
+                        <a href="privacy.php" id="mobile-menu-button">Privacy Policy</a>
+                        <a href="pick.php" id="mobile-menu-button">Pickup Information</a>
+                        <div class="dropdown-content" id="menu">
                             <a href="allergen.html">Allergen and Diet Information</a>
-                            <a href="terms.html">Terms of Service</a>
-                            <a href="privacy.html">Privacy Policy</a>
-                            <a href="delivery.html">Delivery Policy</a>
+                            <a href="terms.php">Terms of Service</a>
+                            <a href="privacy.php">Privacy Policy</a>
                             <a href="pick.html">Pickup Information</a>
                         </div>
                     </div>
@@ -129,12 +163,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             <div class="container hr-line">
                 <hr/>
             </div>
-            
+
             <!--Best Seller-->
             <div class="container pt-3 pb-5"> 
                 <h1 id="best" class="title pt-3">Best Seller</h1>
                 <div class="row justify-content-center pb-4">
-                      <?php
+                    <?php
                     if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
                         $sql = "SELECT id, name, description, price, image FROM products WHERE id=12";
                         $result = mysqli_query($dbc, $sql);
@@ -428,36 +462,36 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     ?>
                 </div>
             </div>
-
-            <!--gifts-->
+<!--
+            gifts
             <div class="container pt-3 pb-5"> 
                 <h1 id="gift" class="title pt-3">GiftBox</h1>
                 <div class="row justify-content-center pb-4">
-                    <?php
-                    if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                        $sql = "SELECT name, description, price, image FROM products WHERE category='gift'";
-                        $result = mysqli_query($dbc, $sql);
-
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<div class="col-6 col-md-4 px-4 py-4">';
-                            echo '<div class="card" data-aos="fade-up">';
-                            // Display image
-                            $imageData = isset($item['image']) ? $item['image'] : null;
-                            echo '<td>' . generateImageTag($imageData) . '</td>';
-
-                            echo '<div class="card-body">';
-                            echo "<h4>{$row['name']}</h4>";
-                            echo '<p class="content-title">';
-                            echo "{$row['description']}</p>";
-                            echo '<h3 class="pt-5">';
-                            echo "RM{$row['price']}</h3>";
-                            echo '<span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>';
-                            echo '</div></div></div>';
-                        }
-                    }
-                    ?>
+                    //<?php
+//                    if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
+//                        $sql = "SELECT name, description, price, image FROM products WHERE category='gift'";
+//                        $result = mysqli_query($dbc, $sql);
+//
+//                        while ($row = mysqli_fetch_assoc($result)) {
+//                            echo '<div class="col-6 col-md-4 px-4 py-4">';
+//                            echo '<div class="card" data-aos="fade-up">';
+//                            // Display image
+//                            $imageData = isset($item['image']) ? $item['image'] : null;
+//                            echo '<td>' . generateImageTag($imageData) . '</td>';
+//
+//                            echo '<div class="card-body">';
+//                            echo "<h4>{$row['name']}</h4>";
+//                            echo '<p class="content-title">';
+//                            echo "{$row['description']}</p>";
+//                            echo '<h3 class="pt-5">';
+//                            echo "RM{$row['price']}</h3>";
+//                            echo '<span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>';
+//                            echo '</div></div></div>';
+//                        }
+//                    }
+//                    ?>
                 </div>
-            </div>
+            </div>-->
 
             <div id="sideNav" class="sidenav">
                 <div class="content">
@@ -479,7 +513,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 </div>
             </div>
 
-            
+
             <!-- Footer -->
             <div class="row text-left px-5 pt-5 foot">
                 <div class="col-md-4 col-sm-12 pb-3">
@@ -527,7 +561,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 </div>
             </div>
         </div>
-        <script src="/5007CEM/public_html/js/mobile-menu.js" type="text/javascript"></script>
         <script src="/5007CEM/public_html/js/product.js" type="text/javascript"></script>
+        <script>
+                        function openNav() {
+                            document.getElementById("mySidenav").style.width = "300px";
+                        }
+
+                        function closeNav() {
+                            document.getElementById("mySidenav").style.width = "0";
+                        }
+        </script>
     </body>
 </html>

@@ -59,11 +59,45 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/5007CEM/public_html/css/customize.css">
+        <!--        <link rel="stylesheet" href="/5007CEM/public_html/css/customize.css">-->
+        <link href="css/customize.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="/5007CEM/public_html/css/nav.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     </head>
+    <style>
+        .searchBox{
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+
+        }
+        .size{
+            width: 305px;
+        }
+        @media screen and (max-width: 767px){
+    .size img{
+        width: 300px;
+    }
+
+    select, .tier-select, .tier-size {
+        height: 50px !important;
+        width: 160px !important;
+        border-radius: 10px !important;
+    }
+
+    .messText{
+        height:100px;
+        width: 300px;
+        left: 3%;
+        position: relative;
+    }
+    
+    .accordion{
+        width: 92%;
+    }
+}
+    </style>
     <body>
 
         <!-- header -->
@@ -84,8 +118,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 
                     <div class="menu-icon">
                         <div class="search">
-                            <a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>
                             <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
+                            <?php
+                            // Check if the user is logged in
+                            if (isset($_SESSION['user'])) {
+                                echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
+                            } else {
+                                echo '<a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -102,7 +144,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 <div class="row head pt-4" id="menu">
 
                     <div class="col-lg-8">
-                        <a href="index.php">
+                        <a href="index.html">
                             <img src="/5007CEM/public_html/image/logo-1.png" height="100" width="100"/>
                         </a>
                         <h3 class="title px-2 pt-2">La Vie en Rose Pâtisserie</h3>
@@ -118,7 +160,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                     </button>
                                 </div>
                             </form>
-                            <a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                            <a href="about.php"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                             <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
                             <?php
                             // Check if the user is logged in
@@ -140,7 +182,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 <a href="index.php">Home</a>
                 <div class="dropdown">
                     <a href="product.php">All Product</a>
-                    <div class="dropdown-content">
+                    <div class="dropdown-content" id="menu">
                         <a href="product.php#cakes">Cakes</a>
                         <a href="product.php#cookies">Cookies & Macaroons</a>
                         <a href="product.php#tarts">Tarts</a>
@@ -151,7 +193,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 </div>
                 <div class="dropdown">
                     <a href="seasonal.php">Seasonal Product</a>
-                    <div class="dropdown-content">
+                    <div class="dropdown-content" id="menu">
                         <a href="seasonal.php#mooncake">Mooncake Set</a>
                         <a href="seasonal.php#father">Father's Day Special</a>
                         <a href="seasonal.php#mother">Mother's Day Special</a>
@@ -162,12 +204,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 </div>
                 <a href="customize.php">Customize</a>
                 <div class="dropdown">
-                    <a href="faq.html">FAQs</a>
-                    <div class="dropdown-content">
+                    <a href="faq.php">FAQs</a>
+                    <a href="allergen.php" id="mobile-menu-button">Allergen and Diet Information</a>
+                    <a href="terms.php" id="mobile-menu-button">Terms of Service</a>
+                    <a href="privacy.php" id="mobile-menu-button">Privacy Policy</a>
+                    <a href="pick.php" id="mobile-menu-button">Pickup Information</a>
+                    <div class="dropdown-content" id="menu">
                         <a href="allergen.html">Allergen and Diet Information</a>
-                        <a href="terms.html">Terms of Service</a>
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="delivery.html">Delivery Policy</a>
+                        <a href="terms.php">Terms of Service</a>
+                        <a href="privacy.php">Privacy Policy</a>
                         <a href="pick.html">Pickup Information</a>
                     </div>
                 </div>
@@ -189,27 +234,27 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="form-group">
                                 <label for="flavour">Flavour:</label>
                                 <select class="selection" name="flavour">
-                                    <option value="0" data-price="0.00">Select One</option>
-                                    <option value="1" data-price="10.00">Vanilla</option>
-                                    <option value="2" data-price="12.00">Chocolate</option>
-                                    <option value="3" data-price="15.00">Strawberry</option>
-                                    <option value="4" data-price="18.00">Chiffon</option>
-                                    <option value="5" data-price="20.00">Cheese</option>
-                                    <option value="6" data-price="22.00">Black Forest</option>
-                                    <option value="7" data-price="24.00">Red Velvet</option>
-                                    <option value="8" data-price="26.00">Carrot</option>
+                                    <option value="-" data-price="0.00">Select One</option>
+                                    <option value="vanilla" data-price="10.00">Vanilla</option>
+                                    <option value="chocolate" data-price="12.00">Chocolate</option>
+                                    <option value="strawberry" data-price="15.00">Strawberry</option>
+                                    <option value="chiffon" data-price="18.00">Chiffon</option>
+                                    <option value="cheese" data-price="20.00">Cheese</option>
+                                    <option value="blackforest" data-price="22.00">Black Forest</option>
+                                    <option value="redvelvet" data-price="24.00">Red Velvet</option>
+                                    <option value="carrot" data-price="26.00">Carrot</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label for="filling">Filling: </label>
                                 <select class="selection" name="filling">
-                                    <option value="select" data-price="0.00">Select One</option>
+                                    <option value="-" data-price="0.00">Select One</option>
                                     <option value="caremel" data-price="10.00">Caramel</option>
                                     <option value="strawberry" data-price="12.00">Strawberry and Raspberry</option>
-                                    <option value="pine" data-price="14.00"> Pineapple apricot</option>
+                                    <option value="pineapple" data-price="14.00"> Pineapple apricot</option>
                                     <option value="lemon" data-price="20.00">Lemon Curd</option>
-                                    <option value="choco" data-price="26.00">Chocolate Ganache</option>
+                                    <option value="chocolate" data-price="26.00">Chocolate Ganache</option>
                                 </select>
                             </div>
 
@@ -222,7 +267,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                     <option value="esspresso" data-price="15.00">Espresso</option>
                                     <option value="cheese" data-price="18.00">Cream Cheese</option>
                                     <option value="peanut" data-price="12.00">Peanut Butter</option>
-                                    <option value="straw" data-price="15.00">Strawberry and Raspberry</option>
+                                    <option value="strawberry" data-price="15.00">Strawberry and Raspberry</option>
                                     <option value="vanilla" data-price="10.00">Vanilla</option>
                                 </select>
                             </div>
@@ -235,7 +280,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                     <option value="pastel" data-price="15.00">Pastel</option>
                                     <option value="primary" data-price="12.00">Primary</option>
                                     <option value="neon" data-price="18.00">Neon</option>
-                                    <option value="class" data-price="10.00">Classic / No Preference</option>
+                                    <option value="classic" data-price="10.00">Classic / No Preference</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -412,12 +457,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="form-group">
                                 <label for="type">Type:</label>
                                 <select id="style" name="style">
-                                    <option value="0" data-price="0.00">Select One</option>
-                                    <option value="1" data-price="10.00">Wedding</option>
-                                    <option value="2" data-price="10.00">Birthday</option>
-                                    <option value="3" data-price="10.00">Anniversary</option>
-                                    <option value="4" data-price="10.00">Baby Full Moon</option>
-                                    <option value="5" data-price="10.00">Others</option>
+                                    <option value="-" data-price="0.00">Select One</option>
+                                    <option value="wedding" data-price="10.00">Wedding</option>
+                                    <option value="birthday" data-price="10.00">Birthday</option>
+                                    <option value="aniversary" data-price="10.00">Anniversary</option>
+                                    <option value="fullMoon" data-price="10.00">Baby Full Moon</option>
+                                    <option value="others" data-price="10.00">Others</option>
                                 </select>
                                 <div id="stylec" style="display: none;" class="pb-3">
                                     <p for="stylec">Please Specify:</p>
@@ -428,12 +473,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="form-group">
                                 <label for="shape">Shape:</label>
                                 <select class="selection" name="shape">
-                                    <option value="0" data-price="0.00">Select One</option>
-                                    <option value="1" data-price="10.00">Round</option>
-                                    <option value="2" data-price="20.00">Square</option>
-                                    <option value="3" data-price="30.00">Rectangle</option>
-                                    <option value="4" data-price="40.00">Heart</option>
-                                    <option value="4" data-price="50.00">Hexagon</option>
+                                    <option value="-" data-price="0.00">Select One</option>
+                                    <option value="round" data-price="10.00">Round</option>
+                                    <option value="square" data-price="20.00">Square</option>
+                                    <option value="rectangle" data-price="30.00">Rectangle</option>
+                                    <option value="heart" data-price="40.00">Heart</option>
+                                    <option value="hexagon" data-price="50.00">Hexagon</option>
                                 </select>
                             </div>
 
@@ -441,9 +486,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                 <label for="category">Category:</label>
                                 <select name="category">
                                     <option value="0">Select One</option>
-                                    <option value="1" data-price="0.00">Vegetarian & Gluten free</option>
-                                    <option value="2" data-price="0.00">Sugar Free & Nuts Free</option>
-                                    <option value="3" data-price="0.00">Low Fat & Low Sodium</option>
+                                    <option value="vege" data-price="0.00">Vegetarian & Gluten free</option>
+                                    <option value="sugarFree" data-price="0.00">Sugar Free & Nuts Free</option>
+                                    <option value="low" data-price="0.00">Low Fat & Low Sodium</option>
                                 </select>
                             </div>
 
@@ -495,15 +540,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="form-group">
                                 <label for="flavour">Flavour:</label>
                                 <select class="selection" name="flavour">
-                                    <option value="0">Select One</option>
-                                    <option value="1">Pistachio</option>
-                                    <option value="2">Nutella</option>
-                                    <option value="3">Strawberry</option>
-                                    <option value="4">Salted Caramel</option>
-                                    <option value="5">Cheese</option>
-                                    <option value="6">Snickerdoodle</option>
-                                    <option value="7">White Alomond</option>
-                                    <option value="8">Cotton Candy</option>
+                                    <option value="-">Select One</option>
+                                    <option value="pistachio">Pistachio</option>
+                                    <option value="nutella">Nutella</option>
+                                    <option value="strawberry">Strawberry</option>
+                                    <option value="saltedCaremel">Salted Caramel</option>
+                                    <option value="cheese">Cheese</option>
+                                    <option value="snicker">Snickerdoodle</option>
+                                    <option value="almond">White Alomond</option>
+                                    <option value="candy">Cotton Candy</option>
                                 </select>
 
                             </div>
@@ -511,46 +556,46 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="form-group">
                                 <label for="filling">Filling:</label>
                                 <select class="selection" name="filling">
-                                    <option value="0">Select One</option>
-                                    <option value="1">Caramel</option>
-                                    <option value="2">Strawberry and Raspberry</option>
-                                    <option value="3">Pineapple apricot</option>
-                                    <option value="4">Lemon Curd</option>
-                                    <option value="5">Chocolate Ganache</option>
+                                    <option value="-">Select One</option>
+                                    <option value="caremel" data-price="10.00">Caramel</option>
+                                    <option value="strawberry" data-price="12.00">Strawberry and Raspberry</option>
+                                    <option value="pineapple" data-price="14.00"> Pineapple apricot</option>
+                                    <option value="lemon" data-price="20.00">Lemon Curd</option>
+                                    <option value="chocolate" data-price="26.00">Chocolate Ganache</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label for="size">Size:</label>
                                 <select class="selection" name="size">
-                                    <option value="0">Select One</option>
-                                    <option value="1">Mini 1 inches (2.5cm)</option>
-                                    <option value="2">Standard 1.5 to 2 inches (3.8 x 5 cm)</option>
-                                    <option value="3">Large 3 inches (7.5 cm)</option>
+                                    <option value="-">Select One</option>
+                                    <option value="mini" data-price="10.00">Mini 1 inches (2.5cm)</option>
+                                    <option value="standard" data-price="20.00">Standard 1.5 to 2 inches (3.8 x 5 cm)</option>
+                                    <option value="large" data-price="30.00">Large 3 inches (7.5 cm)</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label for="color">Color:</label>
                                 <select class="selection" name="color">
-                                    <option value="0">Select One</option>
-                                    <option value="1">None</option>
-                                    <option value="2">Pastel</option>
-                                    <option value="3">Primary</option>
-                                    <option value="4">Neon</option>
-                                    <option value="5">Classic / No Preference</option>
+                                     <option value="-" data-price="0.00">Select One</option>
+                                    <option value="none" data-price="0.00">None</option>
+                                    <option value="pastel" data-price="15.00">Pastel</option>
+                                    <option value="primary" data-price="12.00">Primary</option>
+                                    <option value="neon" data-price="18.00">Neon</option>
+                                    <option value="classic" data-price="10.00">Classic / No Preference</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label for="type">Type:</label>
                                 <select class="selection" name="type">
-                                    <option value="0">Select One</option>
-                                    <option value="1">French Macaron Stuffed Brownies</option>
-                                    <option value="2">French Macaron Cakes</option>
-                                    <option value="3">French Macaron Tower</option>
-                                    <option value="4">French Macaron Party Flavour</option>
-                                    <option value="5">French Macaron Push Pop</option>
+                                    <option value="-" data-price="0.00">Select One</option>
+                                    <option value="brownies" data-price="20.00">French Macaron Stuffed Brownies</option>
+                                    <option value="cakes" data-price="30.00">French Macaron Cakes</option>
+                                    <option value="tower" data-price="40.00">French Macaron Tower</option>
+                                    <option value="tower" data-price="50.00">French Macaron Party Flavour</option>
+                                    <option value="pushpop" data-price="60.00">French Macaron Push Pop</option>
                                 </select>
                             </div>
 
@@ -559,21 +604,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="form-group">
                                 <label for="category">Category:</label>
                                 <select class="selection" name="category">
-                                    <option value="0">Select One</option>
-                                    <option value="1">Vegetarian & Gluten free</option>
-                                    <option value="2">Sugar Free & Nuts Free</option>
-                                    <option value="3">Low Fat & Low Sodium</option>
+                                    <option value="-">Select One</option>
+                                    <option value="vege" data-price="0.00">Vegetarian & Gluten free</option>
+                                    <option value="sugarFree" data-price="0.00">Sugar Free & Nuts Free</option>
+                                    <option value="low" data-price="0.00">Low Fat & Low Sodium</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label for="box">Box:</label>
                                 <select class="selection" name="box">
-                                    <option value="0">Select One</option>
-                                    <option value="1">4 pcs</option>
-                                    <option value="2">6 pcs</option>
-                                    <option value="3">12 pcs</option>
-                                    <option value="4">24 pcs</option>
+                                    <option value="-" data-price="0.00">Select One</option>
+                                    <option value="4" data-price="20.00">4 pcs</option>
+                                    <option value="6" data-price="30.00">6 pcs</option>
+                                    <option value="12" data-price="40.00">12 pcs</option>
+                                    <option value="24" data-price="50.00">24 pcs</option>
                                 </select>
                                 </p>
                             </div>
@@ -610,10 +655,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="form-group">
                                 <label for="crust">Crust:</label>
                                 <select class="selection" name="crust">
-                                    <option value="0" data-price="0.00">Select One</option>
-                                    <option value="1" data-price="10.00">Thicker</option>
-                                    <option value="2" data-price="15.00">Flakier</option>
-                                    <option value="3" data-price="20.00">Firmer</option>
+                                    <option value="-" data-price="0.00">Select One</option>
+                                    <option value="thick" data-price="10.00">Thicker</option>
+                                    <option value="flakier" data-price="15.00">Flakier</option>
+                                    <option value="firm" data-price="20.00">Firmer</option>
                                 </select>
                             </div>
 
@@ -621,25 +666,25 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                 <label for="size">Size:</label>
                                 <select class="selection" name="size">
                                     <optgroup label="Round">
-                                        <option value="0" data-price="0.00">Select One</option>
-                                        <option value="1" data-price="10.00">[Mini] 2 - 3 inches (5 - 7.5 cm) </option>
-                                        <option value="2" data-price="20.00">[Small] 4 - 5 inches (10 - 12.5 cm)</option>
-                                        <option value="3" data-price="30.00">[Standard] 8 - 9 inches (20 - 23cm)</option>
-                                        <option value="4" data-price="40.00">[Large] 10 - 12 inches (25 - 30 cm)</option>
+                                        <option value="-" data-price="0.00">Select One</option>
+                                        <option value="mini" data-price="10.00">[Mini] 2 - 3 inches (5 - 7.5 cm) </option>
+                                        <option value="small" data-price="20.00">[Small] 4 - 5 inches (10 - 12.5 cm)</option>
+                                        <option value="standard" data-price="30.00">[Standard] 8 - 9 inches (20 - 23cm)</option>
+                                        <option value="large" data-price="40.00">[Large] 10 - 12 inches (25 - 30 cm)</option>
                                     </optgroup>
                                     <optgroup label="Square">
-                                        <option value="0" data-price="0.00">Select One</option>
-                                        <option value="1" data-price="10.00">[Mini] 2 x 2 inches (5 x 5 cm) </option>
-                                        <option value="2" data-price="20.00">[Small] 4 x 4 inches (10 x 10 cm)</option>
-                                        <option value="3" data-price="30.00">[Standard] 8 x 8 inches (20 x 20 cm) </option>
-                                        <option value="4" data-price="40.00">[Large] 10 x 10 inches (25 x 25 cm)</option>
+                                        <option value="-" data-price="0.00">Select One</option>
+                                        <option value="mini" data-price="10.00">[Mini] 2 x 2 inches (5 x 5 cm) </option>
+                                        <option value="small" data-price="20.00">[Small] 4 x 4 inches (10 x 10 cm)</option>
+                                        <option value="standard" data-price="30.00">[Standard] 8 x 8 inches (20 x 20 cm) </option>
+                                        <option value="large" data-price="40.00">[Large] 10 x 10 inches (25 x 25 cm)</option>
                                     </optgroup>
                                     <optgroup label="Rectangle">
-                                        <option value="0" data-price="0.00">Select One</option>
-                                        <option value="1" data-price="20.00">[Mini] 2 x 4 inches (5 x 10 cm) </option>
-                                        <option value="2" data-price="30.00">[Small] 4 x 6 inches (10  x 15 cm)</option>
-                                        <option value="3" data-price="40.00">[Standard] 8 x 12 inches (20 x 30 cm)</option>
-                                        <option value="4" data-price="50.00">[Large] 10 x 14 inches (25 x 35 cm)</option>
+                                        <option value="-" data-price="0.00">Select One</option>
+                                        <option value="mini" data-price="20.00">[Mini] 2 x 4 inches (5 x 10 cm) </option>
+                                        <option value="small" data-price="30.00">[Small] 4 x 6 inches (10  x 15 cm)</option>
+                                        <option value="standard" data-price="40.00">[Standard] 8 x 12 inches (20 x 30 cm)</option>
+                                        <option value="large" data-price="50.00">[Large] 10 x 14 inches (25 x 35 cm)</option>
                                     </optgroup>
                                 </select>
                             </div>
@@ -647,16 +692,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="form-group">
                                 <label for="filling">Filling:</label>
                                 <select class="selection" name="filling">
-                                    <option value="0" data-price="0.00">Select One</option>
-                                    <option value="1" data-price="15.00">Chocolate Coffee</option>
-                                    <option value="2" data-price="15.00">Mini Fruits</option>
-                                    <option value="3" data-price="12.00">French Lemon Cream</option>
-                                    <option value="4" data-price="15.00">Pistachio</option>
-                                    <option value="5" data-price="12.00">Portuguese Custard</option>
-                                    <option value="6" data-price="20.00">White Bean & Ground Almond</option>
-                                    <option value="7" data-price="20.00">Quince Cheese</option>
-                                    <option value="8" data-price="12.00">Fruit Jam</option>
-                                    <option value="9" data-price="12.00">Traditional</option>
+                                    <option value="-" data-price="0.00">Select One</option>
+                                    <option value="chocolate" data-price="15.00">Chocolate Coffee</option>
+                                    <option value="fruits" data-price="15.00">Mini Fruits</option>
+                                    <option value="lemon" data-price="12.00">French Lemon Cream</option>
+                                    <option value="pistachio" data-price="15.00">Pistachio</option>
+                                    <option value="custard" data-price="12.00">Portuguese Custard</option>
+                                    <option value="almond" data-price="20.00">White Bean & Ground Almond</option>
+                                    <option value="quince" data-price="20.00">Quince Cheese</option>
+                                    <option value="jam" data-price="12.00">Fruit Jam</option>
+                                    <option value="normal" data-price="12.00">Traditional</option>
                                 </select>
                             </div>
 
@@ -664,35 +709,34 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                 <label for="type">Type:</label>
                                 <select class="selection" name="type">
                                     <option value="0" data-price="0.00">Select One</option>
-                                    <option value="1" data-price="20.00">French Macaron Stuffed Brownies</option>
-                                    <option value="2" data-price="30.00">French Macaron Cakes</option>
-                                    <option value="3" data-price="40.00">French Macaron Tower</option>
-                                    <option value="4" data-price="50.00">French Macaron Party Flavour</option>
-                                    <option value="5" data-price="60.00">French Macaron Push Pop</option>
+                                    <option value="brownies" data-price="20.00">French Macaron Stuffed Brownies</option>
+                                    <option value="cakes" data-price="30.00">French Macaron Cakes</option>
+                                    <option value="tower" data-price="40.00">French Macaron Tower</option>
+                                    <option value="tower" data-price="50.00">French Macaron Party Flavour</option>
+                                    <option value="pushpop" data-price="60.00">French Macaron Push Pop</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label for="category">Category:</label>
                                 <select class="selection" name="category">
-                                    <option value="0" data-price="0.00">Select One</option>
-                                    <option value="1" data-price="0.00">Vegetarian & Gluten free</option>
-                                    <option value="2" data-price="0.00">Sugar Free & Nuts Free</option>
-                                    <option value="3" data-price="0.00">Low Fat & Low Sodium</option>
+                                     <option value="vege" data-price="0.00">Vegetarian & Gluten free</option>
+                                    <option value="sugarFree" data-price="0.00">Sugar Free & Nuts Free</option>
+                                    <option value="low" data-price="0.00">Low Fat & Low Sodium</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label for="box">Box:</label>
                                 <select class="selection" name="box">
-                                    <option value="0" data-price="0.00">Select One</option>
-                                    <option value="1" data-price="0.00">No Box</option>
+                                    <option value="-" data-price="0.00">Select One</option>
+                                    <option value="-" data-price="0.00">No Box</option>
                                     <option value="2" data-price="10.00">2 pcs</option>
-                                    <option value="3" data-price="20.00">4 pcs</option>
-                                    <option value="4" data-price="30.00">6 pcs</option>
-                                    <option value="5" data-price="40.00">12 pcs</option>
-                                    <option value="6" data-price="50.00">24 pcs</option>
-                                    <option value="7" data-price="60.00">48 pcs</option>
+                                    <option value="4" data-price="20.00">4 pcs</option>
+                                    <option value="6" data-price="30.00">6 pcs</option>
+                                    <option value="12" data-price="40.00">12 pcs</option>
+                                    <option value="24" data-price="50.00">24 pcs</option>
+                                    <option value="48" data-price="60.00">48 pcs</option>
                                 </select>
                             </div>
                             <p>Note: </p>

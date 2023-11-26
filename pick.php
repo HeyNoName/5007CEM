@@ -15,21 +15,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    </head>
-     <style>
-        .searchBox{
-            display: flex;
-            justify-content: center;
-            padding-top: 20px;
+        <style>
+            .searchBox{
+                display: flex;
+                justify-content: center;
+                padding-top: 20px;
 
-        }
-        .size{
-            width: 305px;
-        }
-    </style>
+            }
+            .size{
+                width: 305px;
+            }
+        </style>
+    </head>
+
     <body>
         <div class="overflow-hidden">
- <!-- header -->
+            <!-- header -->
             <div class="header">
                 <div class="container" id="myHeader">
                     <!--mobile-menu-->
@@ -51,10 +52,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                 <?php
                                 // Check if the user is logged in
                                 if (isset($_SESSION['user'])) {
-                                    echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
-                                    echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
+                                echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
                                 } else {
-                                    echo '<a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                echo '<a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
                                 }
                                 ?>
                             </div>
@@ -94,10 +95,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                 <?php
                                 // Check if the user is logged in
                                 if (isset($_SESSION['user'])) {
-                                    echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
-                                    echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
+                                echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
                                 } else {
-                                    echo '<a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                echo '<a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
                                 }
                                 ?>
                             </div>
@@ -152,112 +153,87 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             <div class="container hr-line">
                 <hr/>
             </div>
-                      
+
             <div class="container text-justify py-5 px-5">
-                <h1 class="text-center pb-3 title">Terms of service</h1>
-                <ol type="1">
-                    <li>
-                        <p>
-                            <b>Acceptance of Terms</b><br>
-                            By accessing and using the services provided by Bliss Pâtisserie , you agree to comply with and 
-                            be bound by these Terms of Service. If you do not agree with these terms, please refrain from 
-                            using our services.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Use of Services</b><br>
-                            You must be at least 18 years old to use our services or place orders. 
-                            If you are under 18, you may only use our services with the consent and involvement 
-                            of a parent or guardian.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Orders and Payment</b><br>
-                            <b>3.1 Order Placement:</b> When placing an order, you agree to provide accurate and complete 
-                            information, including contact and payment details. We reserve the right to refuse or cancel 
-                            orders at our discretion.<br><br>
+                <h1 class="text-center pb-3 title">Pick Up Information</h1>
 
-                            <b>3.2 Payment:</b> Payment for orders can be made using accepted methods as specified on our 
-                            website. Orders are subject to applicable taxes.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Cancellations and Refunds</b><br>
-                            <b>4.1 Cancellations:</b> You may cancel an order within a specified timeframe, as indicated on our 
-                            website or communicated to you during the ordering process. After this timeframe, 
-                            cancellations may not be possible.<br><br>
+                <h4 class="pt-4">Our Store</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.0247000251957!2d100.33273147478046!3d5.413208635069488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac35e17db31bb%3A0x1236041f2d3ec9e0!2sLa%20Vie%20en%20Rose%20P%C3%A2tisserie!5e0!3m2!1sen!2smy!4v1693982880895!5m2!1sen!2smy" width="500" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="map"></iframe>
+                <h5 class="pt-2 pb-1">19, Lebuh Melayu, George Town, 10100 George Town, Pulau Pinang</h5>
+                <h5 class="pt-2 pb-1">Operating Hours:</h5>
+                <h5 class="pb-2">Wednesday - Sunday : 10AM - 6PM</h5>
+                <h5 class="pt-2">Contact No: 0143336480</h5>
 
-                            <b>4.2 Refunds:</b> Refunds, if applicable, will be issued in accordance with our Refund Policy,
-                            which can be found on our website.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Privacy Policy</b><br>
-                            Your use of our services is also governed by our Privacy Policy, which outlines how we collect, 
-                            use, and protect your personal information. Please review our Privacy Policy separately.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Allergen and Dietary Information</b><br>
-                            Please refer to our Allergen and Diet Information section, available on our website, 
-                            to understand the presence of common allergens and dietary options in our products.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b> Limitation of Liability</b><br>
-                            Please refer to our Allergen and Diet Information section, available on our website, 
-                            to understand the presence of common allergens and dietary options in our products.<br>
-                            <b>7.1 Disclaimer:</b> Our bakery products are provided "as is," and we make no warranties, 
-                            express or implied, regarding the quality, fitness for a particular purpose, or safety of our 
-                            products.<br><br>
 
-                            <b>7.2 Liability:</b> In no event shall [Your Bakery Name] be liable for any direct, indirect, 
-                            incidental, special, or consequential damages resulting from the use or inability to use our 
-                            services or products.
-                        <p>
+                <hr>
+
+                <h4 class="pt-4">Before coming to pickup</h4>
+                <p>
+                    Once your order is ready, you will receive a notification message. Make sure to check your primary 
+                    inbox and spam messages. You can then pick up your order anytime from when you receive that message
+                    until the end of the pickup hours.
+                </p>
+                <p>
+                    Please note, if you are unable to collect your order by the close of pickup hours, your order will 
+                    be safely stored overnight. You can then collect it the next day during the operating hours.
+                </p>
+
+                <h4 class="pt-4">Grab/Lalamove/3rd Party Drivers</h4>
+                <p>
+                    If you are arranging for a 3rd party driver to collect your order from us, please ensure that a 
+                    car is selected and not a motorcycle. Our cakes and tarts need to be transported by car with the 
+                    AC on high. For longer journeys, an ice bag with ice packs is required.
+                </p>
+                <p>
+                    You are required to clearly provide the driver with your name and order number as they will need 
+                    to present it to us in order to collect your order.
+                </p>
+                <p>
+                    We do not take responsibility for any problems, issues, or situations that arise from and arise 
+                    because of the 3rd party delivery service as well as for the items once they have left our premises.
+                    It is advisable that the driver takes a picture of all the items of your order before and after 
+                    delivering them to you.
+                </p>
+                <p>
+                    We do not make any delivery arrangements or book and arrange 3rd party delivery services on behalf 
+                    of pickup customers. Please arrange for your own 3rd party delivery service if you have opted for 
+                    self-pickup and are not able to come over to our store to collect your order from us.
+                </p>
+
+                <h4 class="pt-4">How to handle our pastries</h4>
+                <ol type="a">
+                    <li>All cakes and tarts need to be transported by car and placed on a flat surface, eg. car floor.</li>
+                    <li>
+                        They can last in a car ride with the AC on high for about 1 hour. For longer journeys, we 
+                        recommend using a cooler bag with ice packs.
+                    </li>
+                    <li>Cooler bags are free. The cooler bags come with 2 free ice packs.</li>
+                    <li>We don't take any responsibility for the items once they have left our premises.</li>
+                </ol>
+
+                <h4 class="pt-4">Change from pickup to delivery</h4>
+                <p>We are not able to change your order from pickup to delivery. But you do have the options to:</p>
+                <ol type="a">
+                    <li>
+                        Remain your order for self-pickup and arrange for your own 3rd party delivery service like 
+                        grab/lalamove car to collect the cake from us at your chosen time slot up till 6pm.
                     </li>
                     <li>
-                        <p>
-                            <b>Indemnification</b><br>
-                            You agree to indemnify and hold Bliss Pâtisserie, its affiliates, employees, and partners 
-                            harmless from any claims, losses, or damages arising from your use of our services or products, 
-                            violation of these terms, or infringement of any rights.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Termination</b><br>
-                            We reserve the right to terminate or suspend your access to our services at any time, 
-                            without notice, for any reason.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Changes to Terms</b><br>
-                            You can review the most current version of the Terms of Service at any time at this page.
-                            We reserve the right, at our sole discretion, to update, change or replace any part of these 
-                            Terms of Service by posting updates and changes to our website. It is your responsibility to 
-                            check our website periodically for changes. Your continued use of or access to our website or 
-                            the Service following the posting of any changes to these Terms of Service constitutes 
-                            acceptance of those changes.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Contact Information</b><br>
-                            Questions about the Terms of Service should be sent to us at <a href="mailto:lavienpatisserie@gmail.com">lavienpatisserie@gmail.com</a>.
-                        <p>
+                        Cancel your order
+                        <ul type="round">
+                            <li>
+                                All orders made are final and cannot be cancelled due to the already made planning. 
+                                Please let us know if you want to modify your order. Please send us an email to 
+                                <a href="mailto:lavienpatisserie@gmail.com">lavienpatisserie@gmail.com</a>
+                            </li>
+                        </ul>
                     </li>
                 </ol>
+                <p>La Vie en Rose Pâtisserie reserves the right to amend this policy at any time without prior notice.</p>
             </div>
 
-              <!-- Footer -->
+
+            <!-- Footer -->
             <div class="row text-left px-5 pt-5 foot">
                 <div class="col-md-4 col-sm-12 pb-3">
                     <h3 class="pb-3">La Vie en Rose Pâtisserie</h3>
@@ -274,7 +250,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <div class="row">
                         <div class="col-md-4">
                             <p><a href="index.php">Home</a></p>
-                            <p><a href="about.php">About Us</a></p>
+                            <p><a href="about.html">About Us</a></p>
                             <p><a href="product.php">All Products</a></p>
                             <p><a href="seasonal.php">Seasonal Products</a></p>
                             <p><a href="customize.php">Customize</a></p>
@@ -285,7 +261,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <p><a href="faq.html">FAQs</a></p>
                             <p><a href="terms.html">Terms of Service</a></p>
                             <p><a href="privacy.html">Privacy Policy</a></p>
-                            <p><a href="delivery.html">Delivery Policy</a></p>
+                            <!--                            <p><a href="delivery.html">Delivery Policy</a></p>-->
                             <p><a href="pick.html">Pickup Information</a></p>
                         </div>
 
@@ -305,5 +281,5 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             </div>
         </div>
         <script src="/5007CEM/public_html/js/mobile-menu.js" type="text/javascript"></script>
-</body>
+    </body>
 </html>
