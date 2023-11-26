@@ -18,7 +18,6 @@ for (i = 0; i < acc.length; i++) {
 }
 
 
-// Hide all tier containers initially
 var tierContainers = document.querySelectorAll(".tier-container");
 tierContainers.forEach(function (container) {
     container.style.display = "none";
@@ -29,12 +28,10 @@ var tierSelect = document.getElementById("tierSelect");
 tierSelect.addEventListener("change", function () {
     var selectedValue = this.value;
 
-    // Hide all tier containers
     tierContainers.forEach(function (container) {
         container.style.display = "none";
     });
 
-    // Show the selected tier container and all previous tier containers up to the selected tier
     for (var i = 1; i <= selectedValue; i++) {
         var selectedContainer = document.querySelector('.tier-container[data-tier="' + i + '"]');
         if (selectedContainer) {
@@ -59,12 +56,25 @@ styleSelect.addEventListener("change", function () {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-$(document).ready(function () {
-    $('input[type="checkbox"]').click(function () {
-        var inputValue = $(this).attr("value");
-        $("." + inputValue + "-section").toggle();
+    checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener("click", function () {
+            var inputValue = this.value;
+            var elementsToToggle = document.querySelectorAll("." + inputValue + "-section");
+
+            elementsToToggle.forEach(function (element) {
+                if (element.style.display === "none" || element.style.display === "") {
+                    element.style.display = "block";
+                } else {
+                    element.style.display = "none";
+                }
+            });
+        });
     });
 });
+
+
 
 

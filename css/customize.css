@@ -131,11 +131,72 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 
 .pick-section,
 .delivery-section {
-    display: none; 
+    display: none;
+}
+
+label{
+    padding: 10px;
+    margin: 10px;
+    width: 120px;
+}
+
+select , .tier-select , .tier-size{
+    height:50px !important;
+    width: 480px !important;
+    border-radius: 10px !important;
+}
+
+textarea{
+    border-radius: 10px !important;
+    padding: 10px !important;
+}
+
+.form-group{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.messText{
+    height:100px;
+    width: 500px;
+    left: 3%;
+    position: relative;
+}
+
+.upload{
+    padding-left: 20px;
+}
+
+.size-1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
 @media screen and (max-width: 767px){
- 
+    .size img{
+        width: 300px;
+    }
+
+    select, .tier-select, .tier-size {
+        height: 50px !important;
+        width: 160px !important;
+        border-radius: 10px !important;
+    }
+
+    .messText{
+        height:100px;
+        width: 300px;
+        left: 3%;
+        position: relative;
+    }
+    
+    .accordion{
+        width: 92%;
+    }
 }
 
 @media screen and (min-width: 768px) {

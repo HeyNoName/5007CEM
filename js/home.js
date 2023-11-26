@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/javascript.js to edit this template
  */
 
-
-
 //slider
 let slideIndex = 0;
 showSlides();
@@ -20,13 +18,13 @@ function currentSlide(n) {
 function showSlides() {
     let i;
     let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("carousel-indicators");
+    let dots = document.getElementsByClassName("carousel-indicators")[0].getElementsByTagName("li");
 
     if (slideIndex >= slides.length) {
-        slideIndex = 0
+        slideIndex = 0;
     }
     if (slideIndex < 0) {
-        slideIndex = slides.length - 1
+        slideIndex = slides.length - 1;
     }
 
     for (i = 0; i < slides.length; i++) {
@@ -39,13 +37,42 @@ function showSlides() {
     slides[slideIndex].style.display = "block";
     dots[slideIndex].className += " active";
 
-    // Increment the slide index for the next automatic slide
     slideIndex++;
 
-    // Set a timeout for the next automatic slide (adjust the time as needed)
-    setTimeout(showSlides, 5000); // Change slide every 3 seconds
+    setTimeout(showSlides, 8000);
 }
 
+
+// showSlides(slideIndex += n);
+//}
+//
+//function currentSlide(n) {
+//  showSlides(slideIndex = n - 1);
+//}
+//
+//function showSlides() {
+//  let i;
+//  let slides = document.getElementsByClassName("mySlides");
+//  let dots = document.getElementsByClassName("dot");
+//
+//  if (slideIndex >= slides.length) { slideIndex = 0 }
+//  if (slideIndex < 0) { slideIndex = slides.length - 1 }
+//
+//  for (i = 0; i < slides.length; i++) {
+//    slides[i].style.display = "none";
+//  }
+//  for (i = 0; i < dots.length; i++) {
+//    dots[i].className = dots[i].className.replace(" active", "");
+//  }
+//
+//  slides[slideIndex].style.display = "block";
+//  dots[slideIndex].className += " active";
+//
+//  // Increment the slide index for the next automatic slide
+//  slideIndex++;
+//  
+//  // Set a timeout for the next automatic slide (adjust the time as needed)
+//  setTimeout(showSlides, 5000); // Change slide every 3 seconds
 
 
 
@@ -152,6 +179,8 @@ function myFunction() {
 //}
 //
 //// You can add additional logic for handling search functionality here
+
+
 
 
 

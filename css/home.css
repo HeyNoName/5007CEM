@@ -58,24 +58,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 }
 
 /*slider*/
-/* Initially display the first slide */
 .mySlides:first-child {
     display: block;
 }
 
-/* Hide the other slides */
 .mySlides:not(:first-child) {
     display: none;
 }
 
-/* Slideshow container */
 .slideshow-container {
     max-width: 1520px;
     position: relative;
     margin: auto;
 }
 
-/* Next & previous buttons */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -91,18 +87,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
 .text {
     color: #f2f2f2;
     font-size: 15px;
@@ -113,7 +106,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     text-align: center;
 }
 
-/* Number text (1/3 etc) */
 .numbertext {
     color: #f2f2f2;
     font-size: 12px;
@@ -129,14 +121,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 /* Fading animation */
 .fade {
     animation-name: fade;
-    
+
 }
 
 .fade:not(.show) {
     opacity: 1 !important;
-  }
-
-
+}
 
 @keyframes fade {
     from {
@@ -153,21 +143,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
         font-size: 11px
     }
 }
-
-/*#search{
-    display: hidden;
-}*/
-/*.container{
-    display:flex;
-}
-
-.container img {
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
-}*/
-
+/*
 .product{
     background-image: url("/5007CEM/public_html/image/allpro.jpg");
     background-repeat: no-repeat;
@@ -195,7 +171,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 .product:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     filter: brightness(95%);
-}
+}*/
 
 /*about*/
 .about-title{
@@ -294,40 +270,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 }
 
 .sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #88694e;
-  overflow-x: hidden;
-  transition: 0.5s;
-  color: #ffff;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #88694e;
+    overflow-x: hidden;
+    transition: 0.5s;
+    color: #ffff;
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #ffff;
-  display: block;
-  transition: 0.3s;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffff;
+    display: block;
+    transition: 0.3s;
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+    color: #f1f1f1;
 }
 
 .sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
-
-
 
 /*Contact*/
 .content{
@@ -350,12 +324,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     font-weight: 500;
 }
 
+.card .img-wrapper {
+    max-width: 100%;
+    height: 13em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card img {
+    max-height: 100%;
+}
+
+/*arrow-right*/
+
+.fa-arrow-right {
+    transition: transform 0.3s ease;
+    padding-top: 64px;
+}
+
+/* Define the animation when the element is hovered */
+.fa-arrow-right:hover {
+    transform: translateX(10px); /* Adjust the value as needed for the desired effect */
+}
+
+.arrow{
+    display: flex;
+}
+
 /*mobile*/
 @media screen and (max-width: 767px){
     /*banner*/
     .banner img{
         width: 100%;
-        padding-top: 20px;
         height: 400px;
     }
 
@@ -371,7 +371,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     .banner h1{
         font-size: 50px;
     }
-    
+
     .btn-lg{
         position: relative;
         left: 10%;
@@ -381,21 +381,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
         display: inline-block;
         max-width: 100%;
     }
-    
+
     .card .img-wrapper {
         height: 17em;
     }
-    
+
     .about-us{
         display:block;
+        background-color: #E0CDA9;
+        padding-bottom: 40px;
+        filter: none;
     }
-    
+
     .about-us img{
         display: none;
     }
 
-
-
+    .dropdown fa{
+        padding-left: 30px;
+        color: white !important;
+    }
 
 }
 
@@ -403,17 +408,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     #mobile-menu-button {
         display: none;
     }
-    
+
 
 }
-.card .img-wrapper {
-    max-width: 100%;
-    height: 13em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.card img {
-    max-height: 100%;
-}
-}
+
+

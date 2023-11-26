@@ -14,10 +14,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 
 
 .btn-primary{
-    border-radius: 1.3rem !important;
+    border-radius: 1.0rem !important;
     background-color: #88694e !important;
     border-color: transparent !important;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width:100px;
 }
 
 .title{
