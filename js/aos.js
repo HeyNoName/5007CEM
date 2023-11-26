@@ -4,11 +4,10 @@
  */
 /* global AOS */
 
-// Initialize AOS with your desired configuration
 AOS.init({
-  duration: 1000, // Animation duration in milliseconds
-  easing: 'ease', // Easing type ('ease', 'linear', 'ease-in', 'ease-out', 'ease-in-out')
-  once: true // Whether to only animate elements once
+  duration: 1000, 
+  easing: 'ease', 
+  once: true 
 });
 
 // Add a scroll event listener

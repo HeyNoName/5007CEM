@@ -58,24 +58,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 }
 
 /*slider*/
-/* Initially display the first slide */
 .mySlides:first-child {
     display: block;
 }
 
-/* Hide the other slides */
 .mySlides:not(:first-child) {
     display: none;
 }
 
-/* Slideshow container */
 .slideshow-container {
     max-width: 1520px;
     position: relative;
     margin: auto;
 }
 
-/* Next & previous buttons */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -91,18 +87,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
 .text {
     color: #f2f2f2;
     font-size: 15px;
@@ -113,7 +106,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     text-align: center;
 }
 
-/* Number text (1/3 etc) */
 .numbertext {
     color: #f2f2f2;
     font-size: 12px;

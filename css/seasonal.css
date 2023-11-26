@@ -251,6 +251,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
         width:100px;
         height: 100px;
     }
+    
+    .row{
+        display:block;
+    }
+    
+    .card-body{
+        height: 300px;
+    }
 
 }
 

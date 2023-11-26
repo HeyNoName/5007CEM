@@ -180,6 +180,23 @@ textarea{
     .size img{
         width: 300px;
     }
+
+    select, .tier-select, .tier-size {
+        height: 50px !important;
+        width: 160px !important;
+        border-radius: 10px !important;
+    }
+
+    .messText{
+        height:100px;
+        width: 300px;
+        left: 3%;
+        position: relative;
+    }
+    
+    .accordion{
+        width: 92%;
+    }
 }
 
 @media screen and (min-width: 768px) {

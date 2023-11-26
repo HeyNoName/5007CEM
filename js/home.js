@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/javascript.js to edit this template
  */
 
-
-
 //slider
 let slideIndex = 0;
 showSlides();
@@ -20,7 +18,7 @@ function currentSlide(n) {
 function showSlides() {
     let i;
     let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("carousel-indicators")[0].getElementsByTagName("li"); // Access the individual <li> elements
+    let dots = document.getElementsByClassName("carousel-indicators")[0].getElementsByTagName("li");
 
     if (slideIndex >= slides.length) {
         slideIndex = 0;
@@ -39,11 +37,9 @@ function showSlides() {
     slides[slideIndex].style.display = "block";
     dots[slideIndex].className += " active";
 
-    // Increment the slide index for the next automatic slide
     slideIndex++;
 
-    // Set a timeout for the next automatic slide (adjust the time as needed)
-    setTimeout(showSlides, 8000); // Change slide every 5 seconds
+    setTimeout(showSlides, 8000);
 }
 
 
