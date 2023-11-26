@@ -28,26 +28,33 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         </span>
 
                         <div class="pl-5">
-                            <a href="index.html">
+                            <a href="index.php">
                                 <img src="/5007CEM/public_html/image/logo-1.png" height="70" width="70"/>
                             </a>
                         </div>
 
+
                         <div class="menu-icon">
                             <div class="search">
-                                <input type="text" id="search" name="search">
-
-                                <i class="fa fa-search" Onclick="myFunction()"></i>
-                                <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
-                                <span style="cursor:pointer" onclick="openNav2()"><i class="fa fa-shopping-bag"></i></span>
+                                <a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>
+                                <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
                             </div>
                         </div>
                     </div>
 
+                    <form action="searchResult.php" method="GET" id="mobile-menu-button">
+                        <div class="searchBox">
+                            <input type="text" id="search" name="search" class="size">
+                            <button type="submit" style="border: none; background: transparent;">
+                                <i class="fa fa-search" Onclick="myFunction()"></i>
+                            </button>
+                        </div>
+                    </form>
+
                     <div class="row head pt-4" id="menu">
 
                         <div class="col-lg-8">
-                            <a href="index.html">
+                            <a href="index.php">
                                 <img src="/5007CEM/public_html/image/logo-1.png" height="100" width="100"/>
                             </a>
                             <h3 class="title px-2 pt-2">La Vie en Rose Pâtisserie</h3>
@@ -55,140 +62,138 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 
                         <div class="col-lg-4 pl-5">
                             <div class="search">
-                                <input type="text" id="search" name="search">
-
-                                <i class="fa fa-search" Onclick="myFunction()"></i>
-                                <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+                                <form action="searchResult.php" method="GET">
+                                    <div class="search">
+                                        <input type="text" id="search" name="search">
+                                        <button type="submit" style="border: none; background: transparent;">
+                                            <i class="fa fa-search" onclick="myFunction()"></i>
+                                        </button>
+                                    </div>
+                                </form>
                                 <a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                                <span style="cursor:pointer" onclick="openNav2()"><i class="fa fa-shopping-bag"></i></span>
+                                <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
+                                <?php
+                                // Check if the user is logged in
+                                if (isset($_SESSION['user'])) {
+                                    echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                    echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
+                                } else {
+                                    echo '<a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
                     <hr/>
                 </div>
-                
+
                 <div class="menu" id="mySidenav">
                     <a href="javascript:void(0)" id="mobile-menu-button" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                     <div class="dropdown">
-                        <a href="product.html">All Product</a>
+                        <a href="product.php">All Product</a>
                         <div class="dropdown-content">
-                            <a href="product.html#cakes">Cakes</a>
-                            <a href="product.html#cookies">Cookies & Macaroons</a>
-                            <a href="product.html#tarts">Tarts</a>
-                            <a href="product.html#pastry">Pastry</a>
-                            <a href="product.html#savouries">Savouries</a>
-                            <a href="product.html#gift">GiftBox</a>
+                            <a href="product.php#cakes">Cakes</a>
+                            <a href="product.php#cookies">Cookies & Macaroons</a>
+                            <a href="product.php#tarts">Tarts</a>
+                            <a href="product.php#pastry">Pastry</a>
+                            <a href="product.php#savouries">Savouries</a>
+                            <a href="product.php#gift">GiftBox</a>
                         </div>
                     </div>
                     <div class="dropdown">
-                        <a href="seasonal.html">Seasonal Product</a>
+                        <a href="seasonal.php">Seasonal Product</a>
                         <div class="dropdown-content">
-                            <a href="seasonal.html#mooncake">Mooncake Set</a>
-                            <a href="seasonal.html#father">Father's Day Special</a>
-                            <a href="seasonal.html#mother">Mother's Day Special</a>
-                            <a href="seasonal.html#christmas">Christmas</a>
-                            <a href="seasonal.html#chinese">Chinese New Year</a>
-                            <a href="seasonal.html#raya">Hari Raya</a>
+                            <a href="seasonal.php#mooncake">Mooncake Set</a>
+                            <a href="seasonal.php#father">Father's Day Special</a>
+                            <a href="seasonal.php#mother">Mother's Day Special</a>
+                            <a href="seasonal.php#christmas">Christmas</a>
+                            <a href="seasonal.php#chinese">Chinese New Year</a>
+                            <a href="seasonal.php#raya">Hari Raya</a>
                         </div>
                     </div>
-                    <a href="customize.html">Customize</a>
+                    <a href="customize.php">Customize</a>
                     <div class="dropdown">
                         <a href="faq.html">FAQs</a>
                         <div class="dropdown-content">
-                            <a href="allergen.html">Allergen and Diet Information</a>
+                            <a href="allergen.php">Allergen and Diet Information</a>
                             <a href="terms.html">Terms of Service</a>
                             <a href="privacy.html">Privacy Policy</a>
                             <a href="delivery.html">Delivery Policy</a>
                             <a href="pick.html">Pickup Information</a>
                         </div>
                     </div>
-                    <a href="contact.html">Contact Us</a>
+                    <a href="contact.php">Contact Us</a>
                 </div>
             </div>
-            
+
             <div class="container hr-line">
                 <hr/>
             </div>
 
             <div class="container text-justify py-5 px-5">
-                <h1 class="text-center pb-3 title">Pick Up Information</h1>
-
-                <h4 class="pt-4">Our Store</h4>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.0247000251957!2d100.33273147478046!3d5.413208635069488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac35e17db31bb%3A0x1236041f2d3ec9e0!2sLa%20Vie%20en%20Rose%20P%C3%A2tisserie!5e0!3m2!1sen!2smy!4v1693982880895!5m2!1sen!2smy" width="500" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="map"></iframe>
-                <h5 class="pt-2 pb-1">19, Lebuh Melayu, George Town, 10100 George Town, Pulau Pinang</h5>
-                <h5 class="pt-2 pb-1">Operating Hours:</h5>
-                <h5 class="pb-2">Wednesday - Sunday : 10AM - 6PM</h5>
-                <h5 class="pt-2">Contact No: 0143336480</h5>
-
-
-                <hr>
-
-                <h4 class="pt-4">Before coming to pickup</h4>
-                <p>
-                    Once your order is ready, you will receive a notification message. Make sure to check your primary 
-                    inbox and spam messages. You can then pick up your order anytime from when you receive that message
-                    until the end of the pickup hours.
+                <h1 class="text-center pb-3 title">Allergen and Diet Information</h1>
+                <p>At Bliss Pâtisserie, we are committed to providing a delightful bakery experience while catering to 
+                    various dietary needs and allergies. We understand the importance of transparency in food preparation 
+                    and strive to make it easy for our customers to make informed choices. Below, you will find information 
+                    on common allergens and dietary preferences:
                 </p>
-                <p>
-                    Please note, if you are unable to collect your order by the close of pickup hours, your order will 
-                    be safely stored overnight. You can then collect it the next day during the operating hours.
-                </p>
-
-                <h4 class="pt-4">Grab/Lalamove/3rd Party Drivers</h4>
-                <p>
-                    If you are arranging for a 3rd party driver to collect your order from us, please ensure that a 
-                    car is selected and not a motorcycle. Our cakes and tarts need to be transported by car with the 
-                    AC on high. For longer journeys, an ice bag with ice packs is required.
-                </p>
-                <p>
-                    You are required to clearly provide the driver with your name and order number as they will need 
-                    to present it to us in order to collect your order.
-                </p>
-                <p>
-                    We do not take responsibility for any problems, issues, or situations that arise from and arise 
-                    because of the 3rd party delivery service as well as for the items once they have left our premises.
-                    It is advisable that the driver takes a picture of all the items of your order before and after 
-                    delivering them to you.
-                </p>
-                <p>
-                    We do not make any delivery arrangements or book and arrange 3rd party delivery services on behalf 
-                    of pickup customers. Please arrange for your own 3rd party delivery service if you have opted for 
-                    self-pickup and are not able to come over to our store to collect your order from us.
-                </p>
-
-                <h4 class="pt-4">How to handle our pastries</h4>
-                <ol type="a">
-                    <li>All cakes and tarts need to be transported by car and placed on a flat surface, eg. car floor.</li>
+                <h4 class="pt-4">Common Allergens:</h4>
+                <p>Please be aware that our bakery handles the following common allergens:</p>
+                <ol type="1">
                     <li>
-                        They can last in a car ride with the AC on high for about 1 hour. For longer journeys, we 
-                        recommend using a cooler bag with ice packs.
-                    </li>
-                    <li>Cooler bags are free. The cooler bags come with 2 free ice packs.</li>
-                    <li>We don't take any responsibility for the items once they have left our premises.</li>
-                </ol>
-
-                <h4 class="pt-4">Change from pickup to delivery</h4>
-                <p>We are not able to change your order from pickup to delivery. But you do have the options to:</p>
-                <ol type="a">
-                    <li>
-                        Remain your order for self-pickup and arrange for your own 3rd party delivery service like 
-                        grab/lalamove car to collect the cake from us at your chosen time slot up till 6pm.
+                        Gluten: Many of our products contain gluten. We offer gluten-free options, but there is a risk of 
+                        cross-contamination in our kitchen.
                     </li>
                     <li>
-                        Cancel your order
-                        <ul type="round">
-                            <li>
-                                All orders made are final and cannot be cancelled due to the already made planning. 
-                                Please let us know if you want to modify your order. Please send us an email to 
-                                <a href="mailto:lavienpatisserie@gmail.com">lavienpatisserie@gmail.com</a>
-                            </li>
-                        </ul>
+                        Nuts: Some of our products may contain nuts or nut-based ingredients. 
+                        We take precautions to avoid cross-contamination, but there is always a possibility.
+                    </li>
+                    <li>
+                        Dairy: Our recipes often include dairy products. We offer dairy-free alternatives for select items.
+                    </li>
+                    <li>
+                        Eggs: Eggs are used in many of our baked goods.
+                        If you have an egg allergy, please inquire about our eggless options.
+                    </li>
+                    <li>
+                        Soy: Soy-based ingredients may be used in some of our products.
                     </li>
                 </ol>
-                <p>La Vie en Rose Pâtisserie reserves the right to amend this policy at any time without prior notice.</p>
+
+                <h4 class="pt-4">Dietary Preferences:</h4>
+                <p>We understand that dietary preferences and restrictions vary, and we aim to accommodate as many as possible:</p>
+                <ol type="1">
+                    <li>
+                        Vegan: Look for items labeled as vegan on our menu. 
+                        These products are entirely free from animal-derived ingredients.
+                    </li>
+                    <li>
+                        Vegetarian: Most of our products are suitable for vegetarians, as they do not contain meat or fish
+                    </li>
+                    <li>
+                        Gluten-Free: We offer a selection of gluten-free products. However, please note that our kitchen is 
+                        not entirely gluten-free, and cross-contamination can occur.
+                    </li>
+                    <li>
+                        Sugar-Free: We offer some sugar-free options, primarily sweetened with natural alternatives like 
+                        stevia or monk fruit.
+                    </li>
+                    <li>
+                        Low-Fat: While our baked goods are deliciously indulgent, we also provide a range of low-fat 
+                        options for those seeking healthier choices.
+                    </li>
+                    <li>
+                        Low-Sodium: If you are watching your sodium intake, please inquire about our low-sodium selections.
+                    </li>
+                </ol>
+                <h4 class="pt-4">Special Requests:</h4>
+                <p>If you have specific dietary requirements or allergies not mentioned above, 
+                    please inform to us when placing your order. We will do our best to accommodate your needs and 
+                    provide information about suitable options.
+                </p>
             </div>
-            
+
             
             <!-- Footer -->
             <div class="row text-left px-5 pt-5 foot">
@@ -218,7 +223,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <p><a href="faq.html">FAQs</a></p>
                             <p><a href="terms.html">Terms of Service</a></p>
                             <p><a href="privacy.html">Privacy Policy</a></p>
-<!--                            <p><a href="delivery.html">Delivery Policy</a></p>-->
+                            <p><a href="delivery.html">Delivery Policy</a></p>
                             <p><a href="pick.html">Pickup Information</a></p>
                         </div>
 

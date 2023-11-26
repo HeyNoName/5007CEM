@@ -114,12 +114,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     </div>
                     <a href="customize.html">Customize</a>
                     <div class="dropdown">
-                        <a href="faq.html">FAQs</a>
+                        <a href="faq.php">FAQs</a>
                         <div class="dropdown-content">
                             <a href="allergen.html">Allergen and Diet Information</a>
-                            <a href="terms.html">Terms of Service</a>
+                            <a href="terms.php">Terms of Service</a>
                             <a href="privacy.html">Privacy Policy</a>
-                            <a href="delivery.html">Delivery Policy</a>
+<!--                            <a href="delivery.html">Delivery Policy</a>-->
                             <a href="pick.html">Pickup Information</a>
                         </div>
                     </div>
@@ -130,112 +130,97 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             <div class="container hr-line">
                 <hr/>
             </div>
-                      
+                       
             <div class="container text-justify py-5 px-5">
-                <h1 class="text-center pb-3 title">Terms of service</h1>
-                <ol type="1">
-                    <li>
-                        <p>
-                            <b>Acceptance of Terms</b><br>
-                            By accessing and using the services provided by Bliss Pâtisserie , you agree to comply with and 
-                            be bound by these Terms of Service. If you do not agree with these terms, please refrain from 
-                            using our services.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Use of Services</b><br>
-                            You must be at least 18 years old to use our services or place orders. 
-                            If you are under 18, you may only use our services with the consent and involvement 
-                            of a parent or guardian.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Orders and Payment</b><br>
-                            <b>3.1 Order Placement:</b> When placing an order, you agree to provide accurate and complete 
-                            information, including contact and payment details. We reserve the right to refuse or cancel 
-                            orders at our discretion.<br><br>
+                <h1 class="text-center pb-3 title">FAQs</h1>
 
-                            <b>3.2 Payment:</b> Payment for orders can be made using accepted methods as specified on our 
-                            website. Orders are subject to applicable taxes.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Cancellations and Refunds</b><br>
-                            <b>4.1 Cancellations:</b> You may cancel an order within a specified timeframe, as indicated on our 
-                            website or communicated to you during the ordering process. After this timeframe, 
-                            cancellations may not be possible.<br><br>
+                <h4 class="pt-4">Ordering</h4>
+                <p>
+                    Q: How to order?<br>
+                    Step 1: Browse the products.<br>
+                    Step 2: Select your preferred date and time.<br>
+                    Step 3: Select candle/knife, enter the message you would like us to print on the card.<br>
+                    Step 4: Add to cart.<br>
+                    Step 5: Select 'Delivery' or 'In-store Pickup'. (Delivery fee will be calculated after you have entered 
+                    the delivery details.)<br>
+                    Step 6: Complete the payment.<br>
+                    Step 7: Your order is confirmed!<br>
+                </p>
+                <p>
+                    Q: Do you offer online ordering and delivery?<br>
+                    Yes, we offer online ordering for pickup and delivery. 
+                    Simply visit our website, select your items, and choose your preferred option during checkout.<br>
+                </p>
+                <p> 
+                    Q: What types of payment do you accept?<br>
+                    We accept credit/debit cards, online banking, and mobile payment methods such as TnG E-wallet.<br>
+                </p>
+                <p>
+                    Q: How does the same-day delivery/pickup work?<br>
+                    We offer same-day delivery/pickup with a minimum of 3 hours pre-order.<br>
+                    Orders have to be placed by 2pm for same-day delivery/pickup.
+                </p>
+                <p>
+                    Q: Can I mix and match between the Gift sets?<br>
+                    No. Our Gift sets are fixed. We do not make customised combinations/sets.<br>
+                </p>
 
-                            <b>4.2 Refunds:</b> Refunds, if applicable, will be issued in accordance with our Refund Policy,
-                            which can be found on our website.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Privacy Policy</b><br>
-                            Your use of our services is also governed by our Privacy Policy, which outlines how we collect, 
-                            use, and protect your personal information. Please review our Privacy Policy separately.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Allergen and Dietary Information</b><br>
-                            Please refer to our Allergen and Diet Information section, available on our website, 
-                            to understand the presence of common allergens and dietary options in our products.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b> Limitation of Liability</b><br>
-                            Please refer to our Allergen and Diet Information section, available on our website, 
-                            to understand the presence of common allergens and dietary options in our products.<br>
-                            <b>7.1 Disclaimer:</b> Our bakery products are provided "as is," and we make no warranties, 
-                            express or implied, regarding the quality, fitness for a particular purpose, or safety of our 
-                            products.<br><br>
+                <h4 class="pt-4">Delivery</h4>
+                <p>
+                    Q: How much is the delivery fee?<br>
+                    We deliver to areas within 10km of our shop. You may check out the estimated delivery fee, and if 
+                    free delivery applies here. <br>
+                </p>
+                <p>
+                    Q: Can I request a specific delivery time?<br>
+                    Sorry, we cannot arrange delivery at a specifically requested time as we arrange all our deliveries 
+                    according to the areas and total distance of all orders we have per time slot. Drivers deliver to 
+                    multiple areas in one trip and we cannot predict traffic conditions or potential unforeseen 
+                    circumstances.<br>
+                </p>
 
-                            <b>7.2 Liability:</b> In no event shall [Your Bakery Name] be liable for any direct, indirect, 
-                            incidental, special, or consequential damages resulting from the use or inability to use our 
-                            services or products.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Indemnification</b><br>
-                            You agree to indemnify and hold Bliss Pâtisserie, its affiliates, employees, and partners 
-                            harmless from any claims, losses, or damages arising from your use of our services or products, 
-                            violation of these terms, or infringement of any rights.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Termination</b><br>
-                            We reserve the right to terminate or suspend your access to our services at any time, 
-                            without notice, for any reason.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Changes to Terms</b><br>
-                            You can review the most current version of the Terms of Service at any time at this page.
-                            We reserve the right, at our sole discretion, to update, change or replace any part of these 
-                            Terms of Service by posting updates and changes to our website. It is your responsibility to 
-                            check our website periodically for changes. Your continued use of or access to our website or 
-                            the Service following the posting of any changes to these Terms of Service constitutes 
-                            acceptance of those changes.
-                        <p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Contact Information</b><br>
-                            Questions about the Terms of Service should be sent to us at <a href="mailto:lavienpatisserie@gmail.com">lavienpatisserie@gmail.com</a>.
-                        <p>
-                    </li>
-                </ol>
+                <h4 class="pt-4">Pick Up</h4>
+                <p>
+                    Q: Where is your store located at?<br>
+                    Our store located at:<br>
+                    19, Lebuh Melayu, George Town, 10100 George Town, Pulau Pinang.<br>
+                </p>
+
+                <h4 class="pt-4">Product</h4>
+                <p>
+                    Q: Do you write messages on the cake?<br>
+                    Yes. We do write on the cake. <br>
+                </p>
+                <p>
+                    Q: How do I store the desserts/cakes? And how long can they last?<br>
+                    Please keep the cake in the chiller immediately upon receiving it for at least 30 minutes until ready to
+                    serve (do not freeze).<br>
+                    All our cakes must be served at chilled temperature (10°C-12°C) and are best consumed within 2 days. 
+                    However, they can last in the chiller for up to 3-4 days.<br>
+                </p>
+                <p>
+                    Q: How long can the cake last in a car ride?<br>
+                    Our cakes can last in a car ride for up to 1 hour depending on the car's air-conditioner's temperature. 
+                    Please have the AC turned on high during transportation.<br>
+                    For longer journeys, we recommend keeping the cake inside an insulator bag/ice bag/fish box with some 
+                    ice packs.<br>
+                </p>
+                <p>
+                    Q: Do you use halal ingredients? Does your cake contain alcohol?<br>
+                    While we are a halal-certified bakery, we only use Muslim-friendly ingredients in our baking, 
+                    including halal gelatine. We do not use alcohol in our baking.<br>
+                </p>
+                <p>
+                    Q: Can I request a less sweet cake?<br>
+                    Unfortunately, we cannot adjust the sweetness of our cakes as we make them in batches.<br>
+                </p>
+                <p>
+                    Q: Do you accept customised cake orders?<br>
+                    Yes, we do customise the design and flavours of the pastry.<br>
+                </p>
             </div>
 
-              <!-- Footer -->
+             <!-- Footer -->
             <div class="row text-left px-5 pt-5 foot">
                 <div class="col-md-4 col-sm-12 pb-3">
                     <h3 class="pb-3">La Vie en Rose Pâtisserie</h3>
@@ -251,12 +236,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <h3 class="pb-3">Quick Links</h3>
                     <div class="row">
                         <div class="col-md-4">
-                            <p><a href="index.php">Home</a></p>
+                            <p><a href="index.html">Home</a></p>
                             <p><a href="about.html">About Us</a></p>
-                            <p><a href="product.php">All Products</a></p>
-                            <p><a href="seasonal.php">Seasonal Products</a></p>
-                            <p><a href="customize.php">Customize</a></p>
-                            <p><a href="contact.php">Contact Us</a></p>
+                            <p><a href="product.html">All Products</a></p>
+                            <p><a href="seasonal.html">Seasonal Products</a></p>
+                            <p><a href="customize.html">Customize</a></p>
+                            <p><a href="contact.html">Contact Us</a></p>
                         </div>
                         <div class="col-md-8">
                             <p><a href="allergen.html">Allergen and Diet Information</a></p>
@@ -283,5 +268,5 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             </div>
         </div>
         <script src="/5007CEM/public_html/js/mobile-menu.js" type="text/javascript"></script>
-</body>
+    </body>
 </html>

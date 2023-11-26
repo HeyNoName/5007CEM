@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- ... (rest of your HTML code) ... -->
+
+<!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
@@ -9,7 +12,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/5007CEM/public_html/css/default.css">
+        <link rel="stylesheet" href="/5007CEM/public_html/css/contact.css">
         <link rel="stylesheet" href="/5007CEM/public_html/css/nav.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -18,7 +21,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
     </head>
     <body>
         <div class="overflow-hidden">
-            <!-- header -->
+           <!-- header -->
             <div class="header">
                 <div class="container" id="myHeader">
                     <!--mobile-menu-->
@@ -27,6 +30,32 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <i class="fa fa-bars"></i>
                         </span>
 
+                        <div class="pl-5">
+                            <a href="index.php">
+                                <img src="/5007CEM/public_html/image/logo-1.png" height="70" width="70"/>
+                            </a>
+                        </div>
+
+
+                        <div class="menu-icon">
+                            <div class="search">
+                                <a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>
+                                <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="searchResult.php" method="GET" id="mobile-menu-button">
+                        <div class="searchBox">
+                            <input type="text" id="search" name="search" class="size">
+                            <button type="submit" style="border: none; background: transparent;">
+                                <i class="fa fa-search" Onclick="myFunction()"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="row head pt-4" id="menu">
+
                         <div class="col-lg-8">
                             <a href="index.php">
                                 <img src="/5007CEM/public_html/image/logo-1.png" height="100" width="100"/>
@@ -34,147 +63,126 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <h3 class="title px-2 pt-2">La Vie en Rose Pâtisserie</h3>
                         </div>
 
-                        <div class="menu-icon">
-                            <div class="search">
-                                <input type="text" id="search" name="search">
-
-                                <i class="fa fa-search" Onclick="myFunction()"></i>
-                                <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
-                                <span style="cursor:pointer" onclick="openNav2()"><i class="fa fa-shopping-bag"></i></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row head pt-4" id="menu">
-
-                        <div class="col-lg-8">
-                            <a href="index.html">
-                                <img src="/5007CEM/public_html/image/logo-1.png" height="100" width="100"/>
-                            </a>
-                            <h3 class="title px-2 pt-2">La Vie en Rose Pâtisserie</h3>
-                        </div>
-
                         <div class="col-lg-4 pl-5">
                             <div class="search">
-                                <input type="text" id="search" name="search">
-
-                                <i class="fa fa-search" Onclick="myFunction()"></i>
-                                <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+                                <form action="searchResult.php" method="GET">
+                                    <div class="search">
+                                        <input type="text" id="search" name="search">
+                                        <button type="submit" style="border: none; background: transparent;">
+                                            <i class="fa fa-search" onclick="myFunction()"></i>
+                                        </button>
+                                    </div>
+                                </form>
                                 <a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                                <span style="cursor:pointer" onclick="openNav2()"><i class="fa fa-shopping-bag"></i></span>
+                                <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
+                                <?php
+                                // Check if the user is logged in
+                                if (isset($_SESSION['user'])) {
+                                    echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                    echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
+                                } else {
+                                    echo '<a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
                     <hr/>
                 </div>
-                
+
                 <div class="menu" id="mySidenav">
                     <a href="javascript:void(0)" id="mobile-menu-button" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                     <div class="dropdown">
-                        <a href="product.html">All Product</a>
+                        <a href="product.php">All Product</a>
                         <div class="dropdown-content">
-                            <a href="product.html#cakes">Cakes</a>
-                            <a href="product.html#cookies">Cookies & Macaroons</a>
-                            <a href="product.html#tarts">Tarts</a>
-                            <a href="product.html#pastry">Pastry</a>
-                            <a href="product.html#savouries">Savouries</a>
-                            <a href="product.html#gift">GiftBox</a>
+                            <a href="product.php#cakes">Cakes</a>
+                            <a href="product.php#cookies">Cookies & Macaroons</a>
+                            <a href="product.php#tarts">Tarts</a>
+                            <a href="product.php#pastry">Pastry</a>
+                            <a href="product.php#savouries">Savouries</a>
+                            <a href="product.php#gift">GiftBox</a>
                         </div>
                     </div>
                     <div class="dropdown">
-                        <a href="seasonal.html">Seasonal Product</a>
+                        <a href="seasonal.php">Seasonal Product</a>
                         <div class="dropdown-content">
-                            <a href="seasonal.html#mooncake">Mooncake Set</a>
-                            <a href="seasonal.html#father">Father's Day Special</a>
-                            <a href="seasonal.html#mother">Mother's Day Special</a>
-                            <a href="seasonal.html#christmas">Christmas</a>
-                            <a href="seasonal.html#chinese">Chinese New Year</a>
-                            <a href="seasonal.html#raya">Hari Raya</a>
+                            <a href="seasonal.php#mooncake">Mooncake Set</a>
+                            <a href="seasonal.php#father">Father's Day Special</a>
+                            <a href="seasonal.php#mother">Mother's Day Special</a>
+                            <a href="seasonal.php#christmas">Christmas</a>
+                            <a href="seasonal.php#chinese">Chinese New Year</a>
+                            <a href="seasonal.php#raya">Hari Raya</a>
                         </div>
                     </div>
-                    <a href="customize.html">Customize</a>
+                    <a href="customize.php">Customize</a>
                     <div class="dropdown">
                         <a href="faq.html">FAQs</a>
                         <div class="dropdown-content">
                             <a href="allergen.html">Allergen and Diet Information</a>
                             <a href="terms.html">Terms of Service</a>
-                            <a href="privacy.php">Privacy Policy</a>
-<!--                            <a href="delivery.html">Delivery Policy</a>-->
+                            <a href="privacy.html">Privacy Policy</a>
+                            <a href="delivery.html">Delivery Policy</a>
                             <a href="pick.html">Pickup Information</a>
                         </div>
                     </div>
-                    <a href="contact.html">Contact Us</a>
+                    <a href="contact.php">Contact Us</a>
                 </div>
             </div>
-            
+
             <div class="container hr-line">
                 <hr/>
             </div>
+            <div class="container">
+                <!--<img src="/5007CEM/public_html/image/contact.jpg" style="width: 100%"/>-->
+                <div class="row">
+                    <div class="col-md-7 px-5 py-5">
+                        <h1 class="title pb-3">Our Store</h1>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.0247000251957!2d100.33273147478046!3d5.413208635069488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac35e17db31bb%3A0x1236041f2d3ec9e0!2sLa%20Vie%20en%20Rose%20P%C3%A2tisserie!5e0!3m2!1sen!2smy!4v1693982880895!5m2!1sen!2smy" width="500" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="pr-3" id="map"></iframe>
+                        <p>19, Lebuh Melayu, George Town, 10100 George Town, Pulau Pinang</p>
+                        <p>Operating Hours: Wednesday - Sunday : 10AM - 6PM</p>
+                        <p>Contact No: 0143336480</p>
+                    </div>
+                    <div class="col-md-4 px-5 py-5">
+                        <?php
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            $name = $_POST["name"];
+                            $email = $_POST["email"];
+                            $contactNo = $_POST["contactNo"];
+                            $message = $_POST["message"];
 
-            <div class="container text-justify py-5 px-5">
-                <h1 class="text-center pb-3 title">Privacy Policy</h1>
-                <p>This Privacy Policy describes how your personal information is collected, used, and shared when you 
-                    visit or make a purchase from Bliss Pâtisserie (the “Site”).</p>
-                <ol type="1">
-                    <li>
-                        <b>Information We Collect</b><br>
-                        <p>
-                            We collect information you voluntarily provide when you interact with our website, place an order, 
-                            or contact us. This may include your name, email address, phone number, billing and 
-                            shipping address, payment information, and other relevant details.
-                        </p>
-                    </li>
-                    <li>
-                        <b>Use of Information</b><br>
-                        <p>
-                            We use the information we collect for the following purposes:
-                        </p>
-                        <p>
-                            <b>2.1 Order Processing:</b> To process and fulfill your orders, including order confirmation, 
-                            delivery, and customer support.
-                        </p>
-                        <p>
-                            <b>2.2 Communications:</b> To communicate with you about your orders, updates, promotions, and news
-                            related to our bakery.<br>
-                        </p>
-                        <p>
-                            <b>2.3 Improvement of Services:</b> To improve our website and services, analyze user trends, and 
-                            enhance your experience.<br>
-                        </p>
-                        <p>
-                            <b>2.4 Legal Obligations:</b> To comply with legal obligations and regulations.  
-                        </p>
-                    </li>
-                    <li>
-                        <b>Do not track</b><br>
-                        <p>
-                            Please note that we do not alter our Site’s data collection and use practices when we see a 
-                            Do Not Track signal from your browser.
-                        </p>
-                    </li>
-                    <li>
-                        <b>Data retention</b><br>
-                        <p>
-                            When you place an order through the Site, we will maintain your Order Information for our records 
-                            unless and until you ask us to delete this information.
-                        </p>
-                    </li>
-                    <li>
-                        <b>Changes</b><br>
-                        <p>
-                            We may update this privacy policy from time to time in order to reflect, for example, changes to 
-                            our practices or for other operational, legal or regulatory reasons.
-                        </p>
-                    </li>
-                    <li>
-                        <b>Contact us</b><br>
-                        <p>
-                            For more information about our privacy practices, if you have questions, or if you would like to 
-                            make a complaint, please contact us by e‑mail at <a href="mailto:lavienpatisserie@gmail.com">lavienpatisserie@gmail.com</a>.
-                        </p>
-                    </li>
-                </ol>
+                            $to = "lavienpatisserie@gmail.com";
+                            $subject = "New Contact Form Submission";
+                            $headers = "From: $email";
+
+                            $mailBody = "Name: $name\n";
+                            $mailBody .= "Email: $email\n";
+                            $mailBody .= "Contact No: $contactNo\n\n";
+                            $mailBody .= "Message:\n$message";
+
+                            mail($to, $subject, $mailBody, $headers);
+                        }
+                        ?>
+
+                        <h1 class="title pb-4">Contact Us</h1>
+                        <form action="contactus.php" method="POST">
+
+                            <label for="inputlg">Name</label><br>
+                            <input  class="form-control input-lg" id="inputlg" type="text" name="name"><br><br>
+
+                            <label for="inputlg">Email</label><br>
+                            <input  class="form-control input-lg" id="inputlg" type="text" name="email"><br><br>
+
+                            <label for="inputlg">Contact No</label><br>
+                            <input class="form-control input-lg" id="inputlg" type="text" name="contactNo"><br><br>
+
+                            <label for="inputlg">Message</label><br>
+                            <textarea class="form-control input-lg" id="inputlg" placeholder="Write something.." style="height:200px" name="message"></textarea><br><br>
+
+                            <button class="btn btn-primary">Submit</button><br><br>
+                        </form>
+                    </div>
+                </div>
             </div>
 
             
@@ -225,6 +233,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 </div>
             </div>
         </div>
-        <script src="js/mobile-menu.js" type="text/javascript"></script>
+        <script src="/5007CEM/public_html/js/home.js" type="text/javascript"></script>
     </body>
 </html>

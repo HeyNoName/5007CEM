@@ -1,3 +1,58 @@
+<?php
+// Assuming you have a connection to your database
+// Replace the placeholders with your actual database connection code
+$servername = "your_server_name";
+$username = "your_username";
+$password = "your_password";
+$dbname = "your_database_name";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Function to sanitize and validate form data
+function sanitizeInput($data) {
+    return htmlspecialchars(trim($data));
+}
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Cake form data
+    $cakeFlavour = sanitizeInput($_POST["cake_flavour"]);
+    $cakeFilling = sanitizeInput($_POST["cake_filling"]);
+    $cakeFrosting = sanitizeInput($_POST["cake_frosting"]);
+    $cakeColor = sanitizeInput($_POST["cake_color"]);
+    $cakeTier = sanitizeInput($_POST["cake_tier"]);
+    // Add other cake form fields as needed
+
+    // Cookies & Macaroons form data
+    $cookieFlavour = sanitizeInput($_POST["cookie_flavour"]);
+    $cookieFilling = sanitizeInput($_POST["cookie_filling"]);
+    $cookieSize = sanitizeInput($_POST["cookie_size"]);
+    $cookieColor = sanitizeInput($_POST["cookie_color"]);
+    $cookieType = sanitizeInput($_POST["cookie_type"]);
+    $cookieCategory = sanitizeInput($_POST["cookie_category"]);
+    $cookieBox = sanitizeInput($_POST["cookie_box"]);
+    // Add other cookies & macaroons form fields as needed
+
+    // Insert data into the database
+    $sql = "INSERT INTO user_customizations (cake_flavour, cake_filling, cake_frosting, cake_color, cake_tier, cookie_flavour, cookie_filling, cookie_size, cookie_color, cookie_type, cookie_category, cookie_box) VALUES ('$cakeFlavour', '$cakeFilling', '$cakeFrosting', '$cakeColor', '$cakeTier', '$cookieFlavour', '$cookieFilling', '$cookieSize', '$cookieColor', '$cookieType', '$cookieCategory', '$cookieBox')";
+
+    if ($conn->query($sql) === TRUE) {
+        // Redirect to payment page after successful database insertion
+        header("Location: payment.php");
+        exit();
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
+}
+?>
+
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

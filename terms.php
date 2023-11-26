@@ -119,7 +119,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <a href="allergen.html">Allergen and Diet Information</a>
                             <a href="terms.html">Terms of Service</a>
                             <a href="privacy.html">Privacy Policy</a>
-                            <a href="delivery.html">Delivery Policy</a>
+<!--                            <a href="delivery.html">Delivery Policy</a>-->
                             <a href="pick.html">Pickup Information</a>
                         </div>
                     </div>
@@ -252,7 +252,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <div class="row">
                         <div class="col-md-4">
                             <p><a href="index.php">Home</a></p>
-                            <p><a href="about.html">About Us</a></p>
+                            <p><a href="about.php">About Us</a></p>
                             <p><a href="product.php">All Products</a></p>
                             <p><a href="seasonal.php">Seasonal Products</a></p>
                             <p><a href="customize.php">Customize</a></p>
