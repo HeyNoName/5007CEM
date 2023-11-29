@@ -159,19 +159,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 
                 <h4 class="pt-4">Ordering</h4>
                 <p>
-                    Q: How to order?<br>
-                    Step 1: Browse the products.<br>
-                    Step 2: Select your preferred date and time.<br>
-                    Step 3: Select candle/knife, enter the message you would like us to print on the card.<br>
-                    Step 4: Add to cart.<br>
-                    Step 5: Select 'Delivery' or 'In-store Pickup'. (Delivery fee will be calculated after you have entered 
-                    the delivery details.)<br>
-                    Step 6: Complete the payment.<br>
-                    Step 7: Your order is confirmed!<br>
-                </p>
-                <p>
                     Q: Do you offer online ordering and delivery?<br>
-                    Yes, we offer online ordering for pickup and delivery. 
+                    Yes, we offer online ordering for pickup. 
                     Simply visit our website, select your items, and choose your preferred option during checkout.<br>
                 </p>
                 <p> 
@@ -179,27 +168,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     We accept credit/debit cards, online banking, and mobile payment methods such as TnG E-wallet.<br>
                 </p>
                 <p>
-                    Q: How does the same-day delivery/pickup work?<br>
-                    We offer same-day delivery/pickup with a minimum of 3 hours pre-order.<br>
-                    Orders have to be placed by 2pm for same-day delivery/pickup.
-                </p>
-                <p>
                     Q: Can I mix and match between the Gift sets?<br>
                     No. Our Gift sets are fixed. We do not make customised combinations/sets.<br>
-                </p>
-
-                <h4 class="pt-4">Delivery</h4>
-                <p>
-                    Q: How much is the delivery fee?<br>
-                    We deliver to areas within 10km of our shop. You may check out the estimated delivery fee, and if 
-                    free delivery applies here. <br>
-                </p>
-                <p>
-                    Q: Can I request a specific delivery time?<br>
-                    Sorry, we cannot arrange delivery at a specifically requested time as we arrange all our deliveries 
-                    according to the areas and total distance of all orders we have per time slot. Drivers deliver to 
-                    multiple areas in one trip and we cannot predict traffic conditions or potential unforeseen 
-                    circumstances.<br>
                 </p>
 
                 <h4 class="pt-4">Pick Up</h4>

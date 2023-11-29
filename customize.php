@@ -1,21 +1,18 @@
 <?php
-// Assuming you have a database connection
+session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "PastryDB";
 
-// Using procedural style
 $dbc = mysqli_connect($servername, $username, $password, $dbname);
 
-// Check the connection
 if (!$dbc) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Process form data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Assign form data to variables
     $flavour = isset($_POST["flavour"]) ? $_POST["flavour"] : '';
     $filling = isset($_POST["filling"]) ? $_POST["filling"] : '';
     $frosting = isset($_POST["frosting"]) ? $_POST["frosting"] : '';
@@ -28,14 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = isset($_POST["message"]) ? $_POST["message"] : '';
     $remark = isset($_POST["remark"]) ? $_POST["remark"] : '';
 
-    // Additional fields
     $tiers = isset($_POST["tiers"]) ? $_POST["tiers"] : 0;
-
-    // Insert data into the unified orders table (without type or file upload check)
+    
     $sql = "INSERT INTO custom (flavour, filling, frosting, color, style, stylec, shape, category, image, box, tier, remark, message) 
             VALUES ('$flavour', '$filling', '$frosting', '$color', '$style', '$stylec', '$shape', '$category', '$filename', '', '$tiers', '$remark', '$message')";
 
-    // Execute the SQL query
     if (mysqli_query($dbc, $sql)) {
         echo "New record created successfully";
     } else {
@@ -43,10 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Close the database connection
 mysqli_close($dbc);
 ?>
-
 
 <!DOCTYPE html>
 <!--
@@ -173,7 +165,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <a href="about.php"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                             <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
                             <?php
-                            // Check if the user is logged in
                             if (isset($_SESSION['user'])) {
                                 echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
                                 echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
@@ -539,8 +530,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 </div>
             </div>
 
-
-
             <button class="accordion">Cookies & Macaroons</button>
             <div class="panel py-4">
                 <form method="post" action="customize.php">
@@ -608,8 +597,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                 </select>
                             </div>
 
-
-
                             <div class="form-group">
                                 <label for="category">Category:</label>
                                 <select class="selection" name="category">
@@ -631,7 +618,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                 </select>
                                 </p>
                             </div>
-
                         </div>
                         <div class="col-md-6">
                             <div class="upload pt-4">
@@ -805,17 +791,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         "Allergen and Diet Information" page.
                     </li>
                     <li>
-                        No mixing of cake shapes for the tiers
-                    </li>
-                    <li>
                         We recommend you order at least 5 days in advance for customized cakes. Orders made less than
                         5 days in advance may be subjected to cancel if we are absolutely full!
                     </li>
                 </ol>
             </div>
         </div>
-
-
 
         <!-- Footer -->
         <div class="row text-left px-5 pt-5 foot">
@@ -869,7 +850,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script>
                     $(document).ready(function () {
-                        // Function to calculate the total price for a specific form
                         function calculateTotalPrice(form) {
                             var totalPrice = 0;
                             // Tart related selections
@@ -877,7 +857,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             totalPrice += parseFloat($('select[name="size"]').find('option:selected').data('price')) || 0;
                             totalPrice += parseFloat($('select[name="type"]').find('option:selected').data('price')) || 0;
                             totalPrice += parseFloat($('select[name="box"]').find('option:selected').data('price')) || 0;
-                            // Cake related selections
+
                             totalPrice += parseFloat($('select[name="flavour"]').find('option:selected').data('price')) || 0;
                             totalPrice += parseFloat($('select[name="filling"]').find('option:selected').data('price')) || 0;
                             totalPrice += parseFloat($('select[name="frosting"]').find('option:selected').data('price')) || 0;
@@ -886,23 +866,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             totalPrice += parseFloat($('select[name="shape"]').find('option:selected').data('price')) || 0;
                             totalPrice += parseFloat($('select[name="category"]').find('option:selected').data('price')) || 0;
 
-                            // Tier related selections
                             totalPrice += parseFloat($('#tierSelect').find('option:selected').data('price')) || 0;
 
-                            // Calculate tier-specific selections
                             for (var i = 1; i <= 4; i++) {
                                 var tierContainer = $('.tier-container[data-tier="' + i + '"]');
                                 totalPrice += parseFloat(tierContainer.find('.tier-size').find('option:selected').data('price')) || 0;
                             }
 
-                            // Display the total price for the specific form
                             form.find('#total-price').text('Total Price: RM' + totalPrice.toFixed(2));
 
-                            // Update the hidden input field value for the specific form
                             form.find('#total-price-input').val(totalPrice.toFixed(2));
                         }
 
-                        // Bind the function to changes in the dropdowns for each form
                         $('form').each(function () {
                             var form = $(this);
                             form.find('select').change(function () {
@@ -910,12 +885,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             });
                         });
 
-                        // Initially calculate and display the total price for each form
                         $('form').each(function () {
                             calculateTotalPrice($(this));
                         });
 
-                        // Update total price on form submission for each form
                         $('form').submit(function () {
                             var form = $(this);
                             calculateTotalPrice(form);
