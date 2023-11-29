@@ -1,3 +1,6 @@
+<?
+session_start();
+?>
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -25,6 +28,25 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         .size{
             width: 305px;
         }
+
+        .card-deck {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+            flex-direction: column !important;
+        }
+
+        .custom-card {
+            width: 800px;
+            margin: 25px;
+        }
+
+        .custom-card .content-title {
+            font-size: 18px;
+        }
     </style>
     <body>
 
@@ -42,7 +64,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         <?php
                         session_start();
 
-                        // Check if the user is logged in
                         if (isset($_SESSION['user'])) {
                             $user = $_SESSION['user'];
                             echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px;"></i></a>';
@@ -62,9 +83,35 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 
                 <div id="Order" class="tabcontent" style="display:block">
 
-                    <div>
-                        <h3>No orders yet</h3>
-                        <p>Go to store to place an order.</p>
+                    <h3 class="title">Order Details</h3>
+                    <div class="card-deck">
+                        <?php
+                        $dbc = mysqli_connect('localhost', 'root', '', 'PastryDB');
+
+                        if ($dbc) {
+                            $sql = "SELECT order_id, order_date, pay_id, custom_id, cust_id, total_price, product_id, product_name, product_price, product_type, product_quantity FROM `order`";
+                            $result = mysqli_query($dbc, $sql);
+                            
+                            if ($result && mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo "<div class='card custom-card'>";
+                                    echo "<div class='card-body' style='height:150px'>";
+                                    echo "<p class='content-title'>{$row['order_date']}</p>";
+                                    echo "<h5 class='content-title'>{$row['product_name']}</h5>";
+                                    echo "<p class='content-title'>Total: RM{$row['total_price']}</p>";
+                                    echo "</div>";
+                                    echo "</div>";
+                                }
+                            } else {
+                                echo " <h3>No orders yet</h3>";
+                                echo " <p>Go to store to place an order.</p>";
+                            }
+
+                            mysqli_close($dbc);
+                        } else {
+                            echo "Failed to connect to the database.";
+                        }
+                        ?>
                     </div>
                 </div>
 
@@ -72,92 +119,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <h2>Account Information</h2>
                     <div class="pt-4">
                         <?php
-                        // Display user details if logged in
                         if (isset($_SESSION['user'])) {
                             echo '<p>Name: ' . $user['username'] . '</p>';
                             echo '<p>Email: ' . $user['email'] . '</p>';
                         }
                         ?>
-                        <!--                        <div class="add">
-                                                    <p>Address</p><span id="myButton"><i class="fa fa-plus px-3"> Add</i></span>
-                                                </div>
-                                                <div class="box">
-                                                    <p><i class="fa fa-info-circle px-3 pt-3"> No Address Added</i></p>
-                                                </div>-->
-                    </div>
-
-                    <div id="myPopup" class="popup">
-
-                        <form>
-                            <div class="popup-content">
-                                <br>
-                                <label for="name" class="pt-3">Name</label>
-                                <input type="text" id="name" name="name"><br><br>
-
-                                <label for="company">Company/Building</label>
-                                <input type="text" id="company" name="company"><br><br>
-
-                                <label for="add">Address</label>
-                                <input type="text" id="add" name="add"><br><br>
-
-                                <label for="contact">Contact No</label>
-                                <input type="text" id="contact" name="contact"><br><br>
-
-                                <div class="position">
-                                    <span id="closePopup" style="cursor: pointer">Cancel</span>
-                                    <button class="btn btn-primary">Save</button><br><br>
-                                </div>
-                            </div>
-                        </form>
+                        
                     </div>
                 </div>
             </div>
 
-
-            <!--             Footer 
-                        <div class="row text-left px-5 pt-5 foot">
-                            <div class="col-6 col-md-4">
-                                <h3 class="pb-3">La Vie en Rose Pâtisserie</h3>
-                                <p>
-                                    Indulge in premium French desserts, including our exquisite birthday cakes, that are perfect for
-                                    gifting and accessible to everyone. Our cakes are crafted from scratch using only the finest halal
-                                    ingredients, ensuring quality and inclusivity for all.
-                                </p>
-                                <br>
-                                <h3 class="pb-3">Certification</h3>
-                                <img src="/5007CEM/public_html/image/halal.png" width="100" height="100">
-                                <img src="/5007CEM/public_html/image/gluten.png" width="150" height="100">
-                                <img src="/5007CEM/public_html/image/vegan.png" width="100" height="100">
-                            </div>
-                            <div class="col-6 col-md-4">
-                                <h3 class="pb-3">Quick Links</h3>
-                                <p><a href="index.html">Home</a></p>
-                                <p><a href="about.html">About Us</a></p>
-                                <p><a href="product.html">All Products</a></p>
-                                <p><a href="seasonal.html">Seasonal Products</a></p>
-                                <p><a href="customize.html">Customize</a></p>
-                                <p><a href="contact.html">Contact Us</a></p>
-                                <p><a href="allergen.html">Allergen and Diet Information</a></p>
-                                <p><a href="faq.html">FAQs</a></p>
-                                <p><a href="terms.html">Terms of Service</a></p>
-                                <p><a href="privacy.html">Privacy Policy</a></p>
-                                <p><a href="delivery.html">Delivery Policy</a></p>
-                                <p><a href="pick.html">Pickup Information</a></p>
-            
-                                <h3 class="pb-3">Follow Us</h3>
-                                <a href="https://www.facebook.com/lavieenrose.pastisserie/" target="blank"><i class="fa fa-facebook" aria-hidden="true" style="color:white !important"></i></a>
-                                <a href="https://www.instagram.com/lavieenrose.patisserie/" target="blank"><i class="fa fa-instagram" aria-hidden="true" style="color:white !important"></i></a>
-                            </div>
-                            <div class="col-6 col-md-4">
-                                <h3 class="pb-3">Our Store</h3>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.0247000251957!2d100.33273147478046!3d5.413208635069488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac35e17db31bb%3A0x1236041f2d3ec9e0!2sLa%20Vie%20en%20Rose%20P%C3%A2tisserie!5e0!3m2!1sen!2smy!4v1693982880895!5m2!1sen!2smy" width="500" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="pr-3"></iframe>
-                                <p>19, Lebuh Melayu, George Town, 10100 George Town, Pulau Pinang</p>
-                                <p>Operating Hours: Wednesday - Sunday : 10AM - 6PM</p>
-                                <p>Contact No: 0143336480</p>
-                            </div>
-                        </div>-->
         </div>
         <script src="/5007CEM/public_html/js/user.js" type="text/javascript"></script>
-
     </body>
 </html>

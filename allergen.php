@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -49,7 +52,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="search">
                                 <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
                                 <?php
-                                // Check if the user is logged in
                                 if (isset($_SESSION['user'])) {
                                     echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
                                     echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
@@ -70,10 +72,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         </div>
                     </form>
 
+                    <!--menu for screen size larger than mobile-->
                     <div class="row head pt-4" id="menu">
-
                         <div class="col-lg-8">
-                            <a href="index.html">
+                            <a href="index.php">
                                 <img src="/5007CEM/public_html/image/logo-1.png" height="100" width="100"/>
                             </a>
                             <h3 class="title px-2 pt-2">La Vie en Rose Pâtisserie</h3>
@@ -139,10 +141,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         <a href="privacy.php" id="mobile-menu-button">Privacy Policy</a>
                         <a href="pick.php" id="mobile-menu-button">Pickup Information</a>
                         <div class="dropdown-content" id="menu">
-                            <a href="allergen.html">Allergen and Diet Information</a>
+                            <a href="allergen.php">Allergen and Diet Information</a>
                             <a href="terms.php">Terms of Service</a>
                             <a href="privacy.php">Privacy Policy</a>
-                            <a href="pick.html">Pickup Information</a>
+                            <a href="pick.php">Pickup Information</a>
                         </div>
                     </div>
                     <a href="contact.php">Contact Us</a>
@@ -237,19 +239,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <div class="row">
                         <div class="col-md-4">
                             <p><a href="index.php">Home</a></p>
-                            <p><a href="about.html">About Us</a></p>
+                            <p><a href="about.php">About Us</a></p>
                             <p><a href="product.php">All Products</a></p>
                             <p><a href="seasonal.php">Seasonal Products</a></p>
                             <p><a href="customize.php">Customize</a></p>
                             <p><a href="contact.php">Contact Us</a></p>
                         </div>
                         <div class="col-md-8">
-                            <p><a href="allergen.html">Allergen and Diet Information</a></p>
-                            <p><a href="faq.html">FAQs</a></p>
-                            <p><a href="terms.html">Terms of Service</a></p>
-                            <p><a href="privacy.html">Privacy Policy</a></p>
-                            <p><a href="delivery.html">Delivery Policy</a></p>
-                            <p><a href="pick.html">Pickup Information</a></p>
+                            <p><a href="allergen.php">Allergen and Diet Information</a></p>
+                            <p><a href="faq.php">FAQs</a></p>
+                            <p><a href="terms.php">Terms of Service</a></p>
+                            <p><a href="privacy.php">Privacy Policy</a></p>
+                            <p><a href="pick.php">Pickup Information</a></p>
                         </div>
 
                     </div>

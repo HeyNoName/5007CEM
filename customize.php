@@ -73,30 +73,40 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 
         }
         .size{
-            width: 305px;
+            width: 550 px;
         }
+
+        #total-price-input {
+            border: none;
+            font-size: 25px;
+        }
+
         @media screen and (max-width: 767px){
-    .size img{
-        width: 300px;
-    }
+            .size img{
+                width: 300px;
+            }
 
-    select, .tier-select, .tier-size {
-        height: 50px !important;
-        width: 160px !important;
-        border-radius: 10px !important;
-    }
+            .size{
+                width: 305px;
+            }
 
-    .messText{
-        height:100px;
-        width: 300px;
-        left: 3%;
-        position: relative;
-    }
-    
-    .accordion{
-        width: 92%;
-    }
-}
+            select, .tier-select, .tier-size {
+                height: 50px !important;
+                width: 160px !important;
+                border-radius: 10px !important;
+            }
+
+            .messText{
+                height:100px;
+                width: 300px;
+                left: 3%;
+                position: relative;
+            }
+
+            .accordion{
+                width: 92%;
+            }
+        }
     </style>
     <body>
 
@@ -141,10 +151,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     </div>
                 </form>
 
+                <!--menu for screen size larger than mobile-->
                 <div class="row head pt-4" id="menu">
-
                     <div class="col-lg-8">
-                        <a href="index.html">
+                        <a href="index.php">
                             <img src="/5007CEM/public_html/image/logo-1.png" height="100" width="100"/>
                         </a>
                         <h3 class="title px-2 pt-2">La Vie en Rose Pâtisserie</h3>
@@ -210,10 +220,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <a href="privacy.php" id="mobile-menu-button">Privacy Policy</a>
                     <a href="pick.php" id="mobile-menu-button">Pickup Information</a>
                     <div class="dropdown-content" id="menu">
-                        <a href="allergen.html">Allergen and Diet Information</a>
+                        <a href="allergen.php">Allergen and Diet Information</a>
                         <a href="terms.php">Terms of Service</a>
                         <a href="privacy.php">Privacy Policy</a>
-                        <a href="pick.html">Pickup Information</a>
+                        <a href="pick.php">Pickup Information</a>
                     </div>
                 </div>
                 <a href="contact.php">Contact Us</a>
@@ -228,7 +238,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             <h1 class="title pb-5">Customize Your Own Pastry!</h1>
             <button class="accordion" data-toggle="collapse" name="accordion_type" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="border-radius: 10px 10px 0px 0px;">Cake</button>
             <div class="panel py-4">
-                <form method="post" action="customize.php">
+                <form action="customize.php" method="post">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -288,10 +298,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                     <label for="tier">Total Tier:</label>
                                     <select class="tier-select" id="tierSelect" name="tiers">
                                         <option value="0" data-price="0.00">Select One</option>
-                                        <option value="1" data-price="20.00">1 Tier</option>
-                                        <option value="2" data-price="30.00">2 Tier</option>
-                                        <option value="3" data-price="40.00">3 Tier</option>
-                                        <option value="4" data-price="50.00">4 Tier</option>
+                                        <option value="1" data-price="0.00">1 Tier</option>
+                                        <option value="2" data-price="0.00">2 Tier</option>
+                                        <option value="3" data-price="0.00">3 Tier</option>
+                                        <option value="4" data-price="0.00">4 Tier</option>
                                     </select>
                                 </div>
                             </div>
@@ -508,11 +518,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             </div>
 
                         </div>
-
-
-                        <div class="price pt-3">
-                            <button type="submit" class="btn btn-primary"><a href="payment.php">Submit Order</a></button>
-                        </div>
+                    </div>
+                    <h4>Total: RM<input name="total_price" id="total-price-input" value="0.00"></h4>
+                    <div class="price pt-3">
+                        <button type="submit" class="btn btn-primary">Submit Order</button>
                     </div>
                 </form>
                 <hr>
@@ -578,7 +587,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="form-group">
                                 <label for="color">Color:</label>
                                 <select class="selection" name="color">
-                                     <option value="-" data-price="0.00">Select One</option>
+                                    <option value="-" data-price="0.00">Select One</option>
                                     <option value="none" data-price="0.00">None</option>
                                     <option value="pastel" data-price="15.00">Pastel</option>
                                     <option value="primary" data-price="12.00">Primary</option>
@@ -632,17 +641,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 
                             <div class="py-2">
                                 <label for="Messcake" style="width: auto;">A message written on a pastry:</label><br>
-                                <textarea id="cake" name="cake" placeholder="Write something.." class="messText"></textarea>
+                                <textarea id="cake" name="message" placeholder="Write something.." class="messText"></textarea>
                             </div>
 
                             <div class="py-2">
                                 <label for="Recake">Remarks:</label><br>
-                                <textarea id="cake2" name="cake2" placeholder="Write something.." class="messText"></textarea>
+                                <textarea id="cake2" name="remarks" placeholder="Write something.." class="messText"></textarea>
                             </div>
                         </div>
                     </div>
+                    <h4>Total: RM<input name="total_price" id="total-price-input" value="0.00"></h4>
                     <div class="price pt-3">
-                        <button type="submit" class="btn btn-primary"><a href="payment.php">Submit Order</a></button>
+                        <button type="submit" class="btn btn-primary">Submit Order</button>
                     </div>
                 </form>
             </div>
@@ -707,7 +717,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 
                             <div class="form-group">
                                 <label for="type">Type:</label>
-                                <select class="selection" name="type">
+                                <select class="selection" name="set_option">
                                     <option value="0" data-price="0.00">Select One</option>
                                     <option value="brownies" data-price="20.00">French Macaron Stuffed Brownies</option>
                                     <option value="cakes" data-price="30.00">French Macaron Cakes</option>
@@ -720,7 +730,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="form-group">
                                 <label for="category">Category:</label>
                                 <select class="selection" name="category">
-                                     <option value="vege" data-price="0.00">Vegetarian & Gluten free</option>
+                                    <option value="vege" data-price="0.00">Vegetarian & Gluten free</option>
                                     <option value="sugarFree" data-price="0.00">Sugar Free & Nuts Free</option>
                                     <option value="low" data-price="0.00">Low Fat & Low Sodium</option>
                                 </select>
@@ -728,7 +738,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 
                             <div class="form-group">
                                 <label for="box">Box:</label>
-                                <select class="selection" name="box">
+                                <select class="selection" name="box_option">
                                     <option value="-" data-price="0.00">Select One</option>
                                     <option value="-" data-price="0.00">No Box</option>
                                     <option value="2" data-price="10.00">2 pcs</option>
@@ -762,17 +772,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 
                             <div class="py-2">
                                 <label for="Messcake" style="width: auto;">A message written on a pastry:</label><br>
-                                <textarea id="cake" name="cake" placeholder="Write something.." class="messText"></textarea>
+                                <textarea id="cake" name="message" placeholder="Write something.." class="messText"></textarea>
                             </div>
 
                             <div class="py-2">
                                 <label for="Recake">Remarks:</label><br>
-                                <textarea id="cake2" name="cake2" placeholder="Write something.." class="messText"></textarea>
+                                <textarea id="cake2" name="remarks" placeholder="Write something.." class="messText"></textarea>
                             </div>
                         </div>
                     </div>
+                    <h4>Total: RM<input name="total_price" id="total-price-input" value="0.00"></h4>
                     <div class="price pt-3">
-                        <button type="submit" class="btn btn-primary"><a href="payment.php">Submit Order</a></button>
+                        <button type="submit" class="btn btn-primary">Submit Order</button>
                     </div>
                 </form>
             </div>
@@ -801,9 +812,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         5 days in advance may be subjected to cancel if we are absolutely full!
                     </li>
                 </ol>
-
-
-                <h3><span id="total-price">RM 0.00</span></h3><br>
             </div>
         </div>
 
@@ -825,22 +833,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 <h3 class="pb-3">Quick Links</h3>
                 <div class="row">
                     <div class="col-md-4">
-                        <p><a href="index.html">Home</a></p>
-                        <p><a href="about.html">About Us</a></p>
-                        <p><a href="product.html">All Products</a></p>
-                        <p><a href="seasonal.html">Seasonal Products</a></p>
-                        <p><a href="customize.html">Customize</a></p>
-                        <p><a href="contact.html">Contact Us</a></p>
+                        <p><a href="index.php">Home</a></p>
+                        <p><a href="about.php">About Us</a></p>
+                        <p><a href="product.php">All Products</a></p>
+                        <p><a href="seasonal.php">Seasonal Products</a></p>
+                        <p><a href="customize.php">Customize</a></p>
+                        <p><a href="contact.php">Contact Us</a></p>
                     </div>
                     <div class="col-md-8">
-                        <p><a href="allergen.html">Allergen and Diet Information</a></p>
-                        <p><a href="faq.html">FAQs</a></p>
-                        <p><a href="terms.html">Terms of Service</a></p>
-                        <p><a href="privacy.html">Privacy Policy</a></p>
-                        <p><a href="delivery.html">Delivery Policy</a></p>
-                        <p><a href="pick.html">Pickup Information</a></p>
+                        <p><a href="allergen.php">Allergen and Diet Information</a></p>
+                        <p><a href="faq.php">FAQs</a></p>
+                        <p><a href="terms.php">Terms of Service</a></p>
+                        <p><a href="privacy.php">Privacy Policy</a></p>
+                        <p><a href="pick.php">Pickup Information</a></p>
                     </div>
-
                 </div>
 
                 <h3 class="py-3">Follow Us</h3>
@@ -862,40 +868,59 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script>
-                        $(document).ready(function () {
-                            // Function to calculate the total price
-                            function calculateTotalPrice() {
-                                var totalPrice = 0;
-                                // Tart related selections
-                                totalPrice += parseFloat($('select[name="crust"]').find('option:selected').data('price')) || 0;
-                                totalPrice += parseFloat($('select[name="size"]').find('option:selected').data('price')) || 0;
-                                totalPrice += parseFloat($('select[name="type"]').find('option:selected').data('price')) || 0;
-                                totalPrice += parseFloat($('select[name="box"]').find('option:selected').data('price')) || 0;
+                    $(document).ready(function () {
+                        // Function to calculate the total price for a specific form
+                        function calculateTotalPrice(form) {
+                            var totalPrice = 0;
+                            // Tart related selections
+                            totalPrice += parseFloat($('select[name="crust"]').find('option:selected').data('price')) || 0;
+                            totalPrice += parseFloat($('select[name="size"]').find('option:selected').data('price')) || 0;
+                            totalPrice += parseFloat($('select[name="type"]').find('option:selected').data('price')) || 0;
+                            totalPrice += parseFloat($('select[name="box"]').find('option:selected').data('price')) || 0;
+                            // Cake related selections
+                            totalPrice += parseFloat($('select[name="flavour"]').find('option:selected').data('price')) || 0;
+                            totalPrice += parseFloat($('select[name="filling"]').find('option:selected').data('price')) || 0;
+                            totalPrice += parseFloat($('select[name="frosting"]').find('option:selected').data('price')) || 0;
+                            totalPrice += parseFloat($('select[name="color"]').find('option:selected').data('price')) || 0;
+                            totalPrice += parseFloat($('select[name="style"]').find('option:selected').data('price')) || 0;
+                            totalPrice += parseFloat($('select[name="shape"]').find('option:selected').data('price')) || 0;
+                            totalPrice += parseFloat($('select[name="category"]').find('option:selected').data('price')) || 0;
 
-                                // Cake related selections
-                                totalPrice += parseFloat($('select[name="flavour"]').find('option:selected').data('price')) || 0;
-                                totalPrice += parseFloat($('select[name="filling"]').find('option:selected').data('price')) || 0;
-                                totalPrice += parseFloat($('select[name="frosting"]').find('option:selected').data('price')) || 0;
-                                totalPrice += parseFloat($('select[name="color"]').find('option:selected').data('price')) || 0;
-                                totalPrice += parseFloat($('select[name="style"]').find('option:selected').data('price')) || 0;
-                                totalPrice += parseFloat($('select[name="shape"]').find('option:selected').data('price')) || 0;
-                                totalPrice += parseFloat($('select[name="category"]').find('option:selected').data('price')) || 0;
+                            // Tier related selections
+                            totalPrice += parseFloat($('#tierSelect').find('option:selected').data('price')) || 0;
 
-                                // Tier Sizes
-                                $('.tier-size').each(function () {
-                                    totalPrice += parseFloat($(this).find('option:selected').data('price')) || 0;
-                                });
-
-                                // Display the total price
-                                $('#total-price').text('Total Price: RM' + totalPrice.toFixed(2));
+                            // Calculate tier-specific selections
+                            for (var i = 1; i <= 4; i++) {
+                                var tierContainer = $('.tier-container[data-tier="' + i + '"]');
+                                totalPrice += parseFloat(tierContainer.find('.tier-size').find('option:selected').data('price')) || 0;
                             }
 
-                            // Bind the function to changes in the dropdowns
-                            $('select').change(calculateTotalPrice);
+                            // Display the total price for the specific form
+                            form.find('#total-price').text('Total Price: RM' + totalPrice.toFixed(2));
 
-                            // Initially calculate and display the total price
-                            calculateTotalPrice();
+                            // Update the hidden input field value for the specific form
+                            form.find('#total-price-input').val(totalPrice.toFixed(2));
+                        }
+
+                        // Bind the function to changes in the dropdowns for each form
+                        $('form').each(function () {
+                            var form = $(this);
+                            form.find('select').change(function () {
+                                calculateTotalPrice(form);
+                            });
                         });
+
+                        // Initially calculate and display the total price for each form
+                        $('form').each(function () {
+                            calculateTotalPrice($(this));
+                        });
+
+                        // Update total price on form submission for each form
+                        $('form').submit(function () {
+                            var form = $(this);
+                            calculateTotalPrice(form);
+                        });
+                    });
 
         </script>
     </body>

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -103,7 +106,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                 <a href="about.php"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                                 <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
                                 <?php
-                                // Check if the user is logged in
                                 if (isset($_SESSION['user'])) {
                                     echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
                                     echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
@@ -150,10 +152,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         <a href="privacy.php" id="mobile-menu-button">Privacy Policy</a>
                         <a href="pick.php" id="mobile-menu-button">Pickup Information</a>
                         <div class="dropdown-content" id="menu">
-                            <a href="allergen.html">Allergen and Diet Information</a>
+                            <a href="allergen.php">Allergen and Diet Information</a>
                             <a href="terms.php">Terms of Service</a>
                             <a href="privacy.php">Privacy Policy</a>
-                            <a href="pick.html">Pickup Information</a>
+                            <a href="pick.php">Pickup Information</a>
                         </div>
                     </div>
                     <a href="contact.php">Contact Us</a>
@@ -170,6 +172,81 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 <div class="row justify-content-center pb-4">
                     <?php
                     if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
+                        $sql = "SELECT id, name, description, price, image FROM products WHERE id=1";
+                        $result = mysqli_query($dbc, $sql);
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<div class="col-6 col-md-4 px-4 py-4">';
+                            echo '<div class="card" data-aos="fade-up">';
+                            echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
+                            echo '<div class="card-body">';
+                            echo "<h4>{$row['name']}</h4>";
+                            echo '<p class="content-title">';
+                            echo "{$row['description']}</p>";
+                            echo '<h3 class="pt-5">';
+                            echo "RM{$row['price']}</h3>";
+
+                            echo '<form action="cart.php" method="post">';
+                            echo '<input type="hidden" name="product_id" value="' . $row['id'] . '">';
+                            echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
+                            echo '</form>';
+
+                            echo '</div></div></div>';
+                        }
+                    }
+                    ?>
+                    <?php
+                    if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
+                        $sql = "SELECT id, name, description, price, image FROM products WHERE id=5";
+                        $result = mysqli_query($dbc, $sql);
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<div class="col-6 col-md-4 px-4 py-4">';
+                            echo '<div class="card" data-aos="fade-up">';
+                            echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
+                            echo '<div class="card-body">';
+                            echo "<h4>{$row['name']}</h4>";
+                            echo '<p class="content-title">';
+                            echo "{$row['description']}</p>";
+                            echo '<h3 class="pt-5">';
+                            echo "RM{$row['price']}</h3>";
+
+                            echo '<form action="cart.php" method="post">';
+                            echo '<input type="hidden" name="product_id" value="' . $row['id'] . '">';
+                            echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
+                            echo '</form>';
+
+                            echo '</div></div></div>';
+                        }
+                    }
+                    ?>
+                    <?php
+                    if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
+                        $sql = "SELECT id, name, description, price, image FROM products WHERE id=8";
+                        $result = mysqli_query($dbc, $sql);
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<div class="col-6 col-md-4 px-4 py-4">';
+                            echo '<div class="card" data-aos="fade-up">';
+                            echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
+                            echo '<div class="card-body">';
+                            echo "<h4>{$row['name']}</h4>";
+                            echo '<p class="content-title">';
+                            echo "{$row['description']}</p>";
+                            echo '<h3 class="pt-5">';
+                            echo "RM{$row['price']}</h3>";
+
+                            echo '<form action="cart.php" method="post">';
+                            echo '<input type="hidden" name="product_id" value="' . $row['id'] . '">';
+                            echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
+                            echo '</form>';
+
+                            echo '</div></div></div>';
+                        }
+                    }
+                    ?>
+                    <?php
+                    if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
                         $sql = "SELECT id, name, description, price, image FROM products WHERE id=12";
                         $result = mysqli_query($dbc, $sql);
 
@@ -184,7 +261,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             echo '<h3 class="pt-5">';
                             echo "RM{$row['price']}</h3>";
 
-                            // Add to Cart form
                             echo '<form action="cart.php" method="post">';
                             echo '<input type="hidden" name="product_id" value="' . $row['id'] . '">';
                             echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
@@ -194,156 +270,56 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         }
                     }
                     ?>
-                    <div class=".col-6 col-md-4 px-4 py-4">
-                        <div class="card" data-aos="fade-up">
-                            <?php
-                            if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                                $sql = "SELECT image FROM products WHERE id=2";
-                                $result = mysqli_query($dbc, $sql);
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
-                                }
-                            }
-                            ?>
-                            <div class="card-body">
+                    <?php
+                    if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
+                        $sql = "SELECT id, name, description, price, image FROM products WHERE id=15";
+                        $result = mysqli_query($dbc, $sql);
 
-                                <?php
-                                if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                                    $sql = "SELECT name, description, price FROM products WHERE id=2";
-                                    $result = mysqli_query($dbc, $sql);
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                        echo "<h4>{$row['name']}</h4>";
-                                        echo '<p class="content-title">';
-                                        echo "{$row['description']}</p>";
-                                        echo '<h3 class="pt-5">';
-                                        echo "RM{$row['price']}</h3>";
-                                    }
-                                }
-                                ?>
-                                <span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=".col-6 col-md-4 px-4 py-4">
-                        <div class="card" data-aos="fade-up">
-                            <?php
-                            if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                                $sql = "SELECT image FROM products WHERE id=8";
-                                $result = mysqli_query($dbc, $sql);
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
-                                }
-                            }
-                            ?>
-                            <div class="card-body">
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<div class="col-6 col-md-4 px-4 py-4">';
+                            echo '<div class="card" data-aos="fade-up">';
+                            echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
+                            echo '<div class="card-body">';
+                            echo "<h4>{$row['name']}</h4>";
+                            echo '<p class="content-title">';
+                            echo "{$row['description']}</p>";
+                            echo '<h3 class="pt-5">';
+                            echo "RM{$row['price']}</h3>";
 
-                                <?php
-                                if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                                    $sql = "SELECT name, description, price FROM products WHERE id=8";
-                                    $result = mysqli_query($dbc, $sql);
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                        echo "<h4>{$row['name']}</h4>";
-                                        echo '<p class="content-title">';
-                                        echo "{$row['description']}</p>";
-                                        echo '<h3 class="pt-5">';
-                                        echo "RM{$row['price']}</h3>";
-                                    }
-                                }
-                                ?>
-                                <span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=".col-6 col-md-4 px-4 py-4">
-                        <div class="card" data-aos="fade-up">
-                            <?php
-                            if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                                $sql = "SELECT image FROM products WHERE id=12";
-                                $result = mysqli_query($dbc, $sql);
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
-                                }
-                            }
-                            ?>
-                            <div class="card-body">
+                            echo '<form action="cart.php" method="post">';
+                            echo '<input type="hidden" name="product_id" value="' . $row['id'] . '">';
+                            echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
+                            echo '</form>';
 
-                                <?php
-                                if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                                    $sql = "SELECT name, description, price FROM products WHERE id=12";
-                                    $result = mysqli_query($dbc, $sql);
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                        echo "<h4>{$row['name']}</h4>";
-                                        echo '<p class="content-title">';
-                                        echo "{$row['description']}</p>";
-                                        echo '<h3 class="pt-5">';
-                                        echo "RM{$row['price']}</h3>";
-                                    }
-                                }
-                                ?>
-                                <span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=".col-6 col-md-4 px-4 py-4">
-                        <div class="card" data-aos="fade-up">
-                            <?php
-                            if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                                $sql = "SELECT image FROM products WHERE id=15";
-                                $result = mysqli_query($dbc, $sql);
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
-                                }
-                            }
-                            ?>
-                            <div class="card-body">
+                            echo '</div></div></div>';
+                        }
+                    }
+                    ?>
+                    <?php
+                    if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
+                        $sql = "SELECT id, name, description, price, image FROM products WHERE id=18";
+                        $result = mysqli_query($dbc, $sql);
 
-                                <?php
-                                if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                                    $sql = "SELECT name, description, price FROM products WHERE id=15";
-                                    $result = mysqli_query($dbc, $sql);
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                        echo "<h4>{$row['name']}</h4>";
-                                        echo '<p class="content-title">';
-                                        echo "{$row['description']}</p>";
-                                        echo '<h3 class="pt-5">';
-                                        echo "RM{$row['price']}</h3>";
-                                    }
-                                }
-                                ?>
-                                <span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=".col-6 col-md-4 px-4 py-4">
-                        <div class="card" data-aos="fade-up">
-                            <?php
-                            if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                                $sql = "SELECT image FROM products WHERE id=18";
-                                $result = mysqli_query($dbc, $sql);
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
-                                }
-                            }
-                            ?>
-                            <div class="card-body">
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<div class="col-6 col-md-4 px-4 py-4">';
+                            echo '<div class="card" data-aos="fade-up">';
+                            echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
+                            echo '<div class="card-body">';
+                            echo "<h4>{$row['name']}</h4>";
+                            echo '<p class="content-title">';
+                            echo "{$row['description']}</p>";
+                            echo '<h3 class="pt-5">';
+                            echo "RM{$row['price']}</h3>";
 
-                                <?php
-                                if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                                    $sql = "SELECT name, description, price FROM products WHERE id=18";
-                                    $result = mysqli_query($dbc, $sql);
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                        echo "<h4>{$row['name']}</h4>";
-                                        echo '<p class="content-title">';
-                                        echo "{$row['description']}</p>";
-                                        echo '<h3 class="pt-5">';
-                                        echo "RM{$row['price']}</h3>";
-                                    }
-                                }
-                                ?>
-                                <span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>
-                            </div>
-                        </div>
-                    </div>
+                            echo '<form action="cart.php" method="post">';
+                            echo '<input type="hidden" name="product_id" value="' . $row['id'] . '">';
+                            echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
+                            echo '</form>';
+
+                            echo '</div></div></div>';
+                        }
+                    }
+                    ?>
                 </div>
             </div> 
             <!--Cakes-->
@@ -366,7 +342,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             echo '<h3 class="pt-5">';
                             echo "RM{$row['price']}</h3>";
 
-                            // Add to Cart form
                             echo '<form action="cart.php" method="post">';
                             echo '<input type="hidden" name="product_id" value="' . $row['id'] . '">';
                             echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
@@ -376,7 +351,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         }
                     }
                     ?>
-
                 </div>
             </div>
 
@@ -387,7 +361,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 <div class="row justify-content-center pb-4">
                     <?php
                     if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                        $sql = "SELECT name, description, price, image FROM products WHERE category='macarons'";
+                        $sql = "SELECT id, name, description, price, image FROM products WHERE category='macarons'";
                         $result = mysqli_query($dbc, $sql);
 
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -400,7 +374,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             echo "{$row['description']}</p>";
                             echo '<h3 class="pt-5">';
                             echo "RM{$row['price']}</h3>";
-                            echo '<span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>';
+
+                            echo '<form action="cart.php" method="post">';
+                            echo '<input type="hidden" name="product_id" value="' . $row['id'] . '">';
+                            echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
+                            echo '</form>';
+
                             echo '</div></div></div>';
                         }
                     }
@@ -412,9 +391,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             <div class="container pt-3 pb-5"> 
                 <h1 id="tarts" class="title pt-3">Tarts</h1>
                 <div class="row justify-content-center pb-4">
-                    <?php
+                   <?php
                     if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                        $sql = "SELECT name, description, price, image FROM products WHERE category='tarts'";
+                        $sql = "SELECT id, name, description, price, image FROM products WHERE category='tarts'";
                         $result = mysqli_query($dbc, $sql);
 
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -427,7 +406,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             echo "{$row['description']}</p>";
                             echo '<h3 class="pt-5">';
                             echo "RM{$row['price']}</h3>";
-                            echo '<span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>';
+
+                            echo '<form action="cart.php" method="post">';
+                            echo '<input type="hidden" name="product_id" value="' . $row['id'] . '">';
+                            echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
+                            echo '</form>';
+
                             echo '</div></div></div>';
                         }
                     }
@@ -436,13 +420,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             </div>
 
             <!--savouries-->
-
             <div class="container pt-3 pb-5"> 
                 <h1 id="savouries" class="title pt-3">Savouries</h1>
                 <div class="row justify-content-center pb-4">
                     <?php
                     if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                        $sql = "SELECT name, description, price, image FROM products WHERE category='pastry'";
+                        $sql = "SELECT id, name, description, price, image FROM products WHERE category='pastry'";
                         $result = mysqli_query($dbc, $sql);
 
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -455,64 +438,50 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             echo "{$row['description']}</p>";
                             echo '<h3 class="pt-5">';
                             echo "RM{$row['price']}</h3>";
-                            echo '<span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>';
+
+                            echo '<form action="cart.php" method="post">';
+                            echo '<input type="hidden" name="product_id" value="' . $row['id'] . '">';
+                            echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
+                            echo '</form>';
+
                             echo '</div></div></div>';
                         }
                     }
                     ?>
                 </div>
             </div>
-<!--
-            gifts
+
+            <!--gifts-->
             <div class="container pt-3 pb-5"> 
                 <h1 id="gift" class="title pt-3">GiftBox</h1>
                 <div class="row justify-content-center pb-4">
-                    //<?php
-//                    if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-//                        $sql = "SELECT name, description, price, image FROM products WHERE category='gift'";
-//                        $result = mysqli_query($dbc, $sql);
-//
-//                        while ($row = mysqli_fetch_assoc($result)) {
-//                            echo '<div class="col-6 col-md-4 px-4 py-4">';
-//                            echo '<div class="card" data-aos="fade-up">';
-//                            // Display image
-//                            $imageData = isset($item['image']) ? $item['image'] : null;
-//                            echo '<td>' . generateImageTag($imageData) . '</td>';
-//
-//                            echo '<div class="card-body">';
-//                            echo "<h4>{$row['name']}</h4>";
-//                            echo '<p class="content-title">';
-//                            echo "{$row['description']}</p>";
-//                            echo '<h3 class="pt-5">';
-//                            echo "RM{$row['price']}</h3>";
-//                            echo '<span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>';
-//                            echo '</div></div></div>';
-//                        }
-//                    }
-//                    ?>
-                </div>
-            </div>-->
+                 <?php
+                    if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
+                        $sql = "SELECT id, name, description, price, image FROM products WHERE category='gift'";
+                        $result = mysqli_query($dbc, $sql);
 
-            <div id="sideNav" class="sidenav">
-                <div class="content">
-                    <img src="..."/>
-                    <h1>Product Name</h1>
-                    <p>Description</p>
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
-                    <button type="button" name="button" class="input text-center">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                    </button>
-                    <input type="text" name="name" value="1" size="10" class="input text-center">
-                    <button type="button" name="button" class="input">
-                        <i class="fa fa-minus" aria-hidden="true"></i>
-                    </button>
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<div class="col-6 col-md-4 px-4 py-4">';
+                            echo '<div class="card" data-aos="fade-up">';
+                            echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
+                            echo '<div class="card-body">';
+                            echo "<h4>{$row['name']}</h4>";
+                            echo '<p class="content-title">';
+                            echo "{$row['description']}</p>";
+                            echo '<h3 class="pt-5">';
+                            echo "RM{$row['price']}</h3>";
 
-                    <h3>RM</h3>
+                            echo '<form action="cart.php" method="post">';
+                            echo '<input type="hidden" name="product_id" value="' . $row['id'] . '">';
+                            echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
+                            echo '</form>';
 
-                    <button class="btn-lg">Add To Cart</button>
+                            echo '</div></div></div>';
+                        }
+                    }
+                    ?>
                 </div>
             </div>
-
 
             <!-- Footer -->
             <div class="row text-left px-5 pt-5 foot">
@@ -531,19 +500,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <div class="row">
                         <div class="col-md-4">
                             <p><a href="index.php">Home</a></p>
-                            <p><a href="about.html">About Us</a></p>
+                            <p><a href="about.php">About Us</a></p>
                             <p><a href="product.php">All Products</a></p>
                             <p><a href="seasonal.php">Seasonal Products</a></p>
                             <p><a href="customize.php">Customize</a></p>
                             <p><a href="contact.php">Contact Us</a></p>
                         </div>
                         <div class="col-md-8">
-                            <p><a href="allergen.html">Allergen and Diet Information</a></p>
-                            <p><a href="faq.html">FAQs</a></p>
-                            <p><a href="terms.html">Terms of Service</a></p>
-                            <p><a href="privacy.html">Privacy Policy</a></p>
-                            <p><a href="delivery.html">Delivery Policy</a></p>
-                            <p><a href="pick.html">Pickup Information</a></p>
+                            <p><a href="allergen.php">Allergen and Diet Information</a></p>
+                            <p><a href="faq.php">FAQs</a></p>
+                            <p><a href="terms.php">Terms of Service</a></p>
+                            <p><a href="privacy.php">Privacy Policy</a></p>
+                            <p><a href="delivery.php">Delivery Policy</a></p>
+                            <p><a href="pick.php">Pickup Information</a></p>
                         </div>
 
                     </div>

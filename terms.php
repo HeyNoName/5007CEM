@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -16,7 +19,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     </head>
-     <style>
+    <style>
         .searchBox{
             display: flex;
             justify-content: center;
@@ -29,7 +32,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
     </style>
     <body>
         <div class="overflow-hidden">
- <!-- header -->
+            <!-- header -->
             <div class="header">
                 <div class="container" id="myHeader">
                     <!--mobile-menu-->
@@ -49,7 +52,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="search">
                                 <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
                                 <?php
-                                // Check if the user is logged in
                                 if (isset($_SESSION['user'])) {
                                     echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
                                     echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
@@ -71,9 +73,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     </form>
 
                     <div class="row head pt-4" id="menu">
-
                         <div class="col-lg-8">
-                            <a href="index.html">
+                            <a href="index.php">
                                 <img src="/5007CEM/public_html/image/logo-1.png" height="100" width="100"/>
                             </a>
                             <h3 class="title px-2 pt-2">La Vie en Rose Pâtisserie</h3>
@@ -92,7 +93,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                 <a href="about.php"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                                 <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
                                 <?php
-                                // Check if the user is logged in
                                 if (isset($_SESSION['user'])) {
                                     echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
                                     echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
@@ -152,7 +152,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             <div class="container hr-line">
                 <hr/>
             </div>
-                      
+
             <div class="container text-justify py-5 px-5">
                 <h1 class="text-center pb-3 title">Terms of service</h1>
                 <ol type="1">
@@ -257,7 +257,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 </ol>
             </div>
 
-              <!-- Footer -->
+            <!-- Footer -->
             <div class="row text-left px-5 pt-5 foot">
                 <div class="col-md-4 col-sm-12 pb-3">
                     <h3 class="pb-3">La Vie en Rose Pâtisserie</h3>
@@ -281,12 +281,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <p><a href="contact.php">Contact Us</a></p>
                         </div>
                         <div class="col-md-8">
-                            <p><a href="allergen.html">Allergen and Diet Information</a></p>
-                            <p><a href="faq.html">FAQs</a></p>
-                            <p><a href="terms.html">Terms of Service</a></p>
-                            <p><a href="privacy.html">Privacy Policy</a></p>
-                            <p><a href="delivery.html">Delivery Policy</a></p>
-                            <p><a href="pick.html">Pickup Information</a></p>
+                            <p><a href="allergen.php">Allergen and Diet Information</a></p>
+                            <p><a href="faq.php">FAQs</a></p>
+                            <p><a href="terms.php">Terms of Service</a></p>
+                            <p><a href="privacy.php">Privacy Policy</a></p>
+                            <p><a href="delivery.php">Delivery Policy</a></p>
+                            <p><a href="pick.php">Pickup Information</a></p>
                         </div>
 
                     </div>
@@ -305,5 +305,5 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             </div>
         </div>
         <script src="/5007CEM/public_html/js/mobile-menu.js" type="text/javascript"></script>
-</body>
+    </body>
 </html>

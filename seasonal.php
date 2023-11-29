@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -60,7 +63,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="search">
                                 <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
                                 <?php
-                                // Check if the user is logged in
                                 if (isset($_SESSION['user'])) {
                                     echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
                                     echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
@@ -84,7 +86,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <div class="row head pt-4" id="menu">
 
                         <div class="col-lg-8">
-                            <a href="index.html">
+                            <a href="index.php">
                                 <img src="/5007CEM/public_html/image/logo-1.png" height="100" width="100"/>
                             </a>
                             <h3 class="title px-2 pt-2">La Vie en Rose Pâtisserie</h3>
@@ -103,7 +105,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                 <a href="about.php"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                                 <span style="cursor:pointer"><a href="cart.php"><i class="fa fa-shopping-bag"></i></a></span>
                                 <?php
-                                // Check if the user is logged in
                                 if (isset($_SESSION['user'])) {
                                     echo '<a href="user.php"><i class="fa fa-user" aria-hidden="true"></i></a>';
                                     echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>';
@@ -150,10 +151,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         <a href="privacy.php" id="mobile-menu-button">Privacy Policy</a>
                         <a href="pick.php" id="mobile-menu-button">Pickup Information</a>
                         <div class="dropdown-content" id="menu">
-                            <a href="allergen.html">Allergen and Diet Information</a>
+                            <a href="allergen.php">Allergen and Diet Information</a>
                             <a href="terms.php">Terms of Service</a>
                             <a href="privacy.php">Privacy Policy</a>
-                            <a href="pick.html">Pickup Information</a>
+                            <a href="pick.php">Pickup Information</a>
                         </div>
                     </div>
                     <a href="contact.php">Contact Us</a>
@@ -164,7 +165,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 <hr/>
             </div>
              
-            <h1 class="title pt-5">Seasonal Product</h1>
+             <h1 class="title pt-5" id="mobile-menu-button">Seasonal Product</h1>
+             
+            <h1 class="title text-center pt-5" id="menu">Seasonal Product</h1>
 
             <!--MoonCake-->
             <div class="container pt-3 pb-5"> 
@@ -173,6 +176,105 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <?php
                     if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
                         $sql = "SELECT seasonal_id, seasonal_name, seasonal_desc, seasonal_price, image FROM seasonal WHERE category='moon'";
+                        $result = mysqli_query($dbc, $sql);
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<div class="col-6 col-md-4 px-4 py-4">';
+                            echo '<div class="card" data-aos="fade-up">';
+                            echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
+                            echo '<div class="card-body">';
+                            echo "<h4>{$row['seasonal_name']}</h4>";
+                            echo '<p class="content-title">';
+                            echo "{$row['seasonal_desc']}</p>";
+                            echo '<h3 class="pt-5">';
+                            echo "RM{$row['seasonal_price']}</h3>";
+
+                            echo '<form action="cart.php" method="post">';
+                            echo '<input type="hidden" name="seasonal_id" value="' . (isset($row['seasonal_id']) ? $row['seasonal_id'] : '') . '">';
+                            echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
+                            echo '</form>';
+
+                            echo '</div></div></div>';
+                        }
+                    }
+                    ?>
+
+                </div>
+            </div>
+
+            <!--Father's Day-->
+
+            <div class="container pt-3 pb-5"> 
+                <h1 id="father" class="title pt-3">Father's Day Special </h1>
+                <div class="row pb-4">
+                    <?php
+                    if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
+                        $sql = "SELECT seasonal_id, seasonal_name, seasonal_desc, seasonal_price, image FROM seasonal WHERE category='father'";
+                        $result = mysqli_query($dbc, $sql);
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<div class="col-6 col-md-4 px-4 py-4">';
+                            echo '<div class="card" data-aos="fade-up">';
+                            echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
+                            echo '<div class="card-body">';
+                            echo "<h4>{$row['seasonal_name']}</h4>";
+                            echo '<p class="content-title">';
+                            echo "{$row['seasonal_desc']}</p>";
+                            echo '<h3 class="pt-5">';
+                            echo "RM{$row['seasonal_price']}</h3>";
+
+                            echo '<form action="cart.php" method="post">';
+                            echo '<input type="hidden" name="seasonal_id" value="' . (isset($row['seasonal_id']) ? $row['seasonal_id'] : '') . '">';
+                            echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
+                            echo '</form>';
+
+                            echo '</div></div></div>';
+                        }
+                    }
+                    ?>
+                </div>                
+            </div>
+
+
+            <!--Mother's Day-->
+            <div class="container pt-3 pb-5"> 
+                <h1 id="mother" class="title pt-3">Mother's Day Special</h1>
+                <div class="row pb-4">
+                   <?php
+                    if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
+                        $sql = "SELECT seasonal_id, seasonal_name, seasonal_desc, seasonal_price, image FROM seasonal WHERE category='mother'";
+                        $result = mysqli_query($dbc, $sql);
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<div class="col-6 col-md-4 px-4 py-4">';
+                            echo '<div class="card" data-aos="fade-up">';
+                            echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
+                            echo '<div class="card-body">';
+                            echo "<h4>{$row['seasonal_name']}</h4>";
+                            echo '<p class="content-title">';
+                            echo "{$row['seasonal_desc']}</p>";
+                            echo '<h3 class="pt-5">';
+                            echo "RM{$row['seasonal_price']}</h3>";
+
+                            echo '<form action="cart.php" method="post">';
+                            echo '<input type="hidden" name="seasonal_id" value="' . (isset($row['seasonal_id']) ? $row['seasonal_id'] : '') . '">';
+                            echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
+                            echo '</form>';
+
+                            echo '</div></div></div>';
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+
+            <!--christmas-->
+            <div class="container pt-3 pb-5"> 
+                <h1 id="christmas" class="title pt-3">Christmas</h1>
+                <div class="row justify-content-center pb-4">
+                    <?php
+                    if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
+                        $sql = "SELECT seasonal_id, seasonal_name, seasonal_desc, seasonal_price, image FROM seasonal WHERE category='christmas'";
                         $result = mysqli_query($dbc, $sql);
 
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -196,91 +298,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                         }
                     }
                     ?>
-
-                </div>
-            </div>
-
-            <!--Father's Day-->
-
-            <div class="container pt-3 pb-5"> 
-                <h1 id="father" class="title pt-3">Father's Day Special </h1>
-                <div class="row pb-4">
-                    <?php
-                    if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                        $sql = "SELECT seasonal_name, seasonal_desc, seasonal_price, image FROM seasonal WHERE category='father'";
-                        $result = mysqli_query($dbc, $sql);
-
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<div class="col-6 col-md-4 px-4 py-4">';
-                            echo '<div class="card" data-aos="fade-up">';
-                            echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
-                            echo '<div class="card-body">';
-                            echo "<h4>{$row['seasonal_name']}</h4>";
-                            echo '<p class="content-title">';
-                            echo "{$row['seasonal_desc']}</p>";
-                            echo '<h3 class="pt-5">';
-                            echo "RM{$row['seasonal_price']}.00</h3>";
-                            echo '<span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>';
-                            echo '</div></div></div>';
-                        }
-                    }
-                    ?>
-                </div>                
-            </div>
-
-
-
-            <!--Mother's Day-->
-            <div class="container pt-3 pb-5"> 
-                <h1 id="mother" class="title pt-3">Mother's Day Special</h1>
-                <div class="row pb-4">
-                    <?php
-                    if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                        $sql = "SELECT seasonal_name, seasonal_desc, seasonal_price, image FROM seasonal WHERE category='mother'";
-                        $result = mysqli_query($dbc, $sql);
-
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<div class="col-6 col-md-4 px-4 py-4">';
-                            echo '<div class="card" data-aos="fade-up">';
-                            echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
-                            echo '<div class="card-body">';
-                            echo "<h4>{$row['seasonal_name']}</h4>";
-                            echo '<p class="content-title">';
-                            echo "{$row['seasonal_desc']}</p>";
-                            echo '<h3 class="pt-5">';
-                            echo "RM{$row['seasonal_price']}.00</h3>";
-                            echo '<span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>';
-                            echo '</div></div></div>';
-                        }
-                    }
-                    ?>
-                </div>
-            </div>
-
-            <!--christmas-->
-            <div class="container pt-3 pb-5"> 
-                <h1 id="christmas" class="title pt-3">Christmas</h1>
-                <div class="row justify-content-center pb-4">
-                    <?php
-                    if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                        $sql = "SELECT seasonal_name, seasonal_desc, seasonal_price, image FROM seasonal WHERE category='christmas'";
-                        $result = mysqli_query($dbc, $sql);
-
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<div class="col-6 col-md-4 px-4 py-4">';
-                            echo '<div class="card" data-aos="fade-up">';
-                            echo '<img src="data:image/;base64,' . base64_encode($row['image']) . '" />';
-                            echo '<div class="card-body">';
-                            echo "<h4>{$row['seasonal_name']}</h4>";
-                            echo '<p class="content-title">';
-                            echo "{$row['seasonal_desc']}</p>";
-                            echo '<h3 class="pt-5">';
-                            echo "RM{$row['seasonal_price']}.00</h3>";
-                            echo '<span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>';
-                            echo '</div></div></div>';
-                        }
-                    }
-                    ?>
                 </div>
             </div>
 
@@ -291,7 +308,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 <div class="row pb-4">
                     <?php
                     if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                        $sql = "SELECT seasonal_name, seasonal_desc, seasonal_price, image FROM seasonal WHERE category='chinese'";
+                        $sql = "SELECT seasonal_id, seasonal_name, seasonal_desc, seasonal_price, image FROM seasonal WHERE category='chinese'";
                         $result = mysqli_query($dbc, $sql);
 
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -303,8 +320,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             echo '<p class="content-title">';
                             echo "{$row['seasonal_desc']}</p>";
                             echo '<h3 class="pt-5">';
-                            echo "RM{$row['seasonal_price']}.00</h3>";
-                            echo '<span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>';
+                            echo "RM{$row['seasonal_price']}</h3>";
+
+                            echo '<form action="cart.php" method="post">';
+                            echo '<input type="hidden" name="seasonal_id" value="' . (isset($row['seasonal_id']) ? $row['seasonal_id'] : '') . '">';
+                            echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
+                            echo '</form>';
+
                             echo '</div></div></div>';
                         }
                     }
@@ -316,9 +338,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             <div class="container pt-3 pb-5"> 
                 <h1 id="raya" class="title pt-3">Hari Raya</h1>
                 <div class="row pb-4">
-                    <?php
+                   <?php
                     if ($dbc = mysqli_connect('localhost', 'root', '', 'PastryDB')) {
-                        $sql = "SELECT seasonal_name, seasonal_desc, seasonal_price, image FROM seasonal WHERE category='raya'";
+                        $sql = "SELECT seasonal_id, seasonal_name, seasonal_desc, seasonal_price, image FROM seasonal WHERE category='raya'";
                         $result = mysqli_query($dbc, $sql);
 
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -330,37 +352,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             echo '<p class="content-title">';
                             echo "{$row['seasonal_desc']}</p>";
                             echo '<h3 class="pt-5">';
-                            echo "RM{$row['seasonal_price']}.00</h3>";
-                            echo '<span class="btn btn-primary " style="cursor:pointer" onclick="openNav3()">Add To Cart</span>';
+                            echo "RM{$row['seasonal_price']}</h3>";
+
+                            echo '<form action="cart.php" method="post">';
+                            echo '<input type="hidden" name="seasonal_id" value="' . (isset($row['seasonal_id']) ? $row['seasonal_id'] : '') . '">';
+                            echo '<button type="submit" class="btn btn-primary" style="cursor:pointer">Add To Cart</button>';
+                            echo '</form>';
+
                             echo '</div></div></div>';
                         }
                     }
                     ?>
                 </div>
             </div>
-
-            <!--Product Description-->
-
-            <div id="sideNav" class="sidenav">
-                <div class="content">
-                    <img src="..."/>
-                    <h1>Product Name</h1>
-                    <p>Description</p>
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <button type="button" name="button" class="input text-center">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                    </button>
-                    <input type="text" name="name" value="1" size="10" class="input text-center">
-                    <button type="button" name="button" class="input">
-                        <i class="fa fa-minus" aria-hidden="true"></i>
-                    </button>
-
-                    <h3>RM</h3>
-
-                    <button class="btn-lg">Add To Cart</button>
-                </div>
-            </div>
-
 
             <!-- Footer -->
             <div class="row text-left px-5 pt-5 foot">
@@ -379,19 +383,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <div class="row">
                         <div class="col-md-4">
                             <p><a href="index.php">Home</a></p>
-                            <p><a href="about.html">About Us</a></p>
+                            <p><a href="about.php">About Us</a></p>
                             <p><a href="product.php">All Products</a></p>
                             <p><a href="seasonal.php">Seasonal Products</a></p>
                             <p><a href="customize.php">Customize</a></p>
                             <p><a href="contact.php">Contact Us</a></p>
                         </div>
                         <div class="col-md-8">
-                            <p><a href="allergen.html">Allergen and Diet Information</a></p>
-                            <p><a href="faq.html">FAQs</a></p>
-                            <p><a href="terms.html">Terms of Service</a></p>
-                            <p><a href="privacy.html">Privacy Policy</a></p>
-                            <p><a href="delivery.html">Delivery Policy</a></p>
-                            <p><a href="pick.html">Pickup Information</a></p>
+                            <p><a href="allergen.php">Allergen and Diet Information</a></p>
+                            <p><a href="faq.php">FAQs</a></p>
+                            <p><a href="terms.php">Terms of Service</a></p>
+                            <p><a href="privacy.php">Privacy Policy</a></p>
+                            <p><a href="pick.php">Pickup Information</a></p>
                         </div>
 
                     </div>

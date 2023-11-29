@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// database connection
 $dsn = 'mysql:host=localhost;dbname=PastryDB;';
 $username = 'root';
 $password = '';
@@ -14,11 +13,9 @@ try {
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get user input
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    //authentication logic using a database query
     $stmt = $pdo->prepare("SELECT * FROM user WHERE email = :email");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
@@ -26,10 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user && password_verify($password, $user['password'])) {
-        // Successful login
         $_SESSION['user'] = $user;
 
-        // Redirect to index.php
         header("Location: index.php");
         exit();
     } else {
