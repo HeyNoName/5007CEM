@@ -10,7 +10,6 @@ AOS.init({
   once: true 
 });
 
-// Add a scroll event listener
 window.addEventListener('scroll', function () {
     const elements = document.querySelectorAll('[data-aos]');
     elements.forEach((element) => {
@@ -20,7 +19,6 @@ window.addEventListener('scroll', function () {
     });
 });
 
-// Function to check if an element is in the viewport
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (

@@ -40,18 +40,13 @@ tierSelect.addEventListener("change", function () {
     }
 });
 
-// Get the select and textarea elements by their IDs
 var styleSelect = document.getElementById("style");
 var styleTextarea = document.getElementById("stylec");
 
-// Add an event listener to the select element
 styleSelect.addEventListener("change", function () {
-    // Check if the selected value is "Others"
     if (styleSelect.value === "5") {
-        // If "Others" is selected, display the textarea
         styleTextarea.style.display = "block";
     } else {
-        // If any other option is selected, hide the textarea
         styleTextarea.style.display = "none";
     }
 });

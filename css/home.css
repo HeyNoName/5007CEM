@@ -118,7 +118,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     background-color: #717171;
 }
 
-/* Fading animation */
 .fade {
     animation-name: fade;
 
@@ -137,41 +136,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     }
 }
 
-/* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
     .prev, .next,.text {
         font-size: 11px
     }
 }
-/*
-.product{
-    background-image: url("/5007CEM/public_html/image/allpro.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    color: #fff;
-    background-color: #fff !important;
-    border-color: #ffff !important;
-    height: 100px;
-    width: 300px;
-    border-radius: 20px !important;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
 
-.product a{
-    color: #ffffff;
-    font-size:25px;
-}
-
-.product a:hover{
-    color: #ffff;
-    text-decoration: none;
-    font-size: 30px;
-}
-
-.product:hover{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    filter: brightness(95%);
-}*/
 
 /*about*/
 .about-title{
@@ -233,14 +203,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     height: 100%;
     position: fixed;
     top: 0;
-    right: -400px; /* Start it off the screen to the right */
+    right: -400px; 
     background-color: #111;
     overflow-x: hidden;
     transition: right 0.3s ease-in-out;
 }
 
 .cart.active {
-    right: 0; /* Slide it in from the right */
+    right: 0; 
 }
 
 .cart a {
@@ -342,9 +312,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     padding-top: 64px;
 }
 
-/* Define the animation when the element is hovered */
 .fa-arrow-right:hover {
-    transform: translateX(10px); /* Adjust the value as needed for the desired effect */
+    transform: translateX(10px); 
 }
 
 .arrow{
