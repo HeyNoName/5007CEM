@@ -154,9 +154,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             <div class="container hr-line">
                 <hr/>
             </div>
-            <div class="container hr-line">
-                <hr/>
-            </div>
 
             <div class="container text-justify py-5 px-5">
                 <h1 class="text-center pb-3 title">Allergen and Diet Information</h1>

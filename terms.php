@@ -285,7 +285,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <p><a href="faq.php">FAQs</a></p>
                             <p><a href="terms.php">Terms of Service</a></p>
                             <p><a href="privacy.php">Privacy Policy</a></p>
-                            <p><a href="delivery.php">Delivery Policy</a></p>
                             <p><a href="pick.php">Pickup Information</a></p>
                         </div>
 
